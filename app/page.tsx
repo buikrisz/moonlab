@@ -4,22 +4,39 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import aboutImg from "./content/reformer_pilates.webp";
+import priceImg from "./content/price.jpg";
 import styles from "../styles/pages.module.css";
+import { PriceCard } from "@/components";
 
-const schedule = [
-  "8:00 – 9:00",
-  "9:15 – 10:15",
-  "10:30 – 11:30",
-  "16:00 – 17:00",
-  "17:15 – 18:15",
-  "18:30 – 19:30",
-];
-
-const pricing = [
-  { label: "Drop-in", price: "6,500 HUF" },
-  { label: "5-session pass", price: "30,000 HUF" },
-  { label: "10-session pass", price: "58,000 HUF" },
-  { label: "Private session", price: "12,000 HUF" },
+const prices = [
+  {
+    name: "Próba jegy",
+    description:
+      "Egyszeri belépés a Moon Lab Pilates stúdióba, amely lehetőséget ad arra, hogy kipróbáld a reformer pilatest és megismerd a stúdió hangulatát.",
+    price: "4000 Ft",
+    img: priceImg,
+  },
+  {
+    name: "Alkalmi jegy",
+    description:
+      "Egyéni belépés azok számára, akik alkalmanként szeretnének részt venni reformer pilates órákon, anélkül hogy bérletet vásárolnának.",
+    price: "6500 Ft",
+    img: priceImg,
+  },
+  {
+    name: "5 alkalmas bérlet",
+    description:
+      "5 alkalmas bérletünk rugalmas lehetőséget biztosít számodra, hogy rendszeresen részt vegyél reformer pilates órákon, miközben kedvezőbb áron élvezheted a stúdió szolgáltatásait.",
+    price: "30000 Ft",
+    img: priceImg,
+  },
+  {
+    name: "10 alkalmas bérlet",
+    description:
+      "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
+    price: "55000 Ft",
+    img: priceImg,
+  },
 ];
 
 export default function HomePage() {
@@ -40,7 +57,7 @@ export default function HomePage() {
     <main className={styles.main}>
       {/* Hero Section */}
       <motion.section
-        className={styles.heroSection}
+        className={`${styles.section} ${styles.heroSection}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -78,7 +95,7 @@ export default function HomePage() {
       <motion.section
         id="about"
         ref={aboutRef}
-        className={styles.aboutSection}
+        className={`${styles.section} ${styles.aboutSection}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: aboutInView ? 1 : 0 }}
         transition={{ duration: 1 }}
@@ -90,7 +107,7 @@ export default function HomePage() {
           transition={{ duration: 1 }}
         >
           <div className={styles.aboutContent}>
-            <h2 className={styles.aboutSectionTitle}>Reformer Pilates</h2>
+            <h2 className={styles.sectionTitle}>Reformer Pilates</h2>
             <p className={styles.aboutSectionText}>
               A Reformer Pilates egy dinamikus, géppel végzett mozgásforma,
               amely hatékonyan erősíti az izmokat, javítja a testtartást, és
@@ -145,7 +162,7 @@ export default function HomePage() {
               animate={{ opacity: coachInView ? 1 : 0 }}
               transition={{ duration: 1 }}
             >
-              Krisztina Bui
+              Krisztian Bui
             </motion.p>
             <motion.p
               className={styles.sectionText}
@@ -160,56 +177,34 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* Schedule and Pricing */}
+      {/* Pricing */}
       <motion.section
         id="classes"
         ref={scheduleRef}
-        className={styles.scheduleSection}
+        className={`${styles.section} ${styles.priceSection}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: scheduleInView ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className={styles.sectionTitle}>Classes & Pricing</h2>
-        <div className={styles.scheduleGrid}>
-          <div>
-            <h3 className={styles.scheduleSubtitle}>Weekly Schedule</h3>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: scheduleInView ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            >
-              Monday–Saturday, 6 classes/day
-            </motion.p>
-            <ul className={styles.scheduleList}>
-              {schedule.map((slot, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: scheduleInView ? 1 : 0 }}
-                  transition={{ duration: 1 }}
-                >
-                  {slot}
-                </motion.li>
-              ))}
-            </ul>
+        <motion.div
+          className={styles.priceContainer}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: scheduleInView ? 1 : 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className={styles.sectionTitle}>Áraink</h2>
+          <div className={styles.priceCards}>
+            {prices.map((price) => (
+              <PriceCard
+                key={price.name}
+                name={price.name}
+                description={price.description}
+                price={price.price}
+                img={price.img}
+              />
+            ))}
           </div>
-          <div>
-            <h3 className={styles.scheduleSubtitle}>Pricing</h3>
-            <ul className={styles.scheduleList}>
-              {pricing.map((item, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: scheduleInView ? 1 : 0 }}
-                  transition={{ duration: 1 }}
-                >
-                  {item.label}: {item.price}
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <button className={styles.bookButton}>Book a Class</button>
+        </motion.div>
       </motion.section>
 
       {/* Contact Section */}
@@ -257,7 +252,7 @@ export default function HomePage() {
         transition={{ duration: 1 }}
       >
         <p>
-          &copy; {new Date().getFullYear()} MoonLab Pilates. All rights
+          &copy; {new Date().getFullYear()} Moon Lab Pilates. All rights
           reserved.
         </p>
       </motion.footer>

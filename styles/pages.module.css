@@ -2,15 +2,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #623e2a;
+  color: var(--primary-text);
 }
 
-.heroSection {
+.section {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.sectionTitle {
+  font-size: 42;
+  margin-bottom: 60;
+}
+
+.heroSection {
   background: url("../app/content/hero_bg.webp") center/cover no-repeat;
 }
 
@@ -53,7 +61,7 @@
   width: 180;
   height: 40;
   bottom: 120;
-  background-color: #fff;
+  background-color: var(--primary-background);
   font-family: var(--font-dm-sans);
   font-size: 12;
   font-weight: 600;
@@ -67,10 +75,7 @@
 }
 
 .aboutSection {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
+  background-color: var(--primary-background);
 }
 
 .aboutContainer {
@@ -86,11 +91,6 @@
   font-family: var(--font-catchy);
 }
 
-.aboutSectionTitle {
-  font-size: 42;
-  margin-bottom: 60;
-}
-
 .aboutSectionText {
   font-size: 20;
   margin-bottom: 12;
@@ -101,16 +101,26 @@
   width: 400;
 }
 
-.scheduleSection {
-  padding: 4rem 1.5rem;
-  max-width: 900px;
-  text-align: center;
+.priceSection {
+  background-color: var(--primary-background);
 }
 
-.sectionTitle {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80%;
+  width: 80%;
+}
+
+.priceCards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 .sectionText {
@@ -118,7 +128,7 @@
 }
 
 .coachSection {
-  background-color: #f3f4f6;
+  background-color: var(--secondary-background);
   padding: 3rem 1.5rem;
   width: 100%;
 }
