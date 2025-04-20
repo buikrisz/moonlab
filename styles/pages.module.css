@@ -1,0 +1,205 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #623e2a;
+}
+
+.heroSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url("../app/content/hero_bg.webp") center/cover no-repeat;
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  font-family: var(--font-catchy);
+}
+
+.heroTitle {
+  font-size: 100;
+  height: 120;
+  letter-spacing: 3;
+  color: #fff;
+}
+
+.heroSubtitle {
+  font-size: 44;
+  color: #fff;
+}
+
+.heroButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+  width: 180;
+  height: 40;
+  bottom: 120;
+  background-color: #fff;
+  font-family: var(--font-dm-sans);
+  font-size: 12;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.heroButton:hover {
+  cursor: pointer;
+  background-color: #fff6ee;
+}
+
+.aboutSection {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.aboutContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 80%;
+}
+
+.aboutContent {
+  width: 800;
+  font-family: var(--font-catchy);
+}
+
+.aboutSectionTitle {
+  font-size: 42;
+  margin-bottom: 60;
+}
+
+.aboutSectionText {
+  font-size: 20;
+  margin-bottom: 12;
+}
+
+.aboutImage {
+  height: 550;
+  width: 400;
+}
+
+.scheduleSection {
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.sectionText {
+  font-size: 1.125rem;
+}
+
+.coachSection {
+  background-color: #f3f4f6;
+  padding: 3rem 1.5rem;
+  width: 100%;
+}
+
+.coachContent {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.coachProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coachImage {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.coachName {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.scheduleGrid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.scheduleSubtitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.scheduleList {
+  text-align: left;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  list-style: disc;
+}
+
+.bookButton {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.75rem;
+  transition: background 0.3s;
+}
+
+.bookButton:hover {
+  background-color: #333;
+}
+
+.contactSection {
+  width: 100%;
+  background-color: #f3f4f6;
+  padding: 4rem 1.5rem;
+}
+
+.contactContent {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactDetail {
+  margin-top: 0.5rem;
+}
+
+.footer {
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+}

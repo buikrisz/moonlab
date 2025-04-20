@@ -1,8 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Catchy Mager";
+  src: url("/fonts/CatchyMager.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Catchy Mager";
+  src: url("/fonts/CocoGothicRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-catchy: "Catchy Mager", sans-serif;
+  --font-coco: "Coco Gothic", sans-serif;
 }
 
 @theme inline {
@@ -17,6 +33,10 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

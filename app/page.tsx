@@ -1,8 +1,10 @@
-"use client"; // Ensure this is at the top for client-side rendering
+"use client";
 
-import { useEffect } from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
-import { useInView } from 'react-intersection-observer'; // Import IntersectionObserver Hook
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Image from "next/image";
+import aboutImg from "./content/reformer_pilates.webp";
+import styles from "../styles/pages.module.css";
 
 const schedule = [
   "8:00 – 9:00",
@@ -21,96 +23,124 @@ const pricing = [
 ];
 
 export default function HomePage() {
-  const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
-  const { ref: coachRef, inView: coachInView } = useInView({ triggerOnce: true });
-  const { ref: scheduleRef, inView: scheduleInView } = useInView({ triggerOnce: true });
-  const { ref: contactRef, inView: contactInView } = useInView({ triggerOnce: true });
+  const { ref: aboutRef, inView: aboutInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: coachRef, inView: coachInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: scheduleRef, inView: scheduleInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: contactRef, inView: contactInView } = useInView({
+    triggerOnce: true,
+  });
 
   return (
-    <main className="flex flex-col items-center text-gray-800">
+    <main className={styles.main}>
       {/* Hero Section */}
       <motion.section
-        className="w-full h-[90vh] bg-[url('/images/hero.jpg')] bg-cover bg-center flex items-center justify-center text-white mt-16"
+        className={styles.heroSection}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="bg-black/50 p-6 rounded-xl text-center max-w-xl">
+        <motion.div className={styles.heroContent}>
           <motion.h1
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className={styles.heroTitle}
             initial={{ opacity: 0 }}
             animate={{ opacity: aboutInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            Welcome to MoonLab Pilates
+            Moon Lab Pilates
           </motion.h1>
           <motion.p
-            className="text-lg"
+            className={styles.heroSubtitle}
             initial={{ opacity: 0 }}
             animate={{ opacity: aboutInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            Recenter. Recharge. Reform your body and mind.
+            Studio
           </motion.p>
-        </div>
+          <motion.a
+            className={styles.heroButton}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: aboutInView ? 1 : 0 }}
+            transition={{ duration: 1 }}
+            href="#classes"
+          >
+            Órarend
+          </motion.a>
+        </motion.div>
       </motion.section>
 
       {/* About Section */}
       <motion.section
         id="about"
         ref={aboutRef}
-        className="py-16 px-6 max-w-4xl text-center"
+        className={styles.aboutSection}
         initial={{ opacity: 0 }}
         animate={{ opacity: aboutInView ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
-        <motion.h2
-          className="text-3xl font-semibold mb-4"
+        <motion.div
+          className={styles.aboutContainer}
           initial={{ opacity: 0 }}
           animate={{ opacity: aboutInView ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
-          About the Studio
-        </motion.h2>
-        <motion.p
-          className="text-lg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: aboutInView ? 1 : 0 }}
-          transition={{ duration: 1 }}
-        >
-          MoonLab Pilates is a cozy, boutique studio in the heart of the city, offering small group reformer sessions in a calming and empowering environment.
-        </motion.p>
+          <div className={styles.aboutContent}>
+            <h2 className={styles.aboutSectionTitle}>Reformer Pilates</h2>
+            <p className={styles.aboutSectionText}>
+              A Reformer Pilates egy dinamikus, géppel végzett mozgásforma,
+              amely hatékonyan erősíti az izmokat, javítja a testtartást, és
+              növeli a hajlékonyságot. A reformer gép ellenállása révén minden
+              gyakorlat célzott és kontrollált, így ideális mind kezdőknek, mind
+              haladóknak.
+            </p>
+            <p className={styles.aboutSectionText}>
+              A Reformer edzések során a mélyizmokat aktiváljuk, különös
+              tekintettel a törzs stabilizáló izmaira. Ez nemcsak az esztétikus
+              testalkat kialakításában segít, hanem a mindennapi mozgásokat is
+              könnyebbé és biztonságosabbá teszi.
+            </p>
+            <p className={styles.aboutSectionText}>
+              A Moon Lab Pilates stúdióban kis létszámú csoportos órákon vehetsz
+              részt, ahol a személyes figyelem garantált. Célunk, hogy
+              vendégeink egyensúlyt találjanak test és lélek között, miközben
+              egy nyugodt, inspiráló környezetben fejlődnek.
+            </p>
+          </div>
+          <Image
+            src={aboutImg}
+            alt="Inside the Pilates studio"
+            className={styles.aboutImage}
+          />
+        </motion.div>
       </motion.section>
 
       {/* Coach Intro */}
       <motion.section
         id="coach"
         ref={coachRef}
-        className="py-12 px-6 bg-gray-100 w-full"
+        className={styles.coachSection}
         initial={{ opacity: 0 }}
         animate={{ opacity: coachInView ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            className="text-3xl font-semibold mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: coachInView ? 1 : 0 }}
-            transition={{ duration: 1 }}
-          >
-            Meet Your Instructor
-          </motion.h2>
-          <div className="flex flex-col items-center">
+        <div className={styles.coachContent}>
+          <h2 className={styles.sectionTitle}>Meet Your Instructor</h2>
+          <div className={styles.coachProfile}>
             <motion.img
               src="/images/coach.jpg"
               alt="Coach"
-              className="w-40 h-40 object-cover rounded-full mb-4"
+              className={styles.coachImage}
               initial={{ opacity: 0 }}
               animate={{ opacity: coachInView ? 1 : 0 }}
               transition={{ duration: 1 }}
             />
             <motion.p
-              className="text-lg font-medium"
+              className={styles.coachName}
               initial={{ opacity: 0 }}
               animate={{ opacity: coachInView ? 1 : 0 }}
               transition={{ duration: 1 }}
@@ -118,12 +148,13 @@ export default function HomePage() {
               Krisztina Bui
             </motion.p>
             <motion.p
-              className="text-gray-600 max-w-md mt-2"
+              className={styles.sectionText}
               initial={{ opacity: 0 }}
               animate={{ opacity: coachInView ? 1 : 0 }}
               transition={{ duration: 1 }}
             >
-              Certified Pilates instructor with a passion for helping clients feel strong, centered, and confident in their bodies.
+              Certified Pilates instructor with a passion for helping clients
+              feel strong, centered, and confident in their bodies.
             </motion.p>
           </div>
         </div>
@@ -133,85 +164,65 @@ export default function HomePage() {
       <motion.section
         id="classes"
         ref={scheduleRef}
-        className="py-16 px-6 max-w-5xl text-center"
+        className={styles.scheduleSection}
         initial={{ opacity: 0 }}
         animate={{ opacity: scheduleInView ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
-        <motion.h2
-          className="text-3xl font-semibold mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: scheduleInView ? 1 : 0 }}
-          transition={{ duration: 1 }}
-        >
-          Classes & Pricing
-        </motion.h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <h2 className={styles.sectionTitle}>Classes & Pricing</h2>
+        <div className={styles.scheduleGrid}>
           <div>
-            <motion.h3
-              className="text-xl font-bold mb-2"
+            <h3 className={styles.scheduleSubtitle}>Weekly Schedule</h3>
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: scheduleInView ? 1 : 0 }}
               transition={{ duration: 1 }}
             >
-              Weekly Schedule
-            </motion.h3>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: scheduleInView ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            >
-              <p>Monday–Saturday, 6 classes/day</p>
-            </motion.div>
-            <ul className="text-left mt-4 list-disc list-inside">
+              Monday–Saturday, 6 classes/day
+            </motion.p>
+            <ul className={styles.scheduleList}>
               {schedule.map((slot, index) => (
-                <motion.li key={index} initial={{ opacity: 0 }} animate={{ opacity: scheduleInView ? 1 : 0 }} transition={{ duration: 1 }}>
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: scheduleInView ? 1 : 0 }}
+                  transition={{ duration: 1 }}
+                >
                   {slot}
                 </motion.li>
               ))}
             </ul>
           </div>
           <div>
-            <motion.h3
-              className="text-xl font-bold mb-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: scheduleInView ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            >
-              Pricing
-            </motion.h3>
-            <ul className="text-left list-disc list-inside">
+            <h3 className={styles.scheduleSubtitle}>Pricing</h3>
+            <ul className={styles.scheduleList}>
               {pricing.map((item, index) => (
-                <motion.li key={index} initial={{ opacity: 0 }} animate={{ opacity: scheduleInView ? 1 : 0 }} transition={{ duration: 1 }}>
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: scheduleInView ? 1 : 0 }}
+                  transition={{ duration: 1 }}
+                >
                   {item.label}: {item.price}
                 </motion.li>
               ))}
             </ul>
           </div>
         </div>
-        <button className="mt-8 px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition">
-          Book a Class
-        </button>
+        <button className={styles.bookButton}>Book a Class</button>
       </motion.section>
 
       {/* Contact Section */}
       <motion.section
         id="contact"
         ref={contactRef}
-        className="w-full bg-gray-100 py-16 px-6"
+        className={styles.contactSection}
         initial={{ opacity: 0 }}
         animate={{ opacity: contactInView ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            className="text-3xl font-semibold mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: contactInView ? 1 : 0 }}
-            transition={{ duration: 1 }}
-          >
-            Get in Touch
-          </motion.h2>
+        <div className={styles.contactContent}>
+          <h2 className={styles.sectionTitle}>Get in Touch</h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: contactInView ? 1 : 0 }}
@@ -220,6 +231,7 @@ export default function HomePage() {
             Email: hello@moonlabstudio.com
           </motion.p>
           <motion.p
+            className={styles.contactDetail}
             initial={{ opacity: 0 }}
             animate={{ opacity: contactInView ? 1 : 0 }}
             transition={{ duration: 1 }}
@@ -227,6 +239,7 @@ export default function HomePage() {
             Phone: +36 30 123 4567
           </motion.p>
           <motion.p
+            className={styles.contactDetail}
             initial={{ opacity: 0 }}
             animate={{ opacity: contactInView ? 1 : 0 }}
             transition={{ duration: 1 }}
@@ -238,12 +251,15 @@ export default function HomePage() {
 
       {/* Footer */}
       <motion.footer
-        className="w-full bg-black text-white text-center py-6"
+        className={styles.footer}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <p>&copy; {new Date().getFullYear()} MoonLab Pilates. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} MoonLab Pilates. All rights
+          reserved.
+        </p>
       </motion.footer>
     </main>
   );
