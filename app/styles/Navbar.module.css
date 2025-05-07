@@ -1,0 +1,66 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  height: 60px;
+  width: 100%;
+  background-color: var(--primary-background);
+  padding: 0 20px;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  color: var(--primary-text);
+}
+
+.navbar.visible {
+  transform: translateY(0);
+  box-shadow: 0 0 5px var(--primary-text);
+}
+
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.navLinks li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  padding: 0 15px;
+}
+
+.navLinks li a {
+  font-weight: bold;
+}
+
+.navLinks li:hover {
+  background-color: var(--secondary-background);
+}
+
+.languageChooser {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.languageChooser select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
