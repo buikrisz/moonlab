@@ -290,6 +290,7 @@ const HomePage = () => {
           </div>
         </motion.div>
       </motion.section>
+
       {/* Coach Intro */}
       <motion.section
         id="coach"
@@ -299,36 +300,15 @@ const HomePage = () => {
         animate={{ opacity: coachInView ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
-        <div className={styles.coachContent}>
-          <h2 className={styles.sectionTitle}>Meet Your Instructor</h2>
-          <div className={styles.coachProfile}>
-            <motion.img
-              src="/images/coach.jpg"
-              alt="Coach"
-              className={styles.coachImage}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: coachInView ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            />
-            <motion.p
-              className={styles.coachName}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: coachInView ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            >
-              Krisztian Bui
-            </motion.p>
-            <motion.p
-              className={styles.sectionText}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: coachInView ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            >
-              Certified Pilates instructor with a passion for helping clients
-              feel strong, centered, and confident in their bodies.
-            </motion.p>
-          </div>
-        </div>
+        <motion.div
+          className={styles.coachContent}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: coachInView ? 1 : 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className={styles.sectionTitle}>Oktatóink</h2>
+          <h3 className={styles.coachSoon}>HAMAROSAN</h3>
+        </motion.div>
       </motion.section>
 
       {/* Pricing */}

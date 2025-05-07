@@ -135,35 +135,28 @@
 
 .coachSection {
   background-color: var(--primary-background);
+  align-items: flex-start;
+  padding-top: 40;
+  padding-bottom: 40;
 }
 
 .coachContent {
+  display: flex;
+  flex-direction: column;
+  gap: 200;
+  height: 100%;
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
 
-.coachProfile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.coachImage {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 9999px;
-  margin-bottom: 1rem;
-}
-
-.coachName {
-  font-size: 1.125rem;
-  font-weight: 500;
+.coachSoon {
+  font-size: 40;
+  font-family: var(--font-catchy);
 }
 
 .priceSection {
-  background-color: var(--primary-background);
+  background-color: var(--secondary-background);
 }
 
 .priceContainer {
@@ -185,7 +178,7 @@
 }
 
 .faqSection {
-  background-color: var(--secondary-background);
+  background-color: var(--primary-background);
   align-items: flex-start;
   padding-top: 40;
 }
