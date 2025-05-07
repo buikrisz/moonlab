@@ -8,10 +8,12 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import aboutImg from "./content/reformer_pilates.webp";
 import priceImg from "./content/price.jpg";
-import styles from "../styles/pages.module.css";
-import { PriceCard } from "@/components";
+import { PriceCard } from "./components";
+import { FaqCard } from "./components/FaqCard";
+import { FaqCardProps, PriceCardProps } from "./types";
+import styles from "./styles/pages.module.css";
 
-const prices = [
+const prices: PriceCardProps[] = [
   {
     name: "Próba jegy",
     description:
@@ -42,6 +44,51 @@ const prices = [
   },
 ];
 
+const faq: FaqCardProps[] = [
+  {
+    question: "Hogyan tudok bejelentkezni egy órára?",
+    answer:
+      "Bejelentkezni a Motibro online foglalási rendszerén keresztül tudsz, egy gyors regisztráció után. LINK",
+  },
+  {
+    question: "Hogyan tudok jegyet vagy bérletet vásárolni?",
+    answer:
+      "A Motibro fiókodban egyszerűen vásárolhatsz jegyet vagy bérletet. Személyesen is fizethetsz a stúdióban, készpénzzel vagy bankkártyával.",
+  },
+  {
+    question: "Meddig tudom lemondani az órát, amire bejelentkeztem?",
+    answer:
+      "Az órát legalább 24 órával a kezdés előtt tudod lemondani a Motibro rendszerében díjmentesen. Késői - 24 órán belüli - lemondás esetén az óra díját felszámoljuk, bérletes vendégek esetén pedig levonásra kerül az alkalom. Kérjük, hogy mindenképp jelezd a lemondást, még ha későn is, így esélyt adsz a válólistán szereplő vendégeknek a részvételre.",
+  },
+  {
+    question: "Mit hozzak magammal az órára?",
+    answer:
+      "Csak kényelmes, testhezálló edzőruhára van szükség, hogy az oktató jól lássa a tested tartását gyakorlás közben. Emellett javasoljuk a csúszásmentes zokni használatát a biztonság és higiénia érdekében. + törölköző / víz",
+  },
+  {
+    question: "Mennyi ideig tart egy óra?",
+    answer: "A csoportos Reformer Pilates órák 50 perc hosszúak.",
+  },
+  {
+    question: "Teljesen kezdő vagyok, jöhetek órára?",
+    answer:
+      "Igen! Kezdő óráinkat úgy alakítottuk ki, hogy biztonságos és érthető legyen mindenki számára. Ha bizonytalan vagy, egyéni bevezető órát is tudsz foglalni.",
+  },
+  {
+    question: "Milyen típusú órák vannak?",
+    answer:
+      "Reformer pilates (kezdő/haladó); Funkcionális Reformer; HIIT Strength; Stretching ",
+  },
+  {
+    question: "Studiót, hogyan tudom megközelíteni?",
+    answer: "???",
+  },
+  {
+    question: "Van parkolási lehetőség?",
+    answer: "Igen, a környéken ingyenes az utcai parkolás elérhető.",
+  },
+];
+
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
     triggerOnce: true,
@@ -53,6 +100,9 @@ const HomePage = () => {
     triggerOnce: true,
   });
   const { ref: scheduleRef, inView: scheduleInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: faqRef, inView: faqInView } = useInView({
     triggerOnce: true,
   });
   const { ref: contactRef, inView: contactInView } = useInView({
@@ -175,7 +225,7 @@ const HomePage = () => {
             <h5 className={styles.aboutPilatesQuestion}>
               Miért válaszd a Reformer Pilates-t?
             </h5>
-            <p className={styles.aboutPilatesAnswer}>
+            <div className={styles.aboutPilatesAnswer}>
               <ol>
                 <li>
                   ✅ Erősítés és nyújtás egyszerre: A reformer segítségével
@@ -201,11 +251,11 @@ const HomePage = () => {
                   megelőzésére.
                 </li>
               </ol>
-            </p>
+            </div>
           </div>
           <div className={styles.aboutPilatesParagraph}>
             <h5 className={styles.aboutPilatesQuestion}>Kinek ajánlott?</h5>
-            <p className={styles.aboutPilatesAnswer}>
+            <div className={styles.aboutPilatesAnswer}>
               <ol className={styles.aboutPilatesListDisc}>
                 <li>
                   Teljesen kezdőknek, akik biztonságos, vezetett módon szeretnék
@@ -224,7 +274,7 @@ const HomePage = () => {
                   keretében)
                 </li>
               </ol>
-            </p>
+            </div>
           </div>
           <div className={styles.aboutPilatesParagraph}>
             <h5 className={styles.aboutPilatesQuestion}>
@@ -308,6 +358,32 @@ const HomePage = () => {
               />
             ))}
           </div>
+        </motion.div>
+      </motion.section>
+
+      {/* FAQ */}
+      <motion.section
+        id="faq"
+        ref={faqRef}
+        className={`${styles.section} ${styles.faqSection}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: faqInView ? 1 : 0 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.div
+          className={styles.faqContainer}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: faqInView ? 1 : 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className={styles.sectionTitle}>Gyakori Kérdések</h2>
+          {faq.map((item) => (
+            <FaqCard
+              key={item.answer}
+              question={item.question}
+              answer={item.answer}
+            />
+          ))}
         </motion.div>
       </motion.section>
 

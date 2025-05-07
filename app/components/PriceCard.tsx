@@ -1,14 +1,7 @@
-import { StaticImageData } from "next/image";
 import React from "react";
-import styles from "../styles/PriceCard.module.css";
 import Image from "next/image";
-
-type PriceCardProps = {
-  name: string;
-  description: string;
-  price: string;
-  img: StaticImageData;
-};
+import styles from "../styles/PriceCard.module.css";
+import { PriceCardProps } from "../types";
 
 export const PriceCard = ({
   name,
