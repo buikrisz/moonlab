@@ -101,36 +101,36 @@
   width: 400;
 }
 
-.priceSection {
-  background-color: var(--primary-background);
+.aboutPilatesSection {
+  min-height: 80vh;
+  background-color: var(--secondary-background);
 }
 
-.priceContainer {
+.aboutPilatesContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 80%;
-  width: 80%;
+  gap: 30;
+  width: 90%;
 }
 
-.priceCards {
+.aboutPilatesParagraph {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 2rem;
+  flex-direction: column;
+  gap: 10;
 }
 
-.sectionText {
-  font-size: 1.125rem;
+.aboutPilatesQuestion {
+  font-size: 18;
+  font-weight: 600;
+}
+
+.aboutPilatesListDisc {
+  list-style-type: disc;
+  padding-left: 30;
 }
 
 .coachSection {
-  background-color: var(--secondary-background);
-  padding: 3rem 1.5rem;
-  width: 100%;
+  background-color: var(--primary-background);
 }
 
 .coachContent {
@@ -158,47 +158,37 @@
   font-weight: 500;
 }
 
-.scheduleGrid {
-  display: grid;
-  gap: 2rem;
-  margin-top: 1.5rem;
+.priceSection {
+  background-color: var(--primary-background);
 }
 
-.scheduleSubtitle {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80%;
+  width: 80%;
 }
 
-.scheduleList {
-  text-align: left;
-  margin-top: 1rem;
-  padding-left: 1rem;
-  list-style: disc;
-}
-
-.bookButton {
+.priceCards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
   margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background-color: black;
-  color: white;
-  border-radius: 0.75rem;
-  transition: background 0.3s;
-}
-
-.bookButton:hover {
-  background-color: #333;
 }
 
 .contactSection {
-  width: 100%;
-  background-color: #f3f4f6;
-  padding: 4rem 1.5rem;
+  align-items: flex-start;
+  background-color: var(--primary-text);
+  color: var(--primary-background);
 }
 
-.contactContent {
-  max-width: 900px;
-  margin: 0 auto;
+.contactContainer {
+  width: 80%;
+  margin-top: 40;
   text-align: center;
 }
 

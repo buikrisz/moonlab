@@ -43,6 +43,9 @@ export default function HomePage() {
   const { ref: aboutRef, inView: aboutInView } = useInView({
     triggerOnce: true,
   });
+  const { ref: aboutPilatesRef, inView: aboutPilatesInView } = useInView({
+    triggerOnce: true,
+  });
   const { ref: coachRef, inView: coachInView } = useInView({
     triggerOnce: true,
   });
@@ -109,23 +112,24 @@ export default function HomePage() {
           <div className={styles.aboutContent}>
             <h2 className={styles.sectionTitle}>Reformer Pilates</h2>
             <p className={styles.aboutSectionText}>
-              A Reformer Pilates egy dinamikus, géppel végzett mozgásforma,
-              amely hatékonyan erősíti az izmokat, javítja a testtartást, és
-              növeli a hajlékonyságot. A reformer gép ellenállása révén minden
-              gyakorlat célzott és kontrollált, így ideális mind kezdőknek, mind
-              haladóknak.
+              🌑 Üdvözlünk a Moon Lab Pilates világában! 🌑
             </p>
             <p className={styles.aboutSectionText}>
-              A Reformer edzések során a mélyizmokat aktiváljuk, különös
-              tekintettel a törzs stabilizáló izmaira. Ez nemcsak az esztétikus
-              testalkat kialakításában segít, hanem a mindennapi mozgásokat is
-              könnyebbé és biztonságosabbá teszi.
+              Stúdiónk Rákospalota egyik központi, mégis csendes, nyugodt részén
+              található – tökéletes helyszín a testi-lelki feltöltődéshez.
             </p>
             <p className={styles.aboutSectionText}>
-              A Moon Lab Pilates stúdióban kis létszámú csoportos órákon vehetsz
-              részt, ahol a személyes figyelem garantált. Célunk, hogy
-              vendégeink egyensúlyt találjanak test és lélek között, miközben
-              egy nyugodt, inspiráló környezetben fejlődnek.
+              Az exkluzív környezet kialakítása mellett kiemelt figyelmet
+              fordítottunk a gépeinkre is: a stúdióban a jelenleg elérhető egyik
+              legmagasabb minőségű Reformer Pilates gépekkel dolgozunk.
+            </p>
+            <p className={styles.aboutSectionText}>
+              Egyéni és kiscsoportos óráinkon tapasztalt oktatóink minden
+              vendégre személyre szabott figyelmet fordítanak.
+            </p>
+            <p className={styles.aboutSectionText}>
+              ✨ A Moon Lab Pilates a hely, ahol valóban elindulhatsz a
+              testi-lelki egyensúly felé vezető úton. ✨
             </p>
           </div>
           <Image
@@ -136,11 +140,110 @@ export default function HomePage() {
         </motion.div>
       </motion.section>
 
+      {/* About Pilates */}
+      <motion.section
+        id="aboutPilates"
+        ref={aboutPilatesRef}
+        className={`${styles.section} ${styles.aboutPilatesSection}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: aboutPilatesInView ? 1 : 0 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.div
+          className={styles.aboutPilatesContainer}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: aboutPilatesInView ? 1 : 0 }}
+          transition={{ duration: 1 }}
+        >
+          <div className={styles.aboutPilatesParagraph}>
+            <h5 className={styles.aboutPilatesQuestion}>
+              Mi az a Reformer Pilates?
+            </h5>
+            <p className={styles.aboutPilatesAnswer}>
+              A Reformer Pilates a klasszikus Pilates gyakorlatok
+              továbbfejlesztett változata, amely egy speciális gépen, a
+              reformer-en történik. A reformer egy mozgó kocsiból, rugókból,
+              pántokból és rúdakból álló eszköz, amely változatos ellenállást
+              biztosít, így az edzések még hatékonyabbak és dinamikusabbak
+              lesznek.
+            </p>
+          </div>
+          <div className={styles.aboutPilatesParagraph}>
+            <h5 className={styles.aboutPilatesQuestion}>
+              Miért válaszd a Reformer Pilates-t?
+            </h5>
+            <p className={styles.aboutPilatesAnswer}>
+              <ol className={styles.aboutPilatesList}>
+                <li>
+                  ✅ Erősítés és nyújtás egyszerre: A reformer segítségével
+                  egyszerre fejlesztheted izmaid erejét és rugalmasságát.
+                </li>
+                <li>
+                  ✅ Kíméletes az ízületekhez: A rugók ellenállása csökkenti az
+                  ízületekre nehezedő terhelést, ezért biztonságos minden
+                  korosztály és edzettségi szint számára.
+                </li>
+                <li>
+                  ✅ Testtudatosság fejlesztése: Segít javítani a tartást, az
+                  egyensúlyt és a mozgáskoordinációt.
+                </li>
+                <li>
+                  ✅ Célzott izommunka: A gép lehetővé teszi, hogy az izmokat
+                  pontosabban és mélyebben aktiváld, különösen a törzsizomzatot
+                  (core).
+                </li>
+                <li>
+                  ✅ Rehabilitáció és prevenció: Kiválóan alkalmas sérülések
+                  utáni regenerációra, valamint a hát- és derékproblémák
+                  megelőzésére.
+                </li>
+              </ol>
+            </p>
+          </div>
+          <div className={styles.aboutPilatesParagraph}>
+            <h5 className={styles.aboutPilatesQuestion}>Kinek ajánlott?</h5>
+            <p className={styles.aboutPilatesAnswer}>
+              <ol
+                className={`${styles.aboutPilatesList} ${styles.aboutPilatesListDisc}`}
+              >
+                <li>
+                  Teljesen kezdőknek, akik biztonságos, vezetett módon szeretnék
+                  elkezdeni az edzést
+                </li>
+                <li>
+                  Haladóknak, akik tovább szeretnék fejleszteni izomerejüket és
+                  technikájukat
+                </li>
+                <li>Sportolóknak kiegészítő edzésként</li>
+                <li>
+                  Ülőmunkát végzőknek, akik szeretnének javítani tartásukon
+                </li>
+                <li>
+                  Várandós vagy szülés utáni kismamáknak (speciális program
+                  keretében)
+                </li>
+              </ol>
+            </p>
+          </div>
+          <div className={styles.aboutPilatesParagraph}>
+            <h5 className={styles.aboutPilatesQuestion}>
+              Miért érdemes nálunk kipróbálni?
+            </h5>
+            <p className={styles.aboutPilatesAnswer}>
+              Stúdiónkban prémium kategóriás Reformer gépekkel dolgozunk,
+              amelyek maximális kényelmet és hatékonyságot biztosítanak.
+              Tapasztalt oktatóink személyre szabott figyelmet fordítanak rád,
+              hogy biztonságosan, fokozatosan fejlődhess – legyen a célod akár
+              az alakformálás, a rehabilitáció, vagy egyszerűen a mozgás öröme.
+            </p>
+          </div>
+        </motion.div>
+      </motion.section>
       {/* Coach Intro */}
       <motion.section
         id="coach"
         ref={coachRef}
-        className={styles.coachSection}
+        className={`${styles.section} ${styles.coachSection}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: coachInView ? 1 : 0 }}
         transition={{ duration: 1 }}
@@ -211,13 +314,13 @@ export default function HomePage() {
       <motion.section
         id="contact"
         ref={contactRef}
-        className={styles.contactSection}
+        className={`${styles.section} ${styles.contactSection}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: contactInView ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
-        <div className={styles.contactContent}>
-          <h2 className={styles.sectionTitle}>Get in Touch</h2>
+        <div className={styles.contactContainer}>
+          <h2 className={styles.sectionTitle}>Kapcsolat</h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: contactInView ? 1 : 0 }}
