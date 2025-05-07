@@ -124,6 +124,10 @@
   font-weight: 600;
 }
 
+.aboutPilatesAnswer {
+  font-size: 16;
+}
+
 .aboutPilatesListDisc {
   list-style-type: disc;
   padding-left: 30;
@@ -182,18 +186,46 @@
 
 .contactSection {
   align-items: flex-start;
+  min-height: 60vh;
   background-color: var(--primary-text);
   color: var(--primary-background);
 }
+.contactSectionTitle {
+  margin-bottom: 40;
+}
 
 .contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 80%;
-  margin-top: 40;
+  margin-top: 80;
+  gap: 10;
   text-align: center;
 }
 
 .contactDetail {
-  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10;
+}
+
+.contactSocialIcon {
+  font-size: 32;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10;
+  width: 300px;
+  margin-top: 10;
+  padding: 10;
+  border: 1px solid #fff;
+}
+.contactDetailText {
 }
 
 .footer {
@@ -201,5 +233,5 @@
   background-color: black;
   color: white;
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 20 0;
 }
