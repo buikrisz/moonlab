@@ -13,6 +13,7 @@
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
   color: var(--primary-text);
+  opacity: 0.8;
 }
 
 .navbar.visible {
@@ -38,15 +39,17 @@
 }
 
 .navLinks li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 80%;
-  padding: 0 15px;
 }
 
 .navLinks li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
   font-weight: bold;
+  padding: 0 15px;
 }
 
 .navLinks li:hover {

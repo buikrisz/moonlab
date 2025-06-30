@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import logo from "../assets/moon_studio_website_logo_brown.svg";
 import styles from "../styles/Navbar.module.css";
 
 export const Navbar = () => {
@@ -22,18 +24,10 @@ export const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${isVisible ? styles.visible : ""}`}>
       <div className={styles.navbarContent}>
-        {/* Logo */}
         <div className={styles.logo}>
-          {/* <Image
-            src={logo}
-            alt="Moon Lab Pilates Logo"
-            width={50}
-            height={50}
-          /> */}
-          LOGO
+          <Image src={logo} alt="Moon Lab Pilates Logo" width={100} />
         </div>
 
-        {/* Navbar Links */}
         <ul className={styles.navLinks}>
           <li>
             <a href="#about">Rólunk</a>
@@ -52,7 +46,6 @@ export const Navbar = () => {
           </li>
         </ul>
 
-        {/* Language Chooser */}
         <div className={styles.languageChooser}>
           <select>
             <option value="hu">HU</option>

@@ -11,6 +11,8 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  padding-top: 40;
+  padding-bottom: 40;
 }
 
 .sectionTitle {
@@ -77,13 +79,13 @@
 
 .aboutSection {
   background-color: var(--primary-background);
+  min-height: 80vh;
 }
 
 .aboutContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
   width: 80%;
 }
 
@@ -136,8 +138,6 @@
 .coachSection {
   background-color: var(--primary-background);
   align-items: flex-start;
-  padding-top: 40;
-  padding-bottom: 40;
 }
 
 .coachContent {
@@ -157,6 +157,8 @@
 
 .priceSection {
   background-color: var(--secondary-background);
+  align-items: flex-start;
+  min-height: unset;
 }
 
 .priceContainer {
@@ -180,7 +182,6 @@
 .faqSection {
   background-color: var(--primary-background);
   align-items: flex-start;
-  padding-top: 40;
 }
 
 .faqContainer {
