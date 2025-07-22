@@ -1,4 +1,4 @@
-.coachCard {
+.informationCard {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,7 @@
   width: 300;
 }
 
-.coachCardContent {
+.informationCardContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,19 +18,19 @@
   width: 100%;
 }
 
-.coachCardName {
+.informationCardName {
   font-size: 24;
   font-weight: bold;
   margin-bottom: 10;
 }
 
-.coachCardDescription {
+.informationCardDescription {
   font-size: 16;
   margin-bottom: 10;
   min-height: 200;
 }
 
-.coachCardImage {
+.informationCardImage {
   object-fit: cover;
   width: 300;
   height: 200;

@@ -6,128 +6,13 @@ import { IoLocationSharp } from "react-icons/io5";
 import { MdPhoneIphone, MdEmail } from "react-icons/md";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
-import aboutImg from "./content/welcome_image.png";
-import contactImg from "./content/contact_image.png";
-import priceImg from "./content/price.jpg";
+import aboutImg from "./assets/welcome_image.png";
+import contactImg from "./assets/contact_image.png";
 import { Navbar, PriceCard } from "./components";
 import { FaqCard } from "./components/FaqCard";
-import { CoachCardProps, FaqCardProps, PriceCardProps } from "./types";
 import styles from "./styles/pages.module.css";
-import { CoachCard } from "./components/CoachCard";
-
-const prices: PriceCardProps[] = [
-  {
-    name: "Próba jegy",
-    description:
-      "Egyszeri belépés a Moon Lab Pilates stúdióba, amely lehetőséget ad arra, hogy kipróbáld a reformer pilatest és megismerd a stúdió hangulatát.",
-    price: "4000 Ft",
-    img: priceImg,
-  },
-  {
-    name: "Alkalmi jegy",
-    description:
-      "Egyéni belépés azok számára, akik alkalmanként szeretnének részt venni reformer pilates órákon, anélkül hogy bérletet vásárolnának.",
-    price: "6500 Ft",
-    img: priceImg,
-  },
-  {
-    name: "5 alkalmas bérlet",
-    description:
-      "5 alkalmas bérletünk rugalmas lehetőséget biztosít számodra, hogy rendszeresen részt vegyél reformer pilates órákon, miközben kedvezőbb áron élvezheted a stúdió szolgáltatásait.",
-    price: "30000 Ft",
-    img: priceImg,
-  },
-  {
-    name: "10 alkalmas bérlet",
-    description:
-      "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
-    price: "55000 Ft",
-    img: priceImg,
-  },
-];
-
-const coaches: CoachCardProps[] = [
-  {
-    name: "Kriszti",
-    description:
-      "A sport mindig is az életem része volt, de igazán akkor találtam rá arra, amit igazán szeretek, amikor megismerkedtem a reformer pilates edzéssel. Ez a mozgásforma nemcsak hajlékonnyá és erőssé tesz, hanem fejben is teljesen kikapcsol – igazi testi-lelki feltöltődés.",
-    img: priceImg,
-  },
-  {
-    name: "Fanni",
-    description: "???",
-    img: priceImg,
-  },
-  {
-    name: "H. Niki",
-    description:
-      "Gyerekkorom óta a mozgás és a sport szerves része életemnek. Az irodai munka és a gerincsérv kihívásai közepette a pilates nyújtott számomra hatékony megoldást a fájdalom enyhítésére és a testtartás javítására.",
-    img: priceImg,
-  },
-  {
-    name: "Tété",
-    description:
-      "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
-    img: priceImg,
-  },
-  {
-    name: "Vanessza",
-    description:
-      "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
-    img: priceImg,
-  },
-  {
-    name: "Z. Niki",
-    description:
-      "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
-    img: priceImg,
-  },
-];
-
-const faq: FaqCardProps[] = [
-  {
-    question: "Hogyan tudok bejelentkezni egy órára?",
-    answer:
-      "Bejelentkezni a Motibro online foglalási rendszerén keresztül tudsz, egy gyors regisztráció után. LINK",
-  },
-  {
-    question: "Hogyan tudok jegyet vagy bérletet vásárolni?",
-    answer:
-      "A Motibro fiókodban egyszerűen vásárolhatsz jegyet vagy bérletet. Személyesen is fizethetsz a stúdióban, készpénzzel vagy bankkártyával.",
-  },
-  {
-    question: "Meddig tudom lemondani az órát, amire bejelentkeztem?",
-    answer:
-      "Az órát legalább 24 órával a kezdés előtt tudod lemondani a Motibro rendszerében díjmentesen. Késői - 24 órán belüli - lemondás esetén az óra díját felszámoljuk, bérletes vendégek esetén pedig levonásra kerül az alkalom. Kérjük, hogy mindenképp jelezd a lemondást, még ha későn is, így esélyt adsz a válólistán szereplő vendégeknek a részvételre.",
-  },
-  {
-    question: "Mit hozzak magammal az órára?",
-    answer:
-      "Csak kényelmes, testhezálló edzőruhára van szükség, hogy az oktató jól lássa a tested tartását gyakorlás közben. Emellett javasoljuk a csúszásmentes zokni használatát a biztonság és higiénia érdekében. + törölköző / víz",
-  },
-  {
-    question: "Mennyi ideig tart egy óra?",
-    answer: "A csoportos Reformer Pilates órák 50 perc hosszúak.",
-  },
-  {
-    question: "Teljesen kezdő vagyok, jöhetek órára?",
-    answer:
-      "Igen! Kezdő óráinkat úgy alakítottuk ki, hogy biztonságos és érthető legyen mindenki számára. Ha bizonytalan vagy, egyéni bevezető órát is tudsz foglalni.",
-  },
-  {
-    question: "Milyen típusú órák vannak?",
-    answer:
-      "Reformer pilates (kezdő/haladó); Funkcionális Reformer; HIIT Strength; Stretching ",
-  },
-  {
-    question: "Studiót, hogyan tudom megközelíteni?",
-    answer: "???",
-  },
-  {
-    question: "Van parkolási lehetőség?",
-    answer: "Igen, a környéken ingyenes az utcai parkolás elérhető.",
-  },
-];
+import { InformationCard } from "./components/InformationCard";
+import { classTypes, coaches, faq, prices } from "./data";
 
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -137,6 +22,9 @@ const HomePage = () => {
     triggerOnce: true,
   });
   const { ref: coachRef, inView: coachInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: classesRef, inView: classesInView } = useInView({
     triggerOnce: true,
   });
   const { ref: scheduleRef, inView: scheduleInView } = useInView({
@@ -192,7 +80,7 @@ const HomePage = () => {
 
         {/* About Section */}
         <motion.section
-          id="about"
+          id="pilates"
           ref={aboutRef}
           className={`${styles.section} ${styles.aboutSection}`}
           initial={{ opacity: 0 }}
@@ -239,7 +127,7 @@ const HomePage = () => {
 
         {/* About Pilates */}
         <motion.section
-          id="aboutPilates"
+          id="pilates_info"
           ref={aboutPilatesRef}
           className={`${styles.section} ${styles.aboutPilatesSection}`}
           initial={{ opacity: 0 }}
@@ -338,7 +226,7 @@ const HomePage = () => {
 
         {/* Coach Intro */}
         <motion.section
-          id="coach"
+          id="oktatok"
           ref={coachRef}
           className={`${styles.section} ${styles.coachSection}`}
           initial={{ opacity: 0 }}
@@ -354,7 +242,7 @@ const HomePage = () => {
             <h2 className={styles.sectionTitle}>Oktatóink</h2>
             <div className={styles.coachCards}>
               {coaches.map((coach) => (
-                <CoachCard
+                <InformationCard
                   key={coach.name}
                   name={coach.name}
                   description={coach.description}
@@ -365,9 +253,38 @@ const HomePage = () => {
           </motion.div>
         </motion.section>
 
+        {/* Class Types */}
+        <motion.section
+          id="oratipusok"
+          ref={classesRef}
+          className={`${styles.section} ${styles.classesSection}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: classesInView ? 1 : 0 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            className={styles.classesContainer}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: classesInView ? 1 : 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className={styles.sectionTitle}>Óratípusok</h2>
+            <div className={styles.classesCards}>
+              {classTypes.map((classType) => (
+                <InformationCard
+                  key={classType.name}
+                  name={classType.name}
+                  description={classType.description}
+                  img={classType.img}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </motion.section>
+
         {/* Pricing */}
         <motion.section
-          id="classes"
+          id="arak"
           ref={scheduleRef}
           className={`${styles.section} ${styles.priceSection}`}
           initial={{ opacity: 0 }}
@@ -388,7 +305,6 @@ const HomePage = () => {
                   name={price.name}
                   description={price.description}
                   price={price.price}
-                  img={price.img}
                 />
               ))}
             </div>
@@ -423,7 +339,7 @@ const HomePage = () => {
 
         {/* Contact Section */}
         <motion.section
-          id="contact"
+          id="kapcsolat"
           ref={contactRef}
           className={`${styles.section} ${styles.contactSection}`}
           initial={{ opacity: 0 }}
