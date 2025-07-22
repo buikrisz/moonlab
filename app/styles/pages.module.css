@@ -22,7 +22,7 @@
 }
 
 .heroSection {
-  background: url("../content/hero_bg.webp") center/cover no-repeat;
+  background: url("../content/main_background.png") center/cover no-repeat;
 }
 
 .heroSection::before {
@@ -101,6 +101,7 @@
 .aboutImage {
   height: 550;
   width: 400;
+  border-radius: 200px 200px 0 0;
 }
 
 .aboutPilatesSection {

@@ -6,7 +6,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { MdPhoneIphone, MdEmail } from "react-icons/md";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
-import aboutImg from "./content/reformer_pilates.webp";
+import aboutImg from "./content/welcome_image.png";
 import priceImg from "./content/price.jpg";
 import { Navbar, PriceCard } from "./components";
 import { FaqCard } from "./components/FaqCard";
