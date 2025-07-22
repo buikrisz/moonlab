@@ -94,7 +94,8 @@ export const faq: FaqCardProps[] = [
   {
     question: "Hogyan tudok bejelentkezni egy órára?",
     answer:
-      "Bejelentkezni a Motibro online foglalási rendszerén keresztül tudsz, egy gyors regisztráció után. LINK",
+      "Bejelentkezni a Motibro online foglalási rendszerén keresztül tudsz, egy gyors regisztráció után.",
+    link: motibroLink,
   },
   {
     question: "Hogyan tudok jegyet vagy bérletet vásárolni?",

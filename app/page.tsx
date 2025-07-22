@@ -419,6 +419,7 @@ const HomePage = () => {
                 key={item.answer}
                 question={item.question}
                 answer={item.answer}
+                link={item.link}
               />
             ))}
           </motion.div>
