@@ -4,8 +4,8 @@
   justify-content: center;
   align-items: center;
   gap: 12;
-  height: 500;
-  width: 300;
+  height: 600;
+  width: 400;
 }
 
 .informationCardContent {
@@ -32,7 +32,20 @@
 
 .informationCardImage {
   object-fit: cover;
-  width: 300;
-  height: 200;
+  width: 400;
+  height: 300;
   border-radius: 50% 50% 0 0;
+}
+
+@media (max-width: 600) {
+  .informationCard {
+    height: 500;
+    width: 300;
+  }
+
+  .informationCardImage {
+    width: 300;
+    height: 250;
+    border-radius: 50% 50% 0 0;
+  }
 }

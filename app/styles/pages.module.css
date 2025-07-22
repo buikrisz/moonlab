@@ -157,7 +157,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40 20;
+  gap: 80 80;
   width: 100%;
   margin-top: 2rem;
 }
@@ -165,6 +165,7 @@
 .classesSection {
   background-color: var(--secondary-background);
   align-items: flex-start;
+  min-height: unset;
 }
 
 .classesContainer {
@@ -172,7 +173,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 80%;
   width: 80%;
 }
 
@@ -309,8 +309,8 @@
 }
 
 .contactImage {
-  height: 400;
-  width: 400;
+  height: 500;
+  width: 550;
   border-radius: 40% 40% 0 0;
   object-fit: cover;
 }
