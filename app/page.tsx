@@ -12,7 +12,7 @@ import { Navbar, PriceCard } from "./components";
 import { FaqCard } from "./components/FaqCard";
 import styles from "./styles/pages.module.css";
 import { InformationCard } from "./components/InformationCard";
-import { classTypes, coaches, faq, prices } from "./data";
+import { classTypes, coaches, faq, motibroLink, prices } from "./data";
 
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -28,6 +28,9 @@ const HomePage = () => {
     triggerOnce: true,
   });
   const { ref: scheduleRef, inView: scheduleInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: pricesRef, inView: pricesInView } = useInView({
     triggerOnce: true,
   });
   const { ref: faqRef, inView: faqInView } = useInView({
@@ -71,7 +74,9 @@ const HomePage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: aboutInView ? 1 : 0 }}
               transition={{ duration: 1 }}
-              href="#classes"
+              href={motibroLink}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Órarend
             </motion.a>
@@ -282,19 +287,101 @@ const HomePage = () => {
           </motion.div>
         </motion.section>
 
-        {/* Pricing */}
+        {/* Class schedules */}
         <motion.section
-          id="arak"
+          id="orarend"
           ref={scheduleRef}
-          className={`${styles.section} ${styles.priceSection}`}
+          className={`${styles.section} ${styles.scheduleSection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: scheduleInView ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
           <motion.div
-            className={styles.priceContainer}
+            className={styles.scheduleContainer}
             initial={{ opacity: 0 }}
             animate={{ opacity: scheduleInView ? 1 : 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h2
+              className={`${styles.sectionTitle} ${styles.scheduleSectionTitle}`}
+            >
+              Órarend és Foglalás
+            </h2>
+            <div className={styles.scheduleParagraph}>
+              <h5 className={styles.scheduleInfoTitle}>Bejelentkezés</h5>
+              <p className={styles.scheduleInfoDescription}>
+                A csoportos óráinkon való részvétel előzetes online
+                bejelentkezéshez kötött. A foglalást a Motibro rendszerén
+                keresztül, egy gyors regisztrációt követően tudod elvégezni.
+              </p>
+            </div>
+            <div className={styles.scheduleParagraph}>
+              <h5 className={styles.scheduleInfoTitle}>
+                Jegy- és bérletvásárlás
+              </h5>
+              <div className={styles.scheduleInfoDescription}>
+                Az órára történő részvételhez vásárolhatsz jegyet vagy bérletet
+                egyszerűen a Motibro fiókodban a Bérleteim menüpont alatt.
+                Személyesen a stúdióban is van lehetőség fizetésre,
+                bankkártyával.
+              </div>
+            </div>
+            <div className={styles.scheduleParagraph}>
+              <h5 className={styles.scheduleInfoTitle}>Lemondás</h5>
+              <div className={styles.scheduleInfoDescription}>
+                Ha mégsem tudsz részt venni az előzetesen lefoglalt órán,
+                kérjük, hogy legalább 24 órával az óra kezdete előtt töröld a
+                foglalásodat a Motibro rendszerében. Késői lemondás vagy meg nem
+                jelenés esetén a Moon Lab Pilates Stúdió fenntartja a jogot az
+                alkalom levonására, vagy bérlet hiányában az összeg későbbi
+                felszámítására.
+              </div>
+            </div>
+            <div className={styles.scheduleParagraph}>
+              <h5 className={styles.scheduleInfoTitle}>Magánóra</h5>
+              <p className={styles.scheduleInfoDescription}>
+                Egyéni óra foglalásához kérjük, vedd fel velünk a kapcsolatot!
+                Így személyre szabottan tudunk számodra oktatót és időpontot
+                ajánlani.
+              </p>
+            </div>
+            <div className={styles.scheduleParagraph}>
+              <h5 className={styles.scheduleInfoTitle}>Órák menete</h5>
+              <p className={styles.scheduleInfoDescription}>
+                Az órák 50 percesek, az egyes órák között 10 perc szünetet
+                tartunk. Kérjük, hogy az órakezdés előtt legkorábban 10 perccel
+                érkezz meg. Az első alkalomra lehetőség szerint már átöltözve
+                gyere, hogy az oktató elegendő időt tudjon szánni a
+                bemutatkozásra és a reformer gép használatának ismertetésére.
+                Kérünk, hogy hozz magaddal tapadós talpú zoknit és törölközőt.
+                Az órákon való részvétel, valamint az eszközök használata saját
+                felelősségre történik
+              </p>
+            </div>
+            <a
+              href={motibroLink}
+              className={styles.scheduleLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Motibro
+            </a>
+          </motion.div>
+        </motion.section>
+
+        {/* Pricing */}
+        <motion.section
+          id="arak"
+          ref={pricesRef}
+          className={`${styles.section} ${styles.priceSection}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: pricesInView ? 1 : 0 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            className={styles.priceContainer}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: pricesInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
             <h2 className={styles.sectionTitle}>Áraink</h2>
@@ -398,8 +485,8 @@ const HomePage = () => {
           transition={{ duration: 1 }}
         >
           <p>
-            &copy; {new Date().getFullYear()} Moon Lab Pilates. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Moon Lab Pilates. Minden jog
+            fenntartva.
           </p>
         </motion.footer>
       </main>

@@ -47,12 +47,12 @@
   font-size: 100;
   height: 120;
   letter-spacing: 3;
-  color: #fff;
+  color: var(--white);
 }
 
 .heroSubtitle {
   font-size: 44;
-  color: #fff;
+  color: var(--white);
 }
 
 .heroButton {
@@ -185,6 +185,51 @@
   margin-top: 2rem;
 }
 
+.scheduleSection {
+  background-color: var(--primary-background);
+  align-items: flex-start;
+  min-height: fit-content;
+}
+
+.scheduleContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30;
+  width: 90%;
+}
+
+.scheduleSectionTitle {
+  align-self: center;
+  margin-bottom: 40;
+}
+
+.scheduleInfoTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 10;
+  font-family: var(--font-catchy);
+  font-size: 22;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.scheduleInfoDescription {
+  font-size: 16;
+}
+
+.scheduleLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50;
+  background-color: var(--primary-text);
+  color: var(--white);
+  font-size: 20;
+  text-transform: uppercase;
+}
+
 .priceSection {
   background-color: var(--secondary-background);
   align-items: flex-start;
@@ -283,7 +328,7 @@
   width: 300px;
   margin-top: 10;
   padding: 10;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
 }
 .contactDetailText {
 }

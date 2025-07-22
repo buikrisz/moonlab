@@ -1,6 +1,8 @@
 import priceImg from "../assets/price.jpg";
 import { PriceCardProps, InformationCardProps, FaqCardProps } from "../types";
 
+export const motibroLink = "https://moon-lab-pilates.motibro.com/";
+
 export const prices: PriceCardProps[] = [
   {
     name: "Próba alkalom",

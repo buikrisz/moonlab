@@ -30,19 +30,22 @@ export const Navbar = () => {
 
         <ul className={styles.navLinks}>
           <li>
-            <a href="#about">Rólunk</a>
+            <a href="#pilates">Pilatesről</a>
           </li>
           <li>
-            <a href="#aboutPilates">Reformer Pilates</a>
+            <a href="#oktatok">Oktatók</a>
           </li>
           <li>
-            <a href="#classes">Áraink</a>
+            <a href="#oratipusok">Órák</a>
+          </li>
+          <li>
+            <a href="#arak">Áraink</a>
           </li>
           <li>
             <a href="#faq">GYIK</a>
           </li>
           <li>
-            <a href="#contact">Kapcsolat</a>
+            <a href="#kapcsolat">Kapcsolat</a>
           </li>
         </ul>
 
