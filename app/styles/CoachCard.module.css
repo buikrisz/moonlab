@@ -1,0 +1,38 @@
+.coachCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12;
+  height: 500;
+  width: 300;
+}
+
+.coachCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16px;
+  border: 1px solid var(--primary-text);
+  width: 100%;
+}
+
+.coachCardName {
+  font-size: 24;
+  font-weight: bold;
+  margin-bottom: 10;
+}
+
+.coachCardDescription {
+  font-size: 16;
+  margin-bottom: 10;
+  min-height: 200;
+}
+
+.coachCardImage {
+  object-fit: cover;
+  width: 300;
+  height: 200;
+  border-radius: 50% 50% 0 0;
+}

@@ -7,6 +7,12 @@ export type PriceCardProps = {
   img: StaticImageData;
 };
 
+export type CoachCardProps = {
+  name: string;
+  description: string;
+  img: StaticImageData;
+};
+
 export type FaqCardProps = {
   question: string;
   answer: string;

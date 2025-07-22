@@ -11,8 +11,9 @@ import contactImg from "./content/contact_image.png";
 import priceImg from "./content/price.jpg";
 import { Navbar, PriceCard } from "./components";
 import { FaqCard } from "./components/FaqCard";
-import { FaqCardProps, PriceCardProps } from "./types";
+import { CoachCardProps, FaqCardProps, PriceCardProps } from "./types";
 import styles from "./styles/pages.module.css";
+import { CoachCard } from "./components/CoachCard";
 
 const prices: PriceCardProps[] = [
   {
@@ -41,6 +42,44 @@ const prices: PriceCardProps[] = [
     description:
       "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
     price: "55000 Ft",
+    img: priceImg,
+  },
+];
+
+const coaches: CoachCardProps[] = [
+  {
+    name: "Kriszti",
+    description:
+      "A sport mindig is az életem része volt, de igazán akkor találtam rá arra, amit igazán szeretek, amikor megismerkedtem a reformer pilates edzéssel. Ez a mozgásforma nemcsak hajlékonnyá és erőssé tesz, hanem fejben is teljesen kikapcsol – igazi testi-lelki feltöltődés.",
+    img: priceImg,
+  },
+  {
+    name: "Fanni",
+    description: "???",
+    img: priceImg,
+  },
+  {
+    name: "H. Niki",
+    description:
+      "Gyerekkorom óta a mozgás és a sport szerves része életemnek. Az irodai munka és a gerincsérv kihívásai közepette a pilates nyújtott számomra hatékony megoldást a fájdalom enyhítésére és a testtartás javítására.",
+    img: priceImg,
+  },
+  {
+    name: "Tété",
+    description:
+      "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
+    img: priceImg,
+  },
+  {
+    name: "Vanessza",
+    description:
+      "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
+    img: priceImg,
+  },
+  {
+    name: "Z. Niki",
+    description:
+      "10 alkalmas bérletünk ideális választás azok számára, akik hosszabb távon szeretnék elkötelezni magukat a reformer pilates mellett, és maximálisan kihasználni a stúdió nyújtotta lehetőségeket",
     img: priceImg,
   },
 ];
@@ -307,13 +346,22 @@ const HomePage = () => {
           transition={{ duration: 1 }}
         >
           <motion.div
-            className={styles.coachContent}
+            className={styles.coachContainer}
             initial={{ opacity: 0 }}
             animate={{ opacity: coachInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
             <h2 className={styles.sectionTitle}>Oktatóink</h2>
-            <h3 className={styles.coachSoon}>HAMAROSAN</h3>
+            <div className={styles.coachCards}>
+              {coaches.map((coach) => (
+                <CoachCard
+                  key={coach.name}
+                  name={coach.name}
+                  description={coach.description}
+                  img={coach.img}
+                />
+              ))}
+            </div>
           </motion.div>
         </motion.section>
 
