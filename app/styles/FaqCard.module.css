@@ -31,7 +31,7 @@
 }
 
 .faqAnswerVisible {
-  max-height: 200px;
+  max-height: 1000px;
   opacity: 1;
 }
 
@@ -46,10 +46,28 @@
 }
 
 .faqLinkVisible {
-  max-height: 200px;
+  max-height: 1000px;
   opacity: 1;
 }
 
 .faqLinkVisible:hover {
   opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+  .faqCard {
+    padding: 5 30 10 30;
+  }
+
+  .faqQuestion {
+    font-size: 18;
+  }
+
+  .faqAnswerVisible {
+    font-size: 16;
+  }
+
+  .faqLinkVisible {
+    font-size: 16;
+  }
 }
