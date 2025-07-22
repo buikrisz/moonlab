@@ -7,6 +7,7 @@ import { MdPhoneIphone, MdEmail } from "react-icons/md";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import aboutImg from "./content/welcome_image.png";
+import contactImg from "./content/contact_image.png";
 import priceImg from "./content/price.jpg";
 import { Navbar, PriceCard } from "./components";
 import { FaqCard } from "./components/FaqCard";
@@ -382,39 +383,46 @@ const HomePage = () => {
           transition={{ duration: 1 }}
         >
           <div className={styles.contactContainer}>
-            <h2
-              className={`${styles.sectionTitle} ${styles.contactSectionTitle}`}
-            >
-              Kapcsolat
-            </h2>
-            <div className={styles.contactDetail}>
-              <IoLocationSharp />
-              <p className={styles.contactDetailText}>
-                1152 Budapest, Öregfalusi utca 18.
-              </p>
+            <div className={styles.contactInfo}>
+              <h2
+                className={`${styles.sectionTitle} ${styles.contactSectionTitle}`}
+              >
+                Kapcsolat
+              </h2>
+              <div className={styles.contactDetail}>
+                <IoLocationSharp />
+                <p className={styles.contactDetailText}>
+                  1152 Budapest, Öregfalusi utca 18.
+                </p>
+              </div>
+              <div className={styles.contactDetail}>
+                <MdPhoneIphone />
+                <p className={styles.contactDetailText}>+36309014943</p>
+              </div>
+              <div className={styles.contactDetail}>
+                <MdEmail />
+                <p className={styles.contactDetailText}>
+                  moonlabpilates@gmail.com
+                </p>
+              </div>
+              <div className={styles.contactDetail}>
+                <FaFacebook className={styles.contactSocialIcon} />
+                <FaInstagram className={styles.contactSocialIcon} />
+              </div>
+              <div className={styles.contactLinks}>
+                <a href="#" className={styles.contactLink}>
+                  ÁSZF
+                </a>
+                <a href="#" className={styles.contactLink}>
+                  Felelősségi nyilatkozat
+                </a>
+              </div>
             </div>
-            <div className={styles.contactDetail}>
-              <MdPhoneIphone />
-              <p className={styles.contactDetailText}>+36309014943</p>
-            </div>
-            <div className={styles.contactDetail}>
-              <MdEmail />
-              <p className={styles.contactDetailText}>
-                moonlabpilates@gmail.com
-              </p>
-            </div>
-            <div className={styles.contactDetail}>
-              <FaFacebook className={styles.contactSocialIcon} />
-              <FaInstagram className={styles.contactSocialIcon} />
-            </div>
-            <div className={styles.contactLinks}>
-              <a href="#" className={styles.contactLink}>
-                ÁSZF
-              </a>
-              <a href="#" className={styles.contactLink}>
-                Felelősségi nyilatkozat
-              </a>
-            </div>
+            <Image
+              src={contactImg}
+              alt="Inside the Pilates studio"
+              className={styles.contactImage}
+            />
           </div>
         </motion.section>
 
