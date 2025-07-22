@@ -443,23 +443,45 @@ const HomePage = () => {
               </h2>
               <div className={styles.contactDetail}>
                 <IoLocationSharp />
-                <p className={styles.contactDetailText}>
+                <a
+                  href="https://www.google.com/search?q=1152+Budapest%2C+Öregfalusi+utca+18"
+                  className={styles.contactDetailText}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   1152 Budapest, Öregfalusi utca 18.
-                </p>
+                </a>
               </div>
               <div className={styles.contactDetail}>
                 <MdPhoneIphone />
-                <p className={styles.contactDetailText}>+36309014943</p>
+                <a href="tel:+36309014943" className={styles.contactDetailText}>
+                  +36 30 901 4943
+                </a>
               </div>
               <div className={styles.contactDetail}>
                 <MdEmail />
-                <p className={styles.contactDetailText}>
+                <a
+                  href="mailto:moonlabpilates@gmail.com"
+                  className={styles.contactDetailText}
+                >
                   moonlabpilates@gmail.com
-                </p>
+                </a>
               </div>
               <div className={styles.contactDetail}>
-                <FaFacebook className={styles.contactSocialIcon} />
-                <FaInstagram className={styles.contactSocialIcon} />
+                <a
+                  href="https://www.facebook.com/profile.php?id=61575623570319"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebook className={styles.contactSocialIcon} />
+                </a>
+                <a
+                  href="https://www.instagram.com/moonlab_pilates/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram className={styles.contactSocialIcon} />
+                </a>
               </div>
               <div className={styles.contactLinks}>
                 <a href="#" className={styles.contactLink}>
