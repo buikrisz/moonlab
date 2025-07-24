@@ -358,14 +358,6 @@ const HomePage = () => {
                 felelősségre történik
               </p>
             </div>
-            <a
-              href={motibroLink}
-              className={styles.scheduleLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Motibro
-            </a>
           </motion.div>
         </motion.section>
 
