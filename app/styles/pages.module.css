@@ -51,7 +51,7 @@
 }
 
 .heroSubtitle {
-  font-size: 44;
+  font-size: 44px;
   color: var(--white);
 }
 
@@ -61,12 +61,12 @@
   justify-content: center;
   align-items: center;
   justify-self: flex-end;
-  width: 180;
-  height: 40;
-  bottom: 120;
+  width: 180px;
+  height: 40px;
+  bottom: 120px;
   background-color: var(--primary-background);
   font-family: var(--font-dm-sans);
-  font-size: 12;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -86,22 +86,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40;
+  gap: 40px;
   width: 80%;
 }
 
 .aboutContent {
-  width: 800;
+  width: 800px;
 }
 
 .aboutSectionText {
-  font-size: 20;
-  margin-bottom: 12;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
 .aboutImage {
-  height: 550;
-  width: 400;
+  height: 550px;
+  width: 400px;
   border-radius: 200px 200px 0 0;
   object-fit: cover;
 }
@@ -114,28 +114,28 @@
 .aboutPilatesContainer {
   display: flex;
   flex-direction: column;
-  gap: 30;
+  gap: 30px;
   width: 90%;
 }
 
 .aboutPilatesParagraph {
   display: flex;
   flex-direction: column;
-  gap: 10;
+  gap: 10px;
 }
 
 .aboutPilatesQuestion {
-  font-size: 18;
+  font-size: 18px;
   font-weight: 600;
 }
 
 .aboutPilatesAnswer {
-  font-size: 16;
+  font-size: 16px;
 }
 
 .aboutPilatesListDisc {
   list-style-type: disc;
-  padding-left: 30;
+  padding-left: 30px;
 }
 
 .coachSection {
@@ -157,7 +157,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 80 80;
+  gap: 80px 80px;
   width: 100%;
   margin-top: 2rem;
 }
@@ -181,7 +181,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40 80;
+  gap: 40px 80px;
   width: 100%;
   margin-top: 2rem;
 }
@@ -196,27 +196,27 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 30;
+  gap: 30px;
   width: 90%;
 }
 
 .scheduleSectionTitle {
   align-self: center;
-  margin-bottom: 40;
+  margin-bottom: 40px;
 }
 
 .scheduleInfoTitle {
   display: flex;
   flex-direction: column;
-  gap: 10;
+  gap: 10px;
   font-family: var(--font-catchy);
-  font-size: 22;
+  font-size: 22px;
   text-decoration: underline;
   font-style: italic;
 }
 
 .scheduleInfoDescription {
-  font-size: 16;
+  font-size: 16px;
 }
 
 .scheduleLink {
@@ -224,10 +224,10 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50;
+  height: 50px;
   background-color: var(--primary-text);
   color: var(--white);
-  font-size: 20;
+  font-size: 20px;
   text-transform: uppercase;
   transition: opacity 0.2s ease;
 }
@@ -256,7 +256,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40 20;
+  gap: 40px 20px;
   width: 100%;
   margin-top: 2rem;
 }
@@ -271,9 +271,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 20;
+  gap: 20px;
   width: 100%;
-  margin-bottom: 40;
+  margin-bottom: 40px;
 }
 
 .contactSection {
@@ -284,7 +284,7 @@
 }
 
 .contactSectionTitle {
-  margin-bottom: 40;
+  margin-bottom: 40px;
 }
 
 .contactContainer {
@@ -293,8 +293,8 @@
   justify-content: space-between;
   height: 100%;
   width: 80%;
-  margin-top: 60;
-  gap: 10;
+  margin-top: 60px;
+  gap: 10px;
   text-align: center;
 }
 
@@ -303,14 +303,14 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 400;
-  gap: 10;
+  height: 400px;
+  gap: 10px;
   text-align: center;
 }
 
 .contactImage {
-  height: 500;
-  width: 550;
+  height: 500px;
+  width: 550px;
   border-radius: 40% 40% 0 0;
   object-fit: cover;
 }
@@ -319,21 +319,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10;
+  gap: 10px;
 }
 
 .contactSocialIcon {
-  font-size: 32;
+  font-size: 32px;
 }
 
 .contactLinks {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10;
+  gap: 10px;
   width: 300px;
-  margin-top: 10;
-  padding: 10;
+  margin-top: 10px;
+  padding: 10px;
   border: 1px solid var(--white);
 }
 
@@ -342,24 +342,24 @@
   background-color: black;
   color: white;
   text-align: center;
-  padding: 20 0;
+  padding: 20px 0;
 }
 
 @media (max-width: 1100px) {
   .aboutSectionText {
-    font-size: 16;
-    margin-bottom: 12;
+    font-size: 16px;
+    margin-bottom: 12px;
   }
 }
 
 @media (max-width: 900px) {
   .heroTitle {
-    font-size: 70;
-    height: 100;
+    font-size: 70px;
+    height: 100px;
   }
 
   .heroSubtitle {
-    font-size: 40;
+    font-size: 40px;
   }
 
   .aboutContainer {
@@ -379,7 +379,7 @@
   }
 
   .contactContainer {
-    margin-top: 10;
+    margin-top: 10px;
   }
 
   .contactImage {
@@ -395,19 +395,19 @@
   }
 
   .heroContent {
-    padding-top: 140;
+    padding-top: 140px;
   }
 
   .heroTitle {
-    font-size: 50;
-    height: 150;
+    font-size: 50px;
+    height: 150px;
   }
 
   .heroSubtitle {
-    padding-top: 20;
+    padding-top: 20px;
   }
 
   .footer {
-    font-size: 12;
+    font-size: 12px;
   }
 }

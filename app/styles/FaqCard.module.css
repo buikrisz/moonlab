@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5;
+  gap: 5px;
   min-height: 60px;
   width: 80%;
-  padding: 5 60 10 60;
+  padding: 5px 60px 10px 60px;
   border: 1px solid var(--primary-text);
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -18,7 +18,7 @@
 .faqQuestion {
   font-size: 20px;
   font-weight: bold;
-  padding-top: 10;
+  padding-top: 10px;
 }
 
 .faqAnswer {
@@ -56,18 +56,18 @@
 
 @media (max-width: 600px) {
   .faqCard {
-    padding: 5 30 10 30;
+    padding: 5px 30px 10px 30px;
   }
 
   .faqQuestion {
-    font-size: 18;
+    font-size: 18px;
   }
 
   .faqAnswerVisible {
-    font-size: 16;
+    font-size: 16px;
   }
 
   .faqLinkVisible {
-    font-size: 16;
+    font-size: 16px;
   }
 }
