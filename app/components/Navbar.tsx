@@ -37,7 +37,7 @@ export const Navbar = () => {
           onClick={handleCloseMenu}
           aria-label="Close menu"
         >
-          <IoMdClose />
+          {IoMdClose({})}
         </button>
         <ul>
           <li>
@@ -79,7 +79,7 @@ export const Navbar = () => {
           onClick={() => setMenuOpen((open) => !open)}
           aria-label="Open menu"
         >
-          <IoMdMenu />
+          {IoMdMenu({})}
         </button>
 
         <div className={styles.logo}>

@@ -434,7 +434,7 @@ const HomePage = () => {
                 Kapcsolat
               </h2>
               <div className={styles.contactDetail}>
-                <IoLocationSharp />
+                {IoLocationSharp({})}
                 <a
                   href="https://www.google.com/search?q=1152+Budapest%2C+Öregfalusi+utca+18"
                   className={styles.contactDetailText}
@@ -445,13 +445,13 @@ const HomePage = () => {
                 </a>
               </div>
               <div className={styles.contactDetail}>
-                <MdPhoneIphone />
+                {MdPhoneIphone({})}
                 <a href="tel:+36309014943" className={styles.contactDetailText}>
                   +36 30 901 4943
                 </a>
               </div>
               <div className={styles.contactDetail}>
-                <MdEmail />
+                {MdEmail({})}
                 <a
                   href="mailto:moonlabpilates@gmail.com"
                   className={styles.contactDetailText}
@@ -465,14 +465,14 @@ const HomePage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaFacebook className={styles.contactSocialIcon} />
+                  {FaFacebook({ className: styles.contactSocialIcon })}
                 </a>
                 <a
                   href="https://www.instagram.com/moonlab_pilates/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaInstagram className={styles.contactSocialIcon} />
+                  {FaInstagram({ className: styles.contactSocialIcon })}
                 </a>
               </div>
               <div className={styles.contactLinks}>
