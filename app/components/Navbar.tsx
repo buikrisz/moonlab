@@ -37,7 +37,7 @@ export const Navbar = () => {
           onClick={handleCloseMenu}
           aria-label="Close menu"
         >
-          <IoMdClose />
+          X
         </button>
         <ul>
           <li>
