@@ -8,8 +8,10 @@ export type PriceCardProps = {
 
 export type InformationCardProps = {
   name: string;
-  description: string;
+  shortDescription: string;
   img: StaticImageData;
+  fullDescription?: string;
+  showFullDescription?: boolean;
 };
 
 export type FaqCardProps = {

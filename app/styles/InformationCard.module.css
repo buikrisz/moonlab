@@ -1,33 +1,44 @@
 .informationCard {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 12px;
-  height: 600px;
+  min-height: 660px;
   width: 400px;
+  transition: height 0.3s ease-in-out;
 }
+/* 
+.informationCardExpanded {
+  height: 1100px;
+} 
+*/
 
 .informationCardContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
+  gap: 12px;
   padding: 16px;
   border: 1px solid var(--primary-text);
   width: 100%;
+  min-height: 350px;
 }
 
 .informationCardName {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 10px;
+  font-family: var(--font-eyesome);
 }
 
 .informationCardDescription {
   font-size: 16px;
   margin-bottom: 10px;
   min-height: 200px;
+  font-style: italic;
 }
 
 .informationCardImage {

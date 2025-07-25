@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Eyesome Script";
+  src: url("/fonts/Eyesome_Script.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --white: #ffffff;
   --foreground: #171717;
@@ -12,6 +19,7 @@
   --secondary-background: #efebe5;
   --primary-text: #623e2a;
   --font-catchy: "Catchy Mager", sans-serif;
+  --font-eyesome: "Eyesome Script", sans-serif;
 }
 
 @theme inline {
@@ -64,6 +72,13 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
 }
 
 p,

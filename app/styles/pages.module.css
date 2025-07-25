@@ -18,7 +18,7 @@
 .sectionTitle {
   font-size: 42px;
   margin-bottom: 60px;
-  font-family: var(--font-catchy);
+  font-family: var(--font-eyesome);
 }
 
 .heroSection {
@@ -125,8 +125,9 @@
 }
 
 .aboutPilatesQuestion {
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 600;
+  font-family: var(--font-eyesome);
 }
 
 .aboutPilatesAnswer {
@@ -139,6 +140,7 @@
 }
 
 .coachSection {
+  position: relative;
   background-color: var(--primary-background);
   align-items: flex-start;
 }
@@ -159,8 +161,21 @@
   flex-wrap: wrap;
   gap: 80px 80px;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 32px;
 }
+
+/* .coachShowMoreBtn {
+  position: absolute;
+  bottom: 10px;
+  font-style: italic;
+  font-size: 14px;
+  border: 1px solid var(--primary-text);
+  border-radius: 5px;
+}
+
+.coachShowMoreBtn:hover {
+  background-color: var(--secondary-background);
+} */
 
 .classesSection {
   background-color: var(--secondary-background);
@@ -210,9 +225,10 @@
   flex-direction: column;
   gap: 10px;
   font-family: var(--font-catchy);
-  font-size: 22px;
+  font-size: 32px;
   text-decoration: underline;
   font-style: italic;
+  font-family: var(--font-eyesome);
 }
 
 .scheduleInfoDescription {

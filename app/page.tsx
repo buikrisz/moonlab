@@ -13,6 +13,7 @@ import { FaqCard } from "./components/FaqCard";
 import styles from "./styles/pages.module.css";
 import { InformationCard } from "./components/InformationCard";
 import { classTypes, coaches, faq, motibroLink, prices } from "./data";
+import { useCallback, useState } from "react";
 
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -39,6 +40,12 @@ const HomePage = () => {
   const { ref: contactRef, inView: contactInView } = useInView({
     triggerOnce: true,
   });
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const handleClick = useCallback(() => {
+    setShowFullDescription(!showFullDescription);
+  }, [showFullDescription]);
 
   return (
     <>
@@ -250,11 +257,17 @@ const HomePage = () => {
                 <InformationCard
                   key={coach.name}
                   name={coach.name}
-                  description={coach.description}
+                  shortDescription={coach.shortDescription}
+                  fullDescription={coach.fullDescription}
+                  showFullDescription={showFullDescription}
                   img={coach.img}
                 />
               ))}
             </div>
+
+            {/* <button onClick={handleClick} className={styles.coachShowMoreBtn}>
+              Teljes bemutatkozás
+            </button> */}
           </motion.div>
         </motion.section>
 
@@ -279,7 +292,7 @@ const HomePage = () => {
                 <InformationCard
                   key={classType.name}
                   name={classType.name}
-                  description={classType.description}
+                  shortDescription={classType.shortDescription}
                   img={classType.img}
                 />
               ))}
