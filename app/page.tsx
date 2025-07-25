@@ -41,11 +41,11 @@ const HomePage = () => {
     triggerOnce: true,
   });
 
-  const [showFullDescription, setShowFullDescription] = useState(false);
+  // const [showFullDescription, setShowFullDescription] = useState(false);
 
-  const handleClick = useCallback(() => {
-    setShowFullDescription(!showFullDescription);
-  }, [showFullDescription]);
+  // const handleClick = useCallback(() => {
+  //   setShowFullDescription(!showFullDescription);
+  // }, [showFullDescription]);
 
   return (
     <>

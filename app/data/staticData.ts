@@ -1,4 +1,3 @@
-import priceImg from "../assets/price.jpg";
 import allLevelsImg from "../assets/class-types/all_levels_class.png";
 import cardioImg from "../assets/class-types/hiit_class.png";
 import powerImg from "../assets/class-types/power_class.png";
