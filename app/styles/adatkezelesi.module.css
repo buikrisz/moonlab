@@ -1,0 +1,46 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary-text);
+  background-color: var(--secondary-background);
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 80%;
+  padding-bottom: 40px;
+  color: var(--primary-text);
+}
+
+.title {
+  align-self: center;
+  padding: 20px 0;
+}
+
+.subTitle {
+  padding: 10px 0;
+  transform: translateX(-40px);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.listWithBullets {
+  list-style-type: disc;
+  padding-left: 24px;
+  font-style: italic;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}

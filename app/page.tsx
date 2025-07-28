@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdPhoneIphone, MdEmail } from "react-icons/md";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import Image from "next/image";
 import aboutImg from "./assets/welcome_image.png";
 import contactImg from "./assets/contact_image.png";
 import { Navbar, PriceCard } from "./components";
@@ -39,12 +40,6 @@ const HomePage = () => {
   const { ref: contactRef, inView: contactInView } = useInView({
     triggerOnce: true,
   });
-
-  // const [showFullDescription, setShowFullDescription] = useState(false);
-
-  // const handleClick = useCallback(() => {
-  //   setShowFullDescription(!showFullDescription);
-  // }, [showFullDescription]);
 
   return (
     <>
@@ -442,53 +437,59 @@ const HomePage = () => {
               </h2>
               <div className={styles.contactDetail}>
                 {IoLocationSharp({})}
-                <a
+                <Link
                   href="https://www.google.com/search?q=1152+Budapest%2C+Öregfalusi+utca+18"
                   className={styles.contactDetailText}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   1152 Budapest, Öregfalusi utca 18.
-                </a>
+                </Link>
               </div>
               <div className={styles.contactDetail}>
                 {MdPhoneIphone({})}
-                <a href="tel:+36309014943" className={styles.contactDetailText}>
+                <Link
+                  href="tel:+36309014943"
+                  className={styles.contactDetailText}
+                >
                   +36 30 901 4943
-                </a>
+                </Link>
               </div>
               <div className={styles.contactDetail}>
                 {MdEmail({})}
-                <a
+                <Link
                   href="mailto:moonlabpilates@gmail.com"
                   className={styles.contactDetailText}
                 >
                   moonlabpilates@gmail.com
-                </a>
+                </Link>
               </div>
               <div className={styles.contactDetail}>
-                <a
+                <Link
                   href="https://www.facebook.com/profile.php?id=61575623570319"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {FaFacebook({ className: styles.contactSocialIcon })}
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://www.instagram.com/moonlab_pilates/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {FaInstagram({ className: styles.contactSocialIcon })}
-                </a>
+                </Link>
               </div>
               <div className={styles.contactLinks}>
-                <a href="#" className={styles.contactLink}>
+                <Link href="#" className={styles.contactLink}>
                   ÁSZF
-                </a>
-                <a href="#" className={styles.contactLink}>
+                </Link>
+                <Link href="#" className={styles.contactLink}>
                   Felelősségi nyilatkozat
-                </a>
+                </Link>
+                <Link href="/adatkezelesi" className={styles.contactLink}>
+                  Adatkezelési tájékoztató
+                </Link>
               </div>
             </div>
             <Image
