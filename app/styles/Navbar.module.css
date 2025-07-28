@@ -72,6 +72,20 @@
   display: none;
 }
 
+.scheduleLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  border: 2px solid var(--primary-text);
+  font-weight: 600;
+}
+
+.scheduleLink:hover {
+  background-color: var(--secondary-background);
+}
+
 /* Left-side overlay menu */
 .leftNavOverlay {
   position: fixed;
@@ -126,7 +140,8 @@
 }
 
 @media (max-width: 900px) {
-  .navLinks {
+  .navLinks,
+  .scheduleLink {
     display: none;
   }
 

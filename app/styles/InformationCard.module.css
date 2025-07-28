@@ -5,15 +5,8 @@
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
-  min-height: 660px;
   width: 400px;
-  transition: height 0.3s ease-in-out;
 }
-/* 
-.informationCardExpanded {
-  height: 1100px;
-} 
-*/
 
 .informationCardContent {
   display: flex;
@@ -24,7 +17,6 @@
   padding: 16px;
   border: 1px solid var(--primary-text);
   width: 100%;
-  min-height: 350px;
 }
 
 .informationCardName {
@@ -37,8 +29,12 @@
 .informationCardDescription {
   font-size: 16px;
   margin-bottom: 10px;
-  min-height: 200px;
+  min-height: 100px;
   font-style: italic;
+}
+
+.informationCardDescriptionExpanded {
+  min-height: 220px;
 }
 
 .informationCardImage {

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import logo from "../assets/moon_studio_website_logo_brown.svg";
 import styles from "../styles/Navbar.module.css";
+import { motibroLink } from "../data";
 
 export const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -107,12 +108,14 @@ export const Navbar = () => {
           </li>
         </ul>
 
-        <div className={styles.languageChooser}>
-          <select>
-            <option value="hu">HU</option>
-            <option value="en">EN</option>
-          </select>
-        </div>
+        <a
+          className={styles.scheduleLink}
+          href={motibroLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Órarend
+        </a>
       </div>
     </nav>
   );

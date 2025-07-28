@@ -8,10 +8,9 @@ export type PriceCardProps = {
 
 export type InformationCardProps = {
   name: string;
-  shortDescription: string;
+  description: string;
   img: StaticImageData;
-  fullDescription?: string;
-  showFullDescription?: boolean;
+  isLongCard?: boolean;
 };
 
 export type FaqCardProps = {
