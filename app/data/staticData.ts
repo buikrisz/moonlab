@@ -7,7 +7,12 @@ import teteImg from "../assets/coaches/tete.png";
 import zNikiImg from "../assets/coaches/z_niki.png";
 import hNikiImg from "../assets/coaches/h_niki.png";
 import krisztiImg from "../assets/coaches/kriszti.png";
-import { PriceCardProps, InformationCardProps, FaqCardProps } from "../types";
+import {
+  PriceCardProps,
+  InformationCardProps,
+  FaqCardProps,
+  PdfLinkProps,
+} from "../types";
 
 export const motibroLink = "https://moon-lab-pilates.motibro.com/";
 
@@ -141,5 +146,33 @@ export const faq: FaqCardProps[] = [
   {
     question: "Van parkolási lehetőség?",
     answer: "Igen, a környéken ingyenes az utcai parkolás elérhető.",
+  },
+];
+
+export const pdfFiles: PdfLinkProps[] = [
+  { file: "biostop_csotany.pdf", label: "Biostop csótány" },
+  { file: "cif_brilliance_pink.pdf", label: "Cif Brilliance Pink" },
+  { file: "cif_cream_pink_surolokrém.pdf", label: "Cif Cream Pink súrolókrém" },
+  {
+    file: "domestos_zero_wc_vizkooldo_gel_pink.pdf",
+    label: "Domestos Zero WC vízkőoldó gél Pink",
+  },
+  {
+    file: "duck_toalett_kacsa_mango-verse.pdf",
+    label: "Duck Toalett Kacsa Mango-Verse",
+  },
+  { file: "fito_levelfeny.pdf", label: "Fito Levélfény" },
+  {
+    file: "frosch_levendulas_higieniai_tisztito.pdf",
+    label: "Frosch Levendulás higiéniai tisztító",
+  },
+  { file: "novadest_fresh_s.pdf", label: "Novadest Fresh S" },
+  {
+    file: "protect_forte_rovarirto_porozoszer.pdf",
+    label: "Protect Forte rovarirtó porozószer",
+  },
+  {
+    file: "raid_max_csotany_es_hangyairto_aeroszol.pdf",
+    label: "Raid Max csótány és hangyairtó aeroszol",
   },
 ];

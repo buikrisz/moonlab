@@ -3,7 +3,7 @@ import logo from "../assets/moon_studio_website_logo_brown.svg";
 import styles from "../styles/adatkezelesi.module.css";
 import Link from "next/link";
 
-export default function AdatvedelmiPage() {
+const AdatkezelesiPage = () => {
   return (
     <main className={styles.main}>
       <Link className={styles.logo} href="/">
@@ -166,4 +166,6 @@ export default function AdatvedelmiPage() {
       </div>
     </main>
   );
-}
+};
+
+export default AdatkezelesiPage;

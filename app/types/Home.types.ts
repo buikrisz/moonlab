@@ -18,3 +18,8 @@ export type FaqCardProps = {
   answer: string;
   link?: string;
 };
+
+export type PdfLinkProps = {
+  file: string;
+  label: string;
+};
