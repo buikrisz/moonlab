@@ -10,9 +10,7 @@ const AdatkezelesiPage = () => {
         <Image src={logo} alt="Moon Lab Pilates Logo" width={100} />
       </Link>
       <div className={styles.mainSection}>
-        <h1 className={styles.title}>
-          Adatkezelési tájékoztató kamerás megfigyeléshez
-        </h1>
+        <h1 className={styles.title}>Adatkezelési tájékoztató</h1>
 
         <h2 className={styles.subTitle}>1. Az adatkezelő adatai</h2>
         <ul className={styles.list}>
@@ -21,8 +19,8 @@ const AdatkezelesiPage = () => {
             Társaság
           </li>
           <li>
-            <strong>Székhely:</strong> 1048, Budapest Külső Szilágyi út 106. 1.
-            em 2
+            <strong>Székhely:</strong> 1048, Budapest Külső Szilágyi út 106. 1
+            em. 2
           </li>
           <li>
             <strong>Cégjegyzékszám:</strong> 01-09-443478
@@ -34,36 +32,69 @@ const AdatkezelesiPage = () => {
             <strong>Képviselő:</strong> Bui-Tóth Dominika
           </li>
           <li>
-            <strong>Kapcsolat:</strong> moonlabpilates@gmail.com, +xxx
+            <strong>Kapcsolat:</strong> moonlabpilates@gmail.com, 06 30 901 4943
           </li>
         </ul>
 
         <h2 className={styles.subTitle}>2. Az adatkezelés célja</h2>
-        <p>A kamerás megfigyelés célja:</p>
-        <ul className={`${styles.list} ${styles.listWithBullets}`}>
-          <li>személyek és vagyon védelme,</li>
-          <li>a jogellenes cselekmények megelőzése és felderítése,</li>
-          <li>a jogsértések bizonyítása (pl. lopás, rongálás, stb.),</li>
-          <li>
-            az esetleges munkajogi vagy polgári jogi követelések megalapozása
-            vagy elhárítása.
-          </li>
-        </ul>
-
-        <h2 className={styles.subTitle}>3. A megfigyelt terület</h2>
         <p>
-          A stúdióban egy kamera került elhelyezésre a recepción, és az alábbi
-          területeket figyeli meg:
+          A Moon Lab Pilates Kft. a stúdió működésével összefüggésben kétféle
+          adatkezelést végez:
         </p>
         <ul className={`${styles.list} ${styles.listWithBullets}`}>
-          <li>stúdió bejárata,</li>
-          <li>recepciós/pihenőterület,</li>
-          <li>közlekedőfolyosó,</li>
+          <li>
+            Vendégek személyes adatainak kezelése a szolgáltatások
+            igénybevételéhez (pl. foglalás, kapcsolattartás, számlázás)
+          </li>
+          <li>Kamerás megfigyelés a személy- és vagyonvédelem céljából</li>
         </ul>
 
         <h2 className={styles.subTitle}>
-          4. Az adatkezelés alapjául szolgáló jogszabályok
+          3. A vendégek személyes adatainak kezelése
         </h2>
+        <p>
+          A vendégek adatai (pl. név, e-mail cím, telefonszám) a Motibro
+          rendszerben kerülnek rögzítésre, amely adatfeldolgozóként jár el.
+        </p>
+        <p>
+          Az adatkezelés célja: időpontfoglalás kezelése, kapcsolattartás,
+          szolgáltatás nyújtása, jogi kötelezettségek teljesítése.
+        </p>
+        <p>
+          Az adatkezelés jogalapja: az érintett hozzájárulása (GDPR 6. cikk (1)
+          a)), szerződés teljesítése (b)), valamint jogi kötelezettség (c)).
+        </p>
+
+        <h2 className={styles.subTitle}>4. Kamerás megfigyelés</h2>
+        <p>A kamerás megfigyelés célja:</p>
+        <ul className={`${styles.list} ${styles.listWithBullets}`}>
+          <li>személyek és vagyon védelme</li>
+          <li>jogellenes cselekmények megelőzése és felderítése</li>
+          <li>jogsértések bizonyítása (pl. lopás, rongálás)</li>
+          <li>esetleges jogviták megalapozása vagy elhárítása</li>
+        </ul>
+        <p>
+          <strong>A megfigyelt terület:</strong>
+        </p>
+        <ul className={`${styles.list} ${styles.listWithBullets}`}>
+          <li>stúdió bejárata</li>
+          <li>recepciós/pihenőterület</li>
+          <li>közlekedőfolyosó</li>
+        </ul>
+        <p>
+          A rendszer kizárólag képet rögzít, hangot nem. A felvételek legfeljebb
+          3 munkanapig kerülnek megőrzésre, kivéve ha jogvita vagy hatósági
+          eljárás indokolja a hosszabb tárolást.
+        </p>
+        <p>
+          Hozzáférés a felvételekhez kizárólag az adatkezelő vagy az általa
+          kijelölt, titoktartásra kötelezett személyek számára biztosított. A
+          hozzáférés naplózott és ellenőrizhető.
+        </p>
+
+        <h3 className={styles.subTitle}>
+          4.1. Az adatkezelés alapjául szolgáló jogszabályok
+        </h3>
         <ul className={`${styles.list} ${styles.listWithBullets}`}>
           <li>
             Az információs önrendelkezési jogról szóló és az
@@ -84,7 +115,7 @@ const AdatkezelesiPage = () => {
           szolgáltatás zavartalan működésének biztosítása.
         </p>
 
-        <h2 className={styles.subTitle}>5. A kezelt adatok köre</h2>
+        <h3 className={styles.subTitle}>4.2. A kezelt adatok köre</h3>
         <ul className={styles.list}>
           <li>
             A kamerarendszer valós idejű képfelvételt, illetve annak rögzítését
@@ -93,14 +124,14 @@ const AdatkezelesiPage = () => {
           <li>A hangrögzítés nem történik.</li>
         </ul>
 
-        <h2 className={styles.subTitle}>6. A felvételek tárolásának ideje</h2>
+        <h3 className={styles.subTitle}>4.3. A felvételek tárolásának ideje</h3>
         <p>
           A felvételek maximum 3 munkanapig kerülnek tárolásra, kivéve ha azok
           felhasználása egy eljárásban indokolt (pl. rendőrségi megkeresés,
           jogvita).
         </p>
 
-        <h2 className={styles.subTitle}>7. Hozzáférés az adatokhoz</h2>
+        <h3 className={styles.subTitle}>4.4. Hozzáférés az adatokhoz</h3>
         <ul className={styles.list}>
           <li>
             A felvételekhez kizárólag az adatkezelő, illetve az általa
@@ -112,56 +143,59 @@ const AdatkezelesiPage = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subTitle}>8. Adatok továbbítása</h2>
-        <p>
-          A felvételek kizárólag hatósági megkeresés (pl. rendőrség) vagy
-          jogviták esetén kerülhetnek átadásra az érintettek, illetve jogi
-          képviselőik számára.
-        </p>
+        <h2 className={styles.subTitle}>5. Adatok továbbítása</h2>
+        <ul className={styles.list}>
+          <li>
+            Személyes adatok kizárólag jogszabály alapján vagy az érintett
+            hozzájárulása esetén kerülnek továbbításra.
+          </li>
+          <li>
+            Kamerafelvétel kizárólag hatósági megkeresés vagy jogvita esetén
+            kerülhet kiadásra.
+          </li>
+        </ul>
 
-        <h2 className={styles.subTitle}>9. Az érintettek jogai</h2>
-        <p>Az érintettek az alábbi jogokat gyakorolhatják:</p>
+        <h2 className={styles.subTitle}>6. Az érintettek jogai</h2>
         <ul className={`${styles.list} ${styles.listWithBullets}`}>
-          <li>hozzáférés a rájuk vonatkozó felvételhez,</li>
-          <li>a felvétel másolatának kérése,</li>
-          <li>törlés kérése (amennyiben lehetséges jogi akadály nélkül),</li>
-          <li>tiltakozás az adatkezelés ellen,</li>
+          <li>tájékoztatást az adatkezelésről</li>
+          <li>hozzáférést saját adataihoz</li>
+          <li>azok helyesbítését, törlését, kezelésének korlátozását</li>
+          <li>tiltakozhat az adatkezelés ellen</li>
+          <li>
+            panaszt tehet a Nemzeti Adatvédelmi és Információszabadság
+            Hatóságnál (NAIH)
+          </li>
         </ul>
         <p>
-          Panasz benyújtása a Nemzeti Adatvédelmi és Információszabadság
-          Hatósághoz (NAIH):
+          <strong>Cím:</strong> 1055 Budapest, Falk Miksa utca 9-11.
           <br />
-          <strong>Cím: </strong>1055 Budapest, Falk Miksa utca 9-11.
+          <strong>Web:</strong>{" "}
+          <a
+            href="https://www.naih.hu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://www.naih.hu
+          </a>
           <br />
-          <strong>Web: </strong>
-          {
-            <a
-              href="https://www.naih.hu"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://www.naih.hu
-            </a>
-          }
-          <br />
-          <strong>Telefonszám: </strong>+36 1 391 1400
-          <br />
-          <strong>E-mail: </strong>
-          {<a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>}
+          <strong>E-mail:</strong>{" "}
+          <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>
         </p>
 
         <h2 className={styles.subTitle}>
-          10. Automatizált döntéshozatal, profilalkotás
+          7. Automatizált döntéshozatal, profilalkotás
         </h2>
         <p>
           Az adatkezelő nem végez automatizált döntéshozatalt vagy
-          profilalkotást a kamerás megfigyelés alapján.
+          profilalkotást.
         </p>
 
-        <h2 className={styles.subTitle}>11. Értesítés</h2>
+        <h2 className={styles.subTitle}>
+          8. Hozzáférés az adatkezelési tájékoztatóhoz
+        </h2>
         <p>
-          Ez a tájékoztató a Moon Lab Pilates Kft. által működtetett telephelyen
-          kihelyezésre került, továbbá kérésre elektronikusan is elérhető.
+          Ez a tájékoztató a stúdióban a recepción megtalálható, valamint a
+          honlapon elektronikusan is elérhető.
         </p>
       </div>
     </main>
