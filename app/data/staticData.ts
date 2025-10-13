@@ -1,12 +1,12 @@
 import allLevelsImg from "../assets/class-types/all_levels_class.png";
 import cardioImg from "../assets/class-types/hiit_class.png";
 import powerImg from "../assets/class-types/power_class.png";
-import fanniImg from "../assets/coaches/fanni.png";
-import vanesszaImg from "../assets/coaches/vanessza.png";
-import teteImg from "../assets/coaches/tete.png";
-import zNikiImg from "../assets/coaches/z_niki.png";
-import hNikiImg from "../assets/coaches/h_niki.png";
-import krisztiImg from "../assets/coaches/kriszti.png";
+import fanniImg from "../assets/coaches/fanni.jpg";
+import vanesszaImg from "../assets/coaches/vani.jpg";
+import teteImg from "../assets/coaches/tete.jpg";
+import zNikiImg from "../assets/coaches/z_niki.jpg";
+import hNikiImg from "../assets/coaches/h_niki.jpg";
+import krisztiImg from "../assets/coaches/kriszti.jpg";
 import {
   PriceCardProps,
   InformationCardProps,
