@@ -28,6 +28,10 @@ export const Navbar = () => {
     setMenuOpen(false);
   }, []);
 
+  const handleToggleMenu = useCallback(() => {
+    setMenuOpen((open) => !open);
+  }, []);
+
   return (
     <nav
       className={`
@@ -75,11 +79,7 @@ export const Navbar = () => {
       </div>
 
       <div className={styles.navbarContent}>
-        <button
-          className={styles.hamburger}
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-label="Open menu"
-        >
+        <button className={styles.hamburger} onClick={handleToggleMenu} aria-label="Open menu">
           {IoMdMenu({})}
         </button>
 
