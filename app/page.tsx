@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { IoLocationSharp } from "react-icons/io5";
-import { MdPhoneIphone, MdEmail } from "react-icons/md";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
-import aboutImg from "./assets/welcome_image.png";
-import contactImg from "./assets/contact_image.png";
-import { Navbar, PriceCard } from "./components";
-import { FaqCard } from "./components/FaqCard";
-import styles from "./styles/pages.module.css";
-import { InformationCard } from "./components/InformationCard";
-import { classTypes, coaches, faq, motibroLink, prices } from "./data";
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { IoLocationSharp } from 'react-icons/io5';
+import { MdPhoneIphone, MdEmail } from 'react-icons/md';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import aboutImg from './assets/welcome_image.png';
+import contactImg from './assets/contact_image.png';
+import { Navbar, PriceCard } from './components';
+import { FaqCard } from './components/FaqCard';
+import styles from './styles/pages.module.css';
+import { InformationCard } from './components/InformationCard';
+import { classTypes, coaches, faq, motibroLink, prices } from './data';
 
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -105,29 +105,24 @@ const HomePage = () => {
                 🌑 Üdvözlünk a Moon Lab Pilates világában! 🌑
               </p>
               <p className={styles.aboutSectionText}>
-                Stúdiónk Rákospalota egyik központi, mégis csendes, nyugodt
-                részén található – tökéletes helyszín a testi-lelki
-                feltöltődéshez.
+                Stúdiónk Rákospalota egyik központi, mégis csendes, nyugodt részén található –
+                tökéletes helyszín a testi-lelki feltöltődéshez.
               </p>
               <p className={styles.aboutSectionText}>
-                Az exkluzív környezet kialakítása mellett kiemelt figyelmet
-                fordítottunk a gépeinkre is: a stúdióban a jelenleg elérhető
-                egyik legmagasabb minőségű Reformer Pilates gépekkel dolgozunk.
+                Az exkluzív környezet kialakítása mellett kiemelt figyelmet fordítottunk a gépeinkre
+                is: a stúdióban a jelenleg elérhető egyik legmagasabb minőségű Reformer Pilates
+                gépekkel dolgozunk.
               </p>
               <p className={styles.aboutSectionText}>
-                Egyéni és kiscsoportos óráinkon tapasztalt oktatóink minden
-                vendégre személyre szabott figyelmet fordítanak.
+                Egyéni és kiscsoportos óráinkon tapasztalt oktatóink minden vendégre személyre
+                szabott figyelmet fordítanak.
               </p>
               <p className={styles.aboutSectionText}>
-                ✨ A Moon Lab Pilates a hely, ahol valóban elindulhatsz a
-                testi-lelki egyensúly felé vezető úton. ✨
+                ✨ A Moon Lab Pilates a hely, ahol valóban elindulhatsz a testi-lelki egyensúly felé
+                vezető úton. ✨
               </p>
             </div>
-            <Image
-              src={aboutImg}
-              alt="Inside the Pilates studio"
-              className={styles.aboutImage}
-            />
+            <Image src={aboutImg} alt="Inside the Pilates studio" className={styles.aboutImage} />
           </motion.div>
         </motion.section>
 
@@ -147,46 +142,38 @@ const HomePage = () => {
             transition={{ duration: 1 }}
           >
             <div className={styles.aboutPilatesParagraph}>
-              <h5 className={styles.aboutPilatesQuestion}>
-                Mi az a Reformer Pilates?
-              </h5>
+              <h5 className={styles.aboutPilatesQuestion}>Mi az a Reformer Pilates?</h5>
               <p className={styles.aboutPilatesAnswer}>
-                A Reformer Pilates a klasszikus Pilates gyakorlatok
-                továbbfejlesztett változata, amely egy speciális gépen, a
-                reformer-en történik. A reformer egy mozgó kocsiból, rugókból,
-                pántokból és rúdakból álló eszköz, amely változatos ellenállást
-                biztosít, így az edzések még hatékonyabbak és dinamikusabbak
-                lesznek.
+                A Reformer Pilates a klasszikus Pilates gyakorlatok továbbfejlesztett változata,
+                amely egy speciális gépen, a reformer-en történik. A reformer egy mozgó kocsiból,
+                rugókból, pántokból és rúdakból álló eszköz, amely változatos ellenállást biztosít,
+                így az edzések még hatékonyabbak és dinamikusabbak lesznek.
               </p>
             </div>
             <div className={styles.aboutPilatesParagraph}>
-              <h5 className={styles.aboutPilatesQuestion}>
-                Miért válaszd a Reformer Pilates-t?
-              </h5>
+              <h5 className={styles.aboutPilatesQuestion}>Miért válaszd a Reformer Pilates-t?</h5>
               <div className={styles.aboutPilatesAnswer}>
                 <ol>
                   <li>
-                    ✅ Erősítés és nyújtás egyszerre: A reformer segítségével
-                    egyszerre fejlesztheted izmaid erejét és rugalmasságát.
+                    ✅ Erősítés és nyújtás egyszerre: A reformer segítségével egyszerre
+                    fejlesztheted izmaid erejét és rugalmasságát.
                   </li>
                   <li>
-                    ✅ Kíméletes az ízületekhez: A rugók ellenállása csökkenti
-                    az ízületekre nehezedő terhelést, ezért biztonságos minden
-                    korosztály és edzettségi szint számára.
+                    ✅ Kíméletes az ízületekhez: A rugók ellenállása csökkenti az ízületekre
+                    nehezedő terhelést, ezért biztonságos minden korosztály és edzettségi szint
+                    számára.
                   </li>
                   <li>
-                    ✅ Testtudatosság fejlesztése: Segít javítani a tartást, az
-                    egyensúlyt és a mozgáskoordinációt.
+                    ✅ Testtudatosság fejlesztése: Segít javítani a tartást, az egyensúlyt és a
+                    mozgáskoordinációt.
                   </li>
                   <li>
-                    ✅ Célzott izommunka: A gép lehetővé teszi, hogy az izmokat
-                    pontosabban és mélyebben aktiváld, különösen a
-                    törzsizomzatot (core).
+                    ✅ Célzott izommunka: A gép lehetővé teszi, hogy az izmokat pontosabban és
+                    mélyebben aktiváld, különösen a törzsizomzatot (core).
                   </li>
                   <li>
-                    ✅ Rehabilitáció és prevenció: Kiválóan alkalmas sérülések
-                    utáni regenerációra, valamint a hát- és derékproblémák
-                    megelőzésére.
+                    ✅ Rehabilitáció és prevenció: Kiválóan alkalmas sérülések utáni regenerációra,
+                    valamint a hát- és derékproblémák megelőzésére.
                   </li>
                 </ol>
               </div>
@@ -196,35 +183,25 @@ const HomePage = () => {
               <div className={styles.aboutPilatesAnswer}>
                 <ol className={styles.aboutPilatesListDisc}>
                   <li>
-                    Teljesen kezdőknek, akik biztonságos, vezetett módon
-                    szeretnék elkezdeni az edzést
+                    Teljesen kezdőknek, akik biztonságos, vezetett módon szeretnék elkezdeni az
+                    edzést
                   </li>
                   <li>
-                    Haladóknak, akik tovább szeretnék fejleszteni izomerejüket
-                    és technikájukat
+                    Haladóknak, akik tovább szeretnék fejleszteni izomerejüket és technikájukat
                   </li>
                   <li>Sportolóknak kiegészítő edzésként</li>
-                  <li>
-                    Ülőmunkát végzőknek, akik szeretnének javítani tartásukon
-                  </li>
-                  <li>
-                    Várandós vagy szülés utáni kismamáknak (speciális program
-                    keretében)
-                  </li>
+                  <li>Ülőmunkát végzőknek, akik szeretnének javítani tartásukon</li>
+                  <li>Várandós vagy szülés utáni kismamáknak (speciális program keretében)</li>
                 </ol>
               </div>
             </div>
             <div className={styles.aboutPilatesParagraph}>
-              <h5 className={styles.aboutPilatesQuestion}>
-                Miért érdemes nálunk kipróbálni?
-              </h5>
+              <h5 className={styles.aboutPilatesQuestion}>Miért érdemes nálunk kipróbálni?</h5>
               <p className={styles.aboutPilatesAnswer}>
-                Stúdiónkban prémium kategóriás Reformer gépekkel dolgozunk,
-                amelyek maximális kényelmet és hatékonyságot biztosítanak.
-                Tapasztalt oktatóink személyre szabott figyelmet fordítanak rád,
-                hogy biztonságosan, fokozatosan fejlődhess – legyen a célod akár
-                az alakformálás, a rehabilitáció, vagy egyszerűen a mozgás
-                öröme.
+                Stúdiónkban prémium kategóriás Reformer gépekkel dolgozunk, amelyek maximális
+                kényelmet és hatékonyságot biztosítanak. Tapasztalt oktatóink személyre szabott
+                figyelmet fordítanak rád, hogy biztonságosan, fokozatosan fejlődhess – legyen a
+                célod akár az alakformálás, a rehabilitáció, vagy egyszerűen a mozgás öröme.
               </p>
             </div>
           </motion.div>
@@ -304,60 +281,50 @@ const HomePage = () => {
             animate={{ opacity: scheduleInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            <h2
-              className={`${styles.sectionTitle} ${styles.scheduleSectionTitle}`}
-            >
+            <h2 className={`${styles.sectionTitle} ${styles.scheduleSectionTitle}`}>
               Órarend és Foglalás
             </h2>
             <div className={styles.scheduleParagraph}>
               <h5 className={styles.scheduleInfoTitle}>Bejelentkezés</h5>
               <p className={styles.scheduleInfoDescription}>
-                A csoportos óráinkon való részvétel előzetes online
-                bejelentkezéshez kötött. A foglalást a Motibro rendszerén
-                keresztül, egy gyors regisztrációt követően tudod elvégezni.
+                A csoportos óráinkon való részvétel előzetes online bejelentkezéshez kötött. A
+                foglalást a Motibro rendszerén keresztül, egy gyors regisztrációt követően tudod
+                elvégezni.
               </p>
             </div>
             <div className={styles.scheduleParagraph}>
-              <h5 className={styles.scheduleInfoTitle}>
-                Jegy- és bérletvásárlás
-              </h5>
+              <h5 className={styles.scheduleInfoTitle}>Jegy- és bérletvásárlás</h5>
               <div className={styles.scheduleInfoDescription}>
-                Az órára történő részvételhez vásárolhatsz jegyet vagy bérletet
-                egyszerűen a Motibro fiókodban a Bérleteim menüpont alatt.
-                Személyesen a stúdióban is van lehetőség fizetésre,
-                bankkártyával.
+                Az órára történő részvételhez vásárolhatsz jegyet vagy bérletet egyszerűen a Motibro
+                fiókodban a Bérleteim menüpont alatt. Személyesen a stúdióban is van lehetőség
+                fizetésre, bankkártyával.
               </div>
             </div>
             <div className={styles.scheduleParagraph}>
               <h5 className={styles.scheduleInfoTitle}>Lemondás</h5>
               <div className={styles.scheduleInfoDescription}>
-                Ha mégsem tudsz részt venni az előzetesen lefoglalt órán,
-                kérjük, hogy legalább 24 órával az óra kezdete előtt töröld a
-                foglalásodat a Motibro rendszerében. Késői lemondás vagy meg nem
-                jelenés esetén a Moon Lab Pilates Stúdió fenntartja a jogot az
-                alkalom levonására, vagy bérlet hiányában az összeg későbbi
-                felszámítására.
+                Ha mégsem tudsz részt venni az előzetesen lefoglalt órán, kérjük, hogy legalább 24
+                órával az óra kezdete előtt töröld a foglalásodat a Motibro rendszerében. Késői
+                lemondás vagy meg nem jelenés esetén a Moon Lab Pilates Stúdió fenntartja a jogot az
+                alkalom levonására, vagy bérlet hiányában az összeg későbbi felszámítására.
               </div>
             </div>
             <div className={styles.scheduleParagraph}>
               <h5 className={styles.scheduleInfoTitle}>Magánóra</h5>
               <p className={styles.scheduleInfoDescription}>
-                Egyéni óra foglalásához kérjük, vedd fel velünk a kapcsolatot!
-                Így személyre szabottan tudunk számodra oktatót és időpontot
-                ajánlani.
+                Egyéni óra foglalásához kérjük, vedd fel velünk a kapcsolatot! Így személyre
+                szabottan tudunk számodra oktatót és időpontot ajánlani.
               </p>
             </div>
             <div className={styles.scheduleParagraph}>
               <h5 className={styles.scheduleInfoTitle}>Órák menete</h5>
               <p className={styles.scheduleInfoDescription}>
-                Az órák 50 percesek, az egyes órák között 10 perc szünetet
-                tartunk. Kérjük, hogy az órakezdés előtt legkorábban 10 perccel
-                érkezz meg. Az első alkalomra lehetőség szerint már átöltözve
-                gyere, hogy az oktató elegendő időt tudjon szánni a
-                bemutatkozásra és a reformer gép használatának ismertetésére.
-                Kérünk, hogy hozz magaddal tapadós talpú zoknit és törölközőt.
-                Az órákon való részvétel, valamint az eszközök használata saját
-                felelősségre történik
+                Az órák 50 percesek, az egyes órák között 10 perc szünetet tartunk. Kérjük, hogy az
+                órakezdés előtt legkorábban 10 perccel érkezz meg. Az első alkalomra lehetőség
+                szerint már átöltözve gyere, hogy az oktató elegendő időt tudjon szánni a
+                bemutatkozásra és a reformer gép használatának ismertetésére. Kérünk, hogy hozz
+                magaddal tapadós talpú zoknit és törölközőt. Az órákon való részvétel, valamint az
+                eszközök használata saját felelősségre történik
               </p>
             </div>
           </motion.div>
@@ -430,11 +397,7 @@ const HomePage = () => {
         >
           <div className={styles.contactContainer}>
             <div className={styles.contactInfo}>
-              <h2
-                className={`${styles.sectionTitle} ${styles.contactSectionTitle}`}
-              >
-                Kapcsolat
-              </h2>
+              <h2 className={`${styles.sectionTitle} ${styles.contactSectionTitle}`}>Kapcsolat</h2>
               <div className={styles.contactDetail}>
                 {IoLocationSharp({})}
                 <Link
@@ -448,19 +411,13 @@ const HomePage = () => {
               </div>
               <div className={styles.contactDetail}>
                 {MdPhoneIphone({})}
-                <Link
-                  href="tel:+36309014943"
-                  className={styles.contactDetailText}
-                >
+                <Link href="tel:+36309014943" className={styles.contactDetailText}>
                   +36 30 901 4943
                 </Link>
               </div>
               <div className={styles.contactDetail}>
                 {MdEmail({})}
-                <Link
-                  href="mailto:moonlabpilates@gmail.com"
-                  className={styles.contactDetailText}
-                >
+                <Link href="mailto:moonlabpilates@gmail.com" className={styles.contactDetailText}>
                   moonlabpilates@gmail.com
                 </Link>
               </div>
@@ -507,10 +464,7 @@ const HomePage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <p>
-            &copy; {new Date().getFullYear()} Moon Lab Pilates. Minden jog
-            fenntartva.
-          </p>
+          <p>&copy; {new Date().getFullYear()} Moon Lab Pilates. Minden jog fenntartva.</p>
         </motion.footer>
       </main>
     </>

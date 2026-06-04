@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
-import { IoMdMenu, IoMdClose } from "react-icons/io";
-import logo from "../assets/moon_studio_website_logo_brown.svg";
-import styles from "../styles/Navbar.module.css";
-import { motibroLink } from "../data";
+import { useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
+import { IoMdMenu, IoMdClose } from 'react-icons/io';
+import logo from '../assets/moon_studio_website_logo_brown.svg';
+import styles from '../styles/Navbar.module.css';
+import { motibroLink } from '../data';
 
 export const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,9 +18,9 @@ export const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -29,15 +29,15 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`${styles.navbar} ${isVisible ? styles.visible : ""}`}>
-      <div
-        className={`${styles.leftNavOverlay} ${menuOpen ? styles.open : ""}`}
-      >
-        <button
-          className={styles.closeBtn}
-          onClick={handleCloseMenu}
-          aria-label="Close menu"
-        >
+    <nav
+      className={`
+    ${styles.navbar}
+    ${isVisible ? styles.visible : ''}
+    ${menuOpen ? styles.menuIsOpen : ''}
+  `}
+    >
+      <div className={`${styles.leftNavOverlay} ${menuOpen ? styles.open : ''}`}>
+        <button className={styles.closeBtn} onClick={handleCloseMenu} aria-label="Close menu">
           {IoMdClose({})}
         </button>
         <ul>

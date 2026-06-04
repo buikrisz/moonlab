@@ -22,59 +22,93 @@
 }
 
 .heroSection {
-  background: url("../assets/main_background_2.JPG") center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  background: url("../assets/main_background_3.JPG") right center / cover
+    no-repeat;
 }
 
 .heroSection::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
   z-index: 1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse 55% 135% at 78% 50%,
+    rgba(255, 250, 246, 0) 0%,
+    rgba(255, 250, 246, 0) 43%,
+    rgba(255, 250, 246, 0.22) 52%,
+    rgba(255, 250, 246, 0.62) 62%,
+    rgba(255, 250, 246, 0.92) 72%,
+    #fffaf6 85%,
+    #fffaf6 100%
+  );
 }
 
 .heroContent {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-left: 8vw;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 2;
+  align-items: flex-start;
+  text-align: left;
+
   font-family: var(--font-catchy);
 }
 
 .heroTitle {
+  width: 500px;
   font-size: 100px;
-  height: 120px;
-  letter-spacing: 3px;
-  color: var(--white);
+  font-weight: 200;
+  line-height: 0.95;
+  letter-spacing: 2px;
+  color: #6f5144;
 }
 
 .heroSubtitle {
-  font-size: 44px;
-  color: var(--white);
+  font-size: 22px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  color: #b49a8d;
+  margin-top: 20px;
 }
 
 .heroButton {
-  position: absolute;
+  margin-top: 36px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-self: flex-end;
+
   width: 180px;
-  height: 40px;
-  bottom: 120px;
-  background-color: var(--primary-background);
+  height: 46px;
+
+  border-radius: 999px;
+  background-color: #7a5849;
+  color: var(--primary-background);
+
   font-family: var(--font-dm-sans);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .heroButton:hover {
-  cursor: pointer;
-  background-color: #fff6ee;
+  background-color: #66483c;
+}
+
+.heroButton,
+.heroButton:visited,
+.heroButton:active,
+.heroButton:focus {
+  color: var(--primary-background);
+  text-decoration: none;
 }
 
 .aboutSection {
@@ -242,7 +276,7 @@
   width: 100%;
   height: 50px;
   background-color: var(--primary-text);
-  color: var(--white);
+  color: var(--primary-background);
   font-size: 20px;
   text-transform: uppercase;
   transition: opacity 0.2s ease;
@@ -250,6 +284,14 @@
 
 .scheduleLink:hover {
   opacity: 0.9;
+}
+
+.scheduleLink,
+.scheduleLink:visited,
+.scheduleLink:active,
+.scheduleLink:focus {
+  color: var(--primary-background);
+  text-decoration: none;
 }
 
 .priceSection {
