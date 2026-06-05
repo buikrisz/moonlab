@@ -220,11 +220,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 
   flex: 1;
-  min-height: 200px;
-  padding: 22px 12px;
+  min-width: 0;
+  min-height: 180px;
+  padding: 22px 10px;
 
   text-align: center;
 }
@@ -237,7 +238,7 @@
   right: 0;
 
   width: 1px;
-  height: 140px;
+  height: 110px;
 
   background: rgba(131, 95, 79, 0.2);
 
@@ -252,12 +253,11 @@
 
 .aboutBenefitItem p {
   font-family: var(--font-dm-sans);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.25;
   color: #4f3b32;
 }
-
 .aboutNote {
   display: flex;
   align-items: center;
@@ -617,6 +617,61 @@
   padding: 20px 0;
 }
 
+@media (max-width: 1200px) {
+  .aboutSection {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .aboutContainer {
+    width: min(86%, 900px);
+    gap: 42px;
+  }
+
+  .aboutContent,
+  .aboutImageWrapper,
+  .aboutBenefitsWrapper,
+  .aboutRecommendedCard {
+    width: 100%;
+  }
+
+  .aboutContent {
+    align-items: flex-start;
+  }
+
+  .aboutContent .sectionTitle {
+    margin-bottom: 42px;
+    font-size: clamp(52px, 7vw, 72px);
+  }
+
+  .aboutEyebrow {
+    font-size: clamp(34px, 4vw, 44px);
+  }
+
+  .aboutImageWrapper {
+    justify-content: center;
+  }
+
+  .aboutImage {
+    width: min(100%, 620px);
+    max-width: 620px;
+    height: 420px;
+  }
+
+  .aboutBenefitsWrapper {
+    gap: 36px;
+  }
+
+  .aboutBenefits {
+    width: 100%;
+  }
+
+  .aboutRecommendedCard {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 1100px) {
   .heroSection::before {
     background: radial-gradient(
@@ -685,16 +740,114 @@
     height: 46px;
   }
 
+  .aboutSection {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
   .aboutContainer {
-    flex-direction: column;
+    width: 88%;
+    max-width: 720px;
+    gap: 38px;
   }
 
-  .aboutContent {
-    width: unset;
+  .aboutContent .sectionTitle {
+    margin-bottom: 32px;
+    font-size: clamp(46px, 8vw, 64px);
   }
 
-  .aboutPilatesContainer {
-    width: 80%;
+  .aboutEyebrow {
+    margin-bottom: 24px;
+    font-size: clamp(32px, 5vw, 40px);
+  }
+
+  .aboutSectionText {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .aboutImage {
+    width: min(100%, 540px);
+    height: 360px;
+    border-radius: 180px 180px 0 0;
+  }
+
+  .aboutBenefitsWrapper {
+    align-items: center;
+    width: 100%;
+    gap: 34px;
+  }
+
+  .aboutBenefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 100%;
+    overflow: visible;
+
+    border-top: 1px solid rgba(131, 95, 79, 0.22);
+    border-bottom: none;
+  }
+
+  .aboutBenefitItem {
+    flex: 0 0 50%;
+    min-height: 142px;
+    padding: 22px 12px;
+
+    border-bottom: 1px solid rgba(131, 95, 79, 0.18);
+  }
+
+  .aboutBenefitItem:not(:last-child)::after {
+    display: none;
+  }
+
+  .aboutBenefitItem:nth-child(odd)::after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    top: 50%;
+    right: 0;
+
+    width: 1px;
+    height: 86px;
+
+    background: rgba(131, 95, 79, 0.2);
+
+    transform: translateY(-50%);
+  }
+
+  .aboutBenefitItem:nth-child(2)::after,
+  .aboutBenefitItem:nth-child(4)::after,
+  .aboutBenefitItem:nth-child(5)::after {
+    display: none;
+  }
+
+  .aboutBenefitItem:nth-child(5) {
+    flex: 0 0 100%;
+  }
+
+  .aboutBenefitIcon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .aboutBenefitItem p {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .aboutNote {
+    width: 100%;
+    max-width: 620px;
+    border-radius: 34px;
+  }
+
+  .aboutRecommendedCard {
+    width: 100%;
+    max-width: 620px;
   }
 
   .scheduleContainer {
@@ -766,5 +919,94 @@
     height: 46px;
 
     font-size: 13px;
+  }
+
+  .aboutSection {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .aboutContainer {
+    width: 88%;
+    max-width: 420px;
+    gap: 32px;
+  }
+
+  .aboutContent .sectionTitle {
+    margin-bottom: 26px;
+    font-size: 44px;
+    line-height: 0.95;
+  }
+
+  .aboutEyebrow {
+    margin-bottom: 20px;
+    font-size: 31px;
+    line-height: 1.08;
+  }
+
+  .aboutSectionText {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .aboutImage {
+    width: 100%;
+    height: 280px;
+    border-radius: 140px 140px 0 0;
+  }
+
+  .aboutBenefitsWrapper {
+    gap: 30px;
+  }
+
+  .aboutBenefitItem {
+    min-height: 132px;
+    padding: 20px 10px;
+  }
+
+  .aboutBenefitIcon svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .aboutBenefitItem p {
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  .aboutNote {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    padding: 24px 22px;
+    border-radius: 28px;
+  }
+
+  .aboutNote span {
+    font-size: 24px;
+  }
+
+  .aboutNote p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .aboutRecommendedCard {
+    padding: 28px 22px;
+    border-radius: 20px;
+  }
+
+  .aboutRecommendedTitle {
+    font-size: 30px;
+  }
+
+  .aboutRecommendedList li {
+    font-size: 13px;
+    line-height: 1.35rem;
+  }
+
+  .aboutRecommendedButton {
+    width: 100%;
   }
 }
