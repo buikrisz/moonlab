@@ -386,19 +386,99 @@
   text-decoration: none;
 }
 
-.coachSection {
-  position: relative;
-  background-color: var(--primary-background);
+.coachPriceSection {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(131, 95, 79, 0.06) 0%, rgba(131, 95, 79, 0) 32%),
+    var(--primary-background);
+
   align-items: flex-start;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.coachContainer {
+.coachPriceContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 34px 38px;
+
+  width: 84%;
+}
+
+.coachPriceIntro {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+
+  width: 32%;
+  min-width: 320px;
+  padding-top: 56px;
+}
+
+.coachPriceEyebrow {
+  margin-bottom: 20px;
+
+  font-family: var(--font-eyesome);
+  font-size: 38px;
+  font-weight: 400;
+  color: #6f5144;
+}
+
+.coachPriceIntro .sectionTitle {
+  margin-bottom: 28px;
+
+  font-family: var(--font-catchy);
+  font-size: clamp(38px, 3vw, 52px);
+  font-weight: 400;
+
+  color: #3f332e;
+}
+
+.coachPriceText {
+  max-width: 400px;
+
+  font-family: var(--font-dm-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  color: #4f3b32;
+}
+
+.coachPriceHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  margin-top: 44px;
+}
+
+.coachPriceHighlight {
+  display: flex;
   align-items: center;
-  height: 80%;
-  width: 80%;
+  gap: 18px;
+}
+
+.coachPriceHighlight span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(131, 95, 79, 0.22);
+  border-radius: 999px;
+
+  font-size: 22px;
+  color: #7a5849;
+}
+
+.coachPriceHighlight p {
+  font-family: var(--font-dm-sans);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #4f3b32;
 }
 
 .coachCards {
@@ -406,23 +486,368 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 80px 80px;
+  gap: 24px;
+
+  width: 64%;
+  min-width: 760px;
+}
+
+.coachCard {
+  position: relative;
+
+  display: block;
+
+  width: 300px;
+  min-height: 320px;
+  height: 360px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  font: inherit;
+  color: inherit;
+  text-align: center;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+  perspective: 1200px;
+
+  transform: translateZ(0);
+}
+
+.coachImage {
+  width: 240px;
+  height: 180px;
+
+  object-fit: cover;
+
+  border-radius: 120px 120px 0 0;
+  flex-shrink: 0;
+}
+
+.coachCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
   width: 100%;
-  margin-top: 32px;
+  padding-top: 16px;
 }
 
-/* .coachShowMoreBtn {
-  position: absolute;
-  bottom: 10px;
-  font-style: italic;
+.coachName {
+  margin-bottom: 8px;
+
+  font-family: var(--font-eyesome);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 0.95;
+  color: #6f5144;
+}
+
+.coachDescription {
+  font-family: var(--font-dm-sans);
   font-size: 14px;
-  border: 1px solid var(--primary-text);
-  border-radius: 5px;
+  line-height: 1.45;
+  color: #4f3b32;
 }
 
-.coachShowMoreBtn:hover {
-  background-color: var(--secondary-background);
-} */
+.coachCardInner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+  transform-style: preserve-3d;
+
+  will-change: transform;
+}
+
+.coachCard.flipped .coachCardInner {
+  transform: rotateY(180deg);
+}
+
+.coachCardFront,
+.coachCardBack {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 30px 18px 22px;
+
+  border: 1px solid rgba(131, 95, 79, 0.18);
+  border-radius: 12px;
+
+  background: #fffaf6;
+
+  box-shadow:
+    0 16px 34px rgba(73, 49, 38, 0.05),
+    0 3px 10px rgba(73, 49, 38, 0.04);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.coachCardFront {
+  justify-content: flex-start;
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+.coachCardBack {
+  justify-content: space-between;
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+.coachBackName {
+  margin-bottom: 12px;
+
+  font-family: var(--font-eyesome);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 0.95;
+  color: #6f5144;
+}
+
+.coachLongDescription {
+  width: 100%;
+  flex: 1;
+
+  padding-right: 4px;
+
+  font-family: var(--font-dm-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  color: #4f3b32;
+
+  text-align: left;
+
+  overflow-y: auto;
+}
+
+.coachLongDescription::-webkit-scrollbar {
+  width: 4px;
+}
+
+.coachLongDescription::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(131, 95, 79, 0.24);
+}
+
+.coachFlipHint {
+  margin-top: 10px;
+
+  font-family: var(--font-dm-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color: #8a6758;
+}
+
+.pricePanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 16px;
+  padding: 34px 36px 36px;
+
+  border: 1px solid rgba(131, 95, 79, 0.18);
+  border-radius: 16px;
+
+  background: rgba(255, 250, 246, 0.42);
+
+  box-shadow:
+    0 20px 46px rgba(73, 49, 38, 0.05),
+    0 4px 14px rgba(73, 49, 38, 0.04);
+}
+
+.priceHeader {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 42px;
+}
+
+.priceTitle {
+  position: relative;
+
+  font-family: var(--font-catchy);
+  font-size: 34px;
+  font-weight: 400;
+  color: #3f332e;
+}
+
+.priceTitle::before,
+.priceTitle::after {
+  content: '';
+
+  position: absolute;
+  bottom: -15px;
+
+  width: 48px;
+  height: 1px;
+
+  background: rgba(131, 95, 79, 0.45);
+}
+
+.priceTitle::before {
+  right: calc(50% + 18px);
+}
+
+.priceTitle::after {
+  left: calc(50% + 18px);
+}
+
+.priceHeader::after {
+  content: '✦';
+
+  position: absolute;
+  left: 50%;
+  bottom: -27px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 999px;
+
+  background: var(--primary-background);
+  color: #7a5849;
+
+  font-size: 15px;
+
+  transform: translateX(-50%);
+}
+
+.priceCards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  width: 100%;
+}
+
+.priceCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1;
+  min-width: 180px;
+  min-height: 230px;
+
+  padding: 26px 20px 24px;
+
+  border: 1px solid rgba(131, 95, 79, 0.16);
+  border-radius: 14px;
+
+  background: rgba(255, 250, 246, 0.66);
+
+  text-align: center;
+}
+
+.priceIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 54px;
+  height: 54px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(131, 95, 79, 0.12);
+  border-radius: 999px;
+
+  background: rgba(131, 95, 79, 0.06);
+  color: #7a5849;
+}
+
+.priceIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.priceName {
+  margin-bottom: 16px;
+
+  font-family: var(--font-eyesome);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 0.95;
+  color: #6f5144;
+}
+
+.priceValue {
+  margin-bottom: 18px;
+
+  font-family: var(--font-catchy);
+  font-size: 26px;
+  font-weight: 600;
+  color: #3f332e;
+}
+
+.priceDescription {
+  font-family: var(--font-dm-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  color: #4f3b32;
+}
+
+.priceNote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+
+  width: 100%;
+  min-height: 66px;
+
+  padding: 18px 34px;
+
+  border-radius: 999px;
+
+  background: rgba(131, 95, 79, 0.08);
+}
+
+.priceNote span {
+  font-size: 24px;
+}
+
+.priceNote p {
+  font-family: var(--font-dm-sans);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #4f3b32;
+}
 
 .classesSection {
   background-color: var(--secondary-background);
@@ -507,32 +932,6 @@
   text-decoration: none;
 }
 
-.priceSection {
-  background-color: var(--secondary-background);
-  align-items: flex-start;
-  min-height: unset;
-}
-
-.priceContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 80%;
-  width: 80%;
-}
-
-.priceCards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px 20px;
-  width: 100%;
-  max-width: 1000px;
-  margin-top: 2rem;
-}
-
 .faqSection {
   background-color: var(--primary-background);
   align-items: flex-start;
@@ -615,6 +1014,41 @@
   color: white;
   text-align: center;
   padding: 20px 0;
+}
+
+@media (max-width: 1450px) {
+  .coachPriceContainer {
+    width: min(86%, 1100px);
+  }
+
+  .coachPriceIntro {
+    width: 100%;
+    min-width: 0;
+
+    align-items: center;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .coachPriceText {
+    max-width: 680px;
+  }
+
+  .coachPriceHighlights {
+    flex-direction: row;
+    justify-content: center;
+    gap: 34px;
+
+    margin-top: 34px;
+  }
+
+  .coachCards {
+    width: 100%;
+    min-width: 0;
+
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1008,5 +1442,90 @@
 
   .aboutRecommendedButton {
     width: 100%;
+  }
+
+  .coachPriceContainer {
+    width: 88%;
+    max-width: 340px;
+    gap: 32px;
+  }
+
+  .coachPriceText {
+    max-width: none;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .coachPriceHighlights {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+
+    margin-top: 28px;
+  }
+
+  .pricePanel {
+    padding: 28px 18px 24px;
+    border-radius: 18px;
+  }
+
+  .priceHeader {
+    margin-bottom: 42px;
+  }
+
+  .priceTitle {
+    font-size: 32px;
+  }
+
+  .priceCards {
+    gap: 16px;
+  }
+
+  .priceCard {
+    flex: 0 0 100%;
+    min-height: unset;
+    padding: 26px 20px;
+  }
+
+  .priceIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .priceIcon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .priceName {
+    font-size: 32px;
+  }
+
+  .priceValue {
+    font-size: 25px;
+  }
+
+  .priceDescription {
+    font-size: 13px;
+  }
+
+  .priceNote {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 22px 24px;
+    border-radius: 28px;
+  }
+
+  .priceNote span {
+    font-size: 22px;
+  }
+
+  .priceNote p {
+    font-size: 14px;
+    line-height: 1.55;
   }
 }

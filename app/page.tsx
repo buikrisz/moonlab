@@ -2,7 +2,18 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeartPulse, Dumbbell, BicepsFlexed, ShieldCheck, Scale } from 'lucide-react';
+import {
+  HeartPulse,
+  Dumbbell,
+  BicepsFlexed,
+  ShieldCheck,
+  Scale,
+  Sprout,
+  Ticket,
+  Tickets,
+  CalendarDays,
+  Clock,
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { IoLocationSharp } from 'react-icons/io5';
@@ -10,11 +21,13 @@ import { MdPhoneIphone, MdEmail } from 'react-icons/md';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import aboutImg from './assets/welcome_image.jpg';
 import contactImg from './assets/contact_image.png';
-import { Navbar, PriceCard } from './components';
+import { Navbar } from './components';
 import { FaqCard } from './components/FaqCard';
 import styles from './styles/pages.module.css';
 import { InformationCard } from './components/InformationCard';
 import { classTypes, coaches, faq, motibroLink, prices } from './data';
+import { PriceCardIcons } from './types';
+import { useCallback, useState } from 'react';
 
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -29,15 +42,31 @@ const HomePage = () => {
   const { ref: scheduleRef, inView: scheduleInView } = useInView({
     triggerOnce: true,
   });
-  const { ref: pricesRef, inView: pricesInView } = useInView({
-    triggerOnce: true,
-  });
   const { ref: faqRef, inView: faqInView } = useInView({
     triggerOnce: true,
   });
   const { ref: contactRef, inView: contactInView } = useInView({
     triggerOnce: true,
   });
+
+  const [flippedCoach, setFlippedCoach] = useState<string | null>(null);
+
+  const getPriceIcon = useCallback((icon: PriceCardIcons) => {
+    switch (icon) {
+      case PriceCardIcons.trial:
+        return <Sprout size={28} strokeWidth={1.35} />;
+      case PriceCardIcons.single:
+        return <Ticket size={28} strokeWidth={1.35} />;
+      case PriceCardIcons.five:
+        return <Tickets size={28} strokeWidth={1.35} />;
+      case PriceCardIcons.ten:
+        return <CalendarDays size={28} strokeWidth={1.35} />;
+      case PriceCardIcons.private:
+        return <Clock size={28} strokeWidth={1.35} />;
+      default:
+        return <Ticket size={28} strokeWidth={1.35} />;
+    }
+  }, []);
 
   return (
     <>
@@ -81,7 +110,6 @@ const HomePage = () => {
             </motion.a>
           </motion.div>
         </motion.section>
-
         {/* About Reformer Pilates Section */}
         <motion.section
           id="pilates"
@@ -192,36 +220,107 @@ const HomePage = () => {
           </motion.div>
         </motion.section>
 
-        {/* Coach Intro */}
+        {/* Coaches and Pricing */}
         <motion.section
           id="oktatok"
           ref={coachRef}
-          className={`${styles.section} ${styles.coachSection}`}
+          className={`${styles.section} ${styles.coachPriceSection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: coachInView ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
           <motion.div
-            className={styles.coachContainer}
+            className={styles.coachPriceContainer}
             initial={{ opacity: 0 }}
             animate={{ opacity: coachInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            <h2 className={styles.sectionTitle}>Oktatóink</h2>
+            <div className={styles.coachPriceIntro}>
+              <p className={styles.coachPriceEyebrow}>Szakértelem, amire számíthatsz</p>
+              <h2 className={styles.sectionTitle}>Oktatóink & Áraink</h2>
+
+              <p className={styles.coachPriceText}>
+                Nálunk a mozgás több, mint edzés — tudatos figyelem, szakértelem és törődés. Ismerd
+                meg oktatóinkat és válaszd ki az igényeidhez leginkább illő bérletet.
+              </p>
+
+              <div className={styles.coachPriceHighlights}>
+                <div className={styles.coachPriceHighlight}>
+                  <span>✦</span>
+                  <p>Kis létszámú, személyre szabott órák</p>
+                </div>
+
+                <div className={styles.coachPriceHighlight}>
+                  <span>♡</span>
+                  <p>Támogató közeg, pozitív energiákkal</p>
+                </div>
+              </div>
+            </div>
+
             <div className={styles.coachCards}>
               {coaches.map((coach) => (
-                <InformationCard
+                <button
+                  type="button"
                   key={coach.name}
-                  name={coach.name}
-                  description={coach.description}
-                  img={coach.img}
-                  isLongCard
-                />
+                  className={`${styles.coachCard} ${
+                    flippedCoach === coach.name ? styles.flipped : ''
+                  }`}
+                  onClick={() =>
+                    setFlippedCoach((currentCoach) =>
+                      currentCoach === coach.name ? null : coach.name,
+                    )
+                  }
+                  aria-label={`${coach.name} bemutatkozás megnyitása`}
+                >
+                  <div className={styles.coachCardInner}>
+                    <div className={styles.coachCardFront}>
+                      <Image src={coach.img} alt={coach.name} className={styles.coachImage} />
+
+                      <div className={styles.coachCardContent}>
+                        <h3 className={styles.coachName}>{coach.name}</h3>
+                        <p className={styles.coachDescription}>{coach.description}</p>
+                      </div>
+                    </div>
+
+                    <div className={styles.coachCardBack}>
+                      <h3 className={styles.coachBackName}>{coach.name}</h3>
+
+                      <p className={styles.coachLongDescription}>{coach.description_long}</p>
+
+                      <span className={styles.coachFlipHint}>Vissza</span>
+                    </div>
+                  </div>
+                </button>
               ))}
+            </div>
+
+            <div id="arak" className={styles.pricePanel}>
+              <div className={styles.priceHeader}>
+                <h2 className={styles.priceTitle}>Bérleteink</h2>
+              </div>
+
+              <div className={styles.priceCards}>
+                {prices.map((price) => (
+                  <div className={styles.priceCard} key={price.name}>
+                    <div className={styles.priceIcon}>{getPriceIcon(price.icon)}</div>
+
+                    <h3 className={styles.priceName}>{price.name}</h3>
+                    <p className={styles.priceValue}>{price.price}</p>
+                    <p className={styles.priceDescription}>{price.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.priceNote}>
+              <span>✨</span>
+              <p>
+                Időszakos bérletkedvezményeinkről és aktuális ajánlatainkról Instagram és Facebook
+                oldalainkon osztunk meg friss információkat.
+              </p>
             </div>
           </motion.div>
         </motion.section>
-
         {/* Class Types */}
         <motion.section
           id="oratipusok"
@@ -250,7 +349,6 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
-
         {/* Class schedules */}
         <motion.section
           id="orarend"
@@ -315,35 +413,6 @@ const HomePage = () => {
           </motion.div>
         </motion.section>
 
-        {/* Pricing */}
-        <motion.section
-          id="arak"
-          ref={pricesRef}
-          className={`${styles.section} ${styles.priceSection}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: pricesInView ? 1 : 0 }}
-          transition={{ duration: 1 }}
-        >
-          <motion.div
-            className={styles.priceContainer}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: pricesInView ? 1 : 0 }}
-            transition={{ duration: 1 }}
-          >
-            <h2 className={styles.sectionTitle}>Áraink</h2>
-            <div className={styles.priceCards}>
-              {prices.map((price) => (
-                <PriceCard
-                  key={price.name}
-                  name={price.name}
-                  description={price.description}
-                  price={price.price}
-                />
-              ))}
-            </div>
-          </motion.div>
-        </motion.section>
-
         {/* FAQ */}
         <motion.section
           id="faq"
@@ -370,7 +439,6 @@ const HomePage = () => {
             ))}
           </motion.div>
         </motion.section>
-
         {/* Contact Section */}
         <motion.section
           id="kapcsolat"
@@ -441,7 +509,6 @@ const HomePage = () => {
             />
           </div>
         </motion.section>
-
         {/* Footer */}
         <motion.footer
           className={styles.footer}
