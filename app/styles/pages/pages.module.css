@@ -116,59 +116,6 @@
   min-height: fit-content;
 }
 
-.scheduleContainer {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 30px;
-  width: 90%;
-}
-
-.scheduleSectionTitle {
-  align-self: center;
-  margin-bottom: 40px;
-}
-
-.scheduleInfoTitle {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-family: var(--font-catchy);
-  font-size: 32px;
-  text-decoration: underline;
-  font-style: italic;
-  font-family: var(--font-eyesome);
-}
-
-.scheduleInfoDescription {
-  font-size: 16px;
-}
-
-.scheduleLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  background-color: var(--primary-text);
-  color: var(--primary-background);
-  font-size: 20px;
-  text-transform: uppercase;
-  transition: opacity 0.2s ease;
-}
-
-.scheduleLink:hover {
-  opacity: 0.9;
-}
-
-.scheduleLink,
-.scheduleLink:visited,
-.scheduleLink:active,
-.scheduleLink:focus {
-  color: var(--primary-background);
-  text-decoration: none;
-}
-
 .faqSection {
   background-color: var(--primary-background);
   align-items: flex-start;
@@ -314,10 +261,6 @@
 
     width: 170px;
     height: 46px;
-  }
-
-  .scheduleContainer {
-    width: 80%;
   }
 
   .contactContainer {

@@ -17,6 +17,10 @@ import {
   Zap,
   Baby,
   Flower,
+  Heart,
+  XCircle,
+  Star,
+  RefreshCcw,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -31,9 +35,11 @@ import styles from './styles/pages/pages.module.css';
 import aboutStyles from './styles/pages/about.module.css';
 import coachStyles from './styles/pages/coach.module.css';
 import classesStyles from './styles/pages/classes.module.css';
+import scheduleStyles from './styles/pages/schedule.module.css';
 import { classTypes, coaches, faq, motibroLink, prices } from './data';
 import { PriceCardIcons } from './types';
 import { useCallback, useState } from 'react';
+import scheduleImg from './assets/main_background.png';
 
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -424,56 +430,143 @@ const HomePage = () => {
           transition={{ duration: 1 }}
         >
           <motion.div
-            className={styles.scheduleContainer}
+            className={scheduleStyles.scheduleContainer}
             initial={{ opacity: 0 }}
             animate={{ opacity: scheduleInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            <h2 className={`${styles.sectionTitle} ${styles.scheduleSectionTitle}`}>
-              Órarend és Foglalás
-            </h2>
-            <div className={styles.scheduleParagraph}>
-              <h5 className={styles.scheduleInfoTitle}>Bejelentkezés</h5>
-              <p className={styles.scheduleInfoDescription}>
-                A csoportos óráinkon való részvétel előzetes online bejelentkezéshez kötött. A
-                foglalást a Motibro rendszerén keresztül, egy gyors regisztrációt követően tudod
-                elvégezni.
-              </p>
-            </div>
-            <div className={styles.scheduleParagraph}>
-              <h5 className={styles.scheduleInfoTitle}>Jegy- és bérletvásárlás</h5>
-              <div className={styles.scheduleInfoDescription}>
-                Az órára történő részvételhez vásárolhatsz jegyet vagy bérletet egyszerűen a Motibro
-                fiókodban a Bérleteim menüpont alatt. Személyesen a stúdióban is van lehetőség
-                fizetésre, bankkártyával.
+            <div className={scheduleStyles.scheduleTop}>
+              <div className={scheduleStyles.scheduleIntro}>
+                <h2
+                  className={`${scheduleStyles.sectionTitle} ${scheduleStyles.scheduleSectionTitle}`}
+                >
+                  Órarend és Foglalás
+                </h2>
+
+                <h3 className={scheduleStyles.scheduleSubtitle}>
+                  Találd meg a tökéletes időpontot!
+                </h3>
+
+                <p className={scheduleStyles.scheduleIntroText}>
+                  Egyszerű foglalás, rugalmas lehetőségek és átlátható tudnivalók — minden, amire
+                  szükséged van az élménydús edzésekhez.
+                </p>
+
+                <div className={scheduleStyles.scheduleHighlights}>
+                  <div className={scheduleStyles.scheduleHighlightItem}>
+                    <CalendarDays size={36} strokeWidth={1.35} />
+                    <p>Egyszerű foglalás</p>
+                  </div>
+
+                  <div className={scheduleStyles.scheduleHighlightItem}>
+                    <Clock size={36} strokeWidth={1.35} />
+                    <p>Rugalmas lehetőségek</p>
+                  </div>
+
+                  <div className={scheduleStyles.scheduleHighlightItem}>
+                    <Heart size={36} strokeWidth={1.35} />
+                    <p>Rólad szól</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={scheduleStyles.scheduleImageWrapper}>
+                <Image
+                  src={scheduleImg}
+                  alt="Moon Lab Pilates studio"
+                  className={scheduleStyles.scheduleImage}
+                />
               </div>
             </div>
-            <div className={styles.scheduleParagraph}>
-              <h5 className={styles.scheduleInfoTitle}>Lemondás</h5>
-              <div className={styles.scheduleInfoDescription}>
-                Ha mégsem tudsz részt venni az előzetesen lefoglalt órán, kérjük, hogy legalább 24
-                órával az óra kezdete előtt töröld a foglalásodat a Motibro rendszerében. Késői
-                lemondás vagy meg nem jelenés esetén a Moon Lab Pilates Stúdió fenntartja a jogot az
-                alkalom levonására, vagy bérlet hiányában az összeg későbbi felszámítására.
+
+            <div className={scheduleStyles.scheduleCards}>
+              <div className={scheduleStyles.scheduleCard}>
+                <div className={scheduleStyles.scheduleCardIcon}>
+                  <UserRound size={28} strokeWidth={1.35} />
+                </div>
+
+                <p className={scheduleStyles.scheduleCardNumber}>01.</p>
+                <h3 className={scheduleStyles.scheduleCardTitle}>Bejelentkezés</h3>
+                <p className={scheduleStyles.scheduleCardText}>
+                  A csoportos óráinkon való részvétel előzetes online bejelentkezéshez kötött. A
+                  foglalást a Motibro rendszerén keresztül, egy gyors regisztrációt követően tudod
+                  elvégezni.
+                </p>
+              </div>
+
+              <div className={scheduleStyles.scheduleCard}>
+                <div className={scheduleStyles.scheduleCardIcon}>
+                  <Ticket size={28} strokeWidth={1.35} />
+                </div>
+
+                <p className={scheduleStyles.scheduleCardNumber}>02.</p>
+                <h3 className={scheduleStyles.scheduleCardTitle}>Jegy- és bérletvásárlás</h3>
+                <p className={scheduleStyles.scheduleCardText}>
+                  Az órára történő részvételhez vásárolhatsz jegyet vagy bérletet egyszerűen a
+                  Motibro fiókodban a Bérleteim menüpont alatt. Személyesen a stúdióban is van
+                  lehetőség fizetésre, bankkártyával.
+                </p>
+              </div>
+
+              <div className={scheduleStyles.scheduleCard}>
+                <div className={scheduleStyles.scheduleCardIcon}>
+                  <XCircle size={28} strokeWidth={1.35} />
+                </div>
+
+                <p className={scheduleStyles.scheduleCardNumber}>03.</p>
+                <h3 className={scheduleStyles.scheduleCardTitle}>Lemondás</h3>
+                <p className={scheduleStyles.scheduleCardText}>
+                  Ha mégsem tudsz részt venni az előzetesen lefoglalt órán, kérjük, hogy legalább 24
+                  órával az óra kezdete előtt töröld a foglalásodat a Motibro rendszerében. Késői
+                  lemondás vagy meg nem jelenés esetén az alkalom levonásra kerülhet.
+                </p>
+              </div>
+
+              <div className={scheduleStyles.scheduleCard}>
+                <div className={scheduleStyles.scheduleCardIcon}>
+                  <Star size={28} strokeWidth={1.35} />
+                </div>
+
+                <p className={scheduleStyles.scheduleCardNumber}>04.</p>
+                <h3 className={scheduleStyles.scheduleCardTitle}>Magánóra</h3>
+                <p className={scheduleStyles.scheduleCardText}>
+                  Egyéni óra foglalásához kérjük, vedd fel velünk a kapcsolatot! Így személyre
+                  szabottan tudunk számodra oktatót és időpontot ajánlani.
+                </p>
+              </div>
+
+              <div className={scheduleStyles.scheduleCard}>
+                <div className={scheduleStyles.scheduleCardIcon}>
+                  <RefreshCcw size={28} strokeWidth={1.35} />
+                </div>
+
+                <p className={scheduleStyles.scheduleCardNumber}>05.</p>
+                <h3 className={scheduleStyles.scheduleCardTitle}>Órák menete</h3>
+                <p className={scheduleStyles.scheduleCardText}>
+                  Az órák 50 percesek, az egyes órák között 10 perc szünetet tartunk. Kérjük, hogy
+                  az órakezdés előtt legkorábban 10 perccel érkezz meg. Az első alkalomra lehetőség
+                  szerint már átöltözve gyere, és hozz magaddal tapadós talpú zoknit és törölközőt.
+                </p>
               </div>
             </div>
-            <div className={styles.scheduleParagraph}>
-              <h5 className={styles.scheduleInfoTitle}>Magánóra</h5>
-              <p className={styles.scheduleInfoDescription}>
-                Egyéni óra foglalásához kérjük, vedd fel velünk a kapcsolatot! Így személyre
-                szabottan tudunk számodra oktatót és időpontot ajánlani.
+
+            <div className={scheduleStyles.scheduleNote}>
+              <span>✨</span>
+
+              <p>
+                Foglalj helyet kedvenc órádra pár kattintással, és élvezd a tudatos mozgás élményét!
               </p>
-            </div>
-            <div className={styles.scheduleParagraph}>
-              <h5 className={styles.scheduleInfoTitle}>Órák menete</h5>
-              <p className={styles.scheduleInfoDescription}>
-                Az órák 50 percesek, az egyes órák között 10 perc szünetet tartunk. Kérjük, hogy az
-                órakezdés előtt legkorábban 10 perccel érkezz meg. Az első alkalomra lehetőség
-                szerint már átöltözve gyere, hogy az oktató elegendő időt tudjon szánni a
-                bemutatkozásra és a reformer gép használatának ismertetésére. Kérünk, hogy hozz
-                magaddal tapadós talpú zoknit és törölközőt. Az órákon való részvétel, valamint az
-                eszközök használata saját felelősségre történik
-              </p>
+
+              <a
+                className={scheduleStyles.scheduleButton}
+                href={motibroLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Megnyitom az órarendet
+              </a>
+
+              <small>A Motibro felületén keresztül</small>
             </div>
           </motion.div>
         </motion.section>
@@ -504,6 +597,7 @@ const HomePage = () => {
             ))}
           </motion.div>
         </motion.section>
+
         {/* Contact Section */}
         <motion.section
           id="kapcsolat"
