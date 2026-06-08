@@ -13,6 +13,10 @@ import {
   Tickets,
   CalendarDays,
   Clock,
+  UserRound,
+  Zap,
+  Baby,
+  Flower,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -24,7 +28,6 @@ import contactImg from './assets/contact_image.png';
 import { Navbar } from './components';
 import { FaqCard } from './components/FaqCard';
 import styles from './styles/pages.module.css';
-import { InformationCard } from './components/InformationCard';
 import { classTypes, coaches, faq, motibroLink, prices } from './data';
 import { PriceCardIcons } from './types';
 import { useCallback, useState } from 'react';
@@ -67,6 +70,30 @@ const HomePage = () => {
         return <Ticket size={28} strokeWidth={1.35} />;
     }
   }, []);
+
+  const getClassTypeIcon = (type: string) => {
+    if (type === 'all-levels') {
+      return <UserRound size={26} strokeWidth={1.35} />;
+    }
+
+    if (type === 'cardio') {
+      return <HeartPulse size={26} strokeWidth={1.35} />;
+    }
+
+    if (type === 'power') {
+      return <Zap size={26} strokeWidth={1.35} />;
+    }
+
+    if (type === 'beginner') {
+      return <Baby size={26} strokeWidth={1.35} />;
+    }
+
+    if (type === 'stretching') {
+      return <Flower size={26} strokeWidth={1.35} />;
+    }
+
+    return <UserRound size={26} strokeWidth={1.35} />;
+  };
 
   return (
     <>
@@ -321,6 +348,7 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
+
         {/* Class Types */}
         <motion.section
           id="oratipusok"
@@ -336,19 +364,53 @@ const HomePage = () => {
             animate={{ opacity: classesInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            <h2 className={styles.sectionTitle}>Óratípusok</h2>
+            <div className={styles.classesHeader}>
+              <h2 className={styles.sectionTitle}>Óratípusok</h2>
+
+              <p className={styles.classesIntroText}>
+                Válaszd ki a céljaidhoz és energiaszintedhez leginkább illő óratípust, és élvezd a
+                tudatos mozgás minden pillanatát.
+              </p>
+            </div>
+
             <div className={styles.classesCards}>
               {classTypes.map((classType) => (
-                <InformationCard
-                  key={classType.name}
-                  name={classType.name}
-                  description={classType.description}
-                  img={classType.img}
-                />
+                <div className={styles.classTypeCard} key={classType.name}>
+                  <div className={styles.classTypeImageWrapper}>
+                    <Image
+                      src={classType.img}
+                      alt={classType.name}
+                      className={styles.classTypeImage}
+                    />
+                  </div>
+
+                  <div className={styles.classTypeIcon}>{getClassTypeIcon(classType.type)}</div>
+
+                  <div className={styles.classTypeContent}>
+                    <h3 className={styles.classTypeName}>{classType.name}</h3>
+
+                    <p className={styles.classTypeDescription}>{classType.description}</p>
+
+                    <div className={styles.classTypeTags}>
+                      {classType.tags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               ))}
+            </div>
+
+            <div className={styles.classesNote}>
+              <span>✨</span>
+              <p>
+                Óráink kis létszámúak, hogy mindenki megkapja a figyelmet és a támogatást, amire
+                szüksége van.
+              </p>
             </div>
           </motion.div>
         </motion.section>
+
         {/* Class schedules */}
         <motion.section
           id="orarend"

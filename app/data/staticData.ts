@@ -94,23 +94,45 @@ export const coaches: InformationCardProps[] = [
   },
 ];
 
-export const classTypes: InformationCardProps[] = [
+export const classTypes = [
   {
     name: 'All Levels',
+    type: 'all-levels',
     description:
       'Minden szint számára ajánlott óra, ahol kezdők és haladók együtt, saját tempójukban fejlődhetnek a reformer pilates alapjaitól a haladóbb gyakorlatokig.',
+    tags: ['Teljes test', 'Erő', 'Kontroll'],
     img: allLevelsImg,
   },
   {
     name: 'Cardio | Jumpboard',
+    type: 'cardio',
     description:
       'Dinamikus, kardió jellegű óra jumpboard használatával, amely intenzíven fejleszti az állóképességet és zsírégetést, miközben kíméli az ízületeket.',
+    tags: ['Kardió', 'Állóképesség', 'Zsírégetés'],
     img: cardioImg,
   },
   {
     name: 'Power',
+    type: 'power',
     description:
       'Erőnléti reformer pilates óra, amely a teljes test izomzatát intenzíven megdolgoztatja, fókuszban a törzs, karok és lábak erősítésével.',
+    tags: ['Erő', 'Intenzitás', 'Teljesítmény'],
+    img: powerImg,
+  },
+  {
+    name: 'Kezdő & Kismama',
+    type: 'beginner',
+    description:
+      'Kíméletes, biztonságos óra a helyes alapokért, a tudatos mozgásért és a testi-lelki egyensúly támogatásáért.',
+    tags: ['Alapok', 'Biztonság', 'Tudatosság'],
+    img: powerImg,
+  },
+  {
+    name: 'Stretching',
+    type: 'stretching',
+    description:
+      'Lassú, nyújtó és feltöltő óra a test és az elme ellazításáért, valamint a rugalmasság növeléséért.',
+    tags: ['Nyújtás', 'Mobilitás', 'Relaxáció'],
     img: powerImg,
   },
 ];
