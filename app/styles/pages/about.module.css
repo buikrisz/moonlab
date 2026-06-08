@@ -1,0 +1,540 @@
+.aboutSection {
+  background: var(--primary-background);
+
+  padding-top: 80px;
+  padding-bottom: 110px;
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 34px 48px;
+
+  width: 84%;
+  max-width: 1440px;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: calc(56% - 24px);
+}
+
+.aboutContent .sectionTitle {
+  margin-bottom: 64px;
+
+  font-family: var(--font-eyesome);
+  font-size: clamp(46px, 4vw, 72px);
+  font-weight: 400;
+  line-height: 0.9;
+  color: #6f5144;
+}
+
+.aboutEyebrow {
+  margin-bottom: 28px;
+
+  font-family: var(--font-catchy);
+  font-size: clamp(34px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #3f332e;
+}
+
+.aboutSectionText {
+  margin-bottom: 18px;
+
+  font-family: var(--font-dm-sans);
+  font-size: clamp(17px, 1.1vw, 18px);
+  line-height: 1.7;
+  color: #4f3b32;
+}
+
+.aboutSectionText:last-child {
+  margin-bottom: 0;
+}
+
+.aboutImageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc(44% - 24px);
+}
+
+.aboutImage {
+  width: 100%;
+  max-width: 500px;
+  height: 380px;
+
+  object-fit: cover;
+
+  border-radius: 50% 50% 0 0;
+
+  box-shadow:
+    0 22px 50px rgba(73, 49, 38, 0.14),
+    0 4px 16px rgba(73, 49, 38, 0.08);
+}
+
+.aboutBenefitsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  width: calc(56% - 24px);
+}
+
+.aboutBenefits {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  width: 100%;
+
+  border-top: 1px solid rgba(131, 95, 79, 0.22);
+  border-bottom: 1px solid rgba(131, 95, 79, 0.22);
+}
+
+.aboutBenefitItem {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  flex: 1;
+  min-width: 0;
+  min-height: 180px;
+  padding: 22px 10px;
+
+  text-align: center;
+}
+
+.aboutBenefitItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+
+  top: 50%;
+  right: 0;
+
+  width: 1px;
+  height: 110px;
+
+  background: rgba(131, 95, 79, 0.2);
+
+  transform: translateY(-50%);
+}
+
+.aboutBenefitIcon {
+  font-size: 34px;
+  line-height: 1;
+  color: #8a6758;
+}
+
+.aboutBenefitItem p {
+  font-family: var(--font-dm-sans);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #4f3b32;
+}
+.aboutNote {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  width: 100%;
+  min-height: 78px;
+
+  padding: 20px 34px;
+
+  border-radius: 999px;
+
+  background: rgba(131, 95, 79, 0.08);
+}
+
+.aboutNote span {
+  font-size: 28px;
+}
+
+.aboutNote p {
+  font-family: var(--font-dm-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  font-style: italic;
+  color: #4f3b32;
+}
+
+.aboutRecommendedCard {
+  display: flex;
+  flex-direction: column;
+
+  width: calc(44% - 24px);
+  padding: 34px 36px;
+
+  border: 1px solid rgba(131, 95, 79, 0.2);
+  border-radius: 16px;
+
+  background: rgba(255, 250, 246, 0.72);
+
+  box-shadow:
+    0 18px 42px rgba(73, 49, 38, 0.08),
+    0 4px 12px rgba(73, 49, 38, 0.05);
+}
+
+.aboutRecommendedTitle {
+  margin-bottom: 22px;
+
+  font-family: var(--font-catchy);
+  font-size: 34px;
+  font-weight: 400;
+  color: #3f332e;
+}
+
+.aboutRecommendedList {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aboutRecommendedList li {
+  position: relative;
+
+  padding-left: 30px;
+
+  font-family: var(--font-dm-sans);
+  font-size: 13px;
+  line-height: 1.2rem;
+  color: #4f3b32;
+}
+
+.aboutRecommendedList li::before {
+  content: '✓';
+
+  position: absolute;
+  left: 0;
+  top: 1px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 18px;
+  height: 18px;
+
+  border: 1px solid rgba(131, 95, 79, 0.5);
+  border-radius: 999px;
+
+  font-size: 11px;
+  color: #7a5849;
+}
+
+.aboutRecommendedButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 190px;
+  height: 46px;
+
+  margin-top: 28px;
+
+  border-radius: 999px;
+
+  background-color: #7a5849;
+  color: var(--primary-background);
+
+  font-family: var(--font-dm-sans);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.aboutRecommendedButton:hover {
+  background-color: #66483c;
+}
+
+.aboutRecommendedButton,
+.aboutRecommendedButton:visited,
+.aboutRecommendedButton:active,
+.aboutRecommendedButton:focus {
+  color: var(--primary-background);
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .aboutSection {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .aboutContainer {
+    width: min(86%, 900px);
+    gap: 42px;
+  }
+
+  .aboutContent,
+  .aboutImageWrapper,
+  .aboutBenefitsWrapper,
+  .aboutRecommendedCard {
+    width: 100%;
+  }
+
+  .aboutContent {
+    align-items: flex-start;
+  }
+
+  .aboutContent .sectionTitle {
+    margin-bottom: 42px;
+    font-size: clamp(52px, 7vw, 72px);
+  }
+
+  .aboutEyebrow {
+    font-size: clamp(34px, 4vw, 44px);
+  }
+
+  .aboutImageWrapper {
+    justify-content: center;
+  }
+
+  .aboutImage {
+    width: min(100%, 620px);
+    max-width: 620px;
+    height: 420px;
+  }
+
+  .aboutBenefitsWrapper {
+    gap: 36px;
+  }
+
+  .aboutBenefits {
+    width: 100%;
+  }
+
+  .aboutRecommendedCard {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .aboutSectionText {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .aboutSection {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .aboutContainer {
+    width: 88%;
+    max-width: 720px;
+    gap: 38px;
+  }
+
+  .aboutContent .sectionTitle {
+    margin-bottom: 32px;
+    font-size: clamp(46px, 8vw, 64px);
+  }
+
+  .aboutEyebrow {
+    margin-bottom: 24px;
+    font-size: clamp(32px, 5vw, 40px);
+  }
+
+  .aboutSectionText {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .aboutImage {
+    width: min(100%, 540px);
+    height: 360px;
+    border-radius: 180px 180px 0 0;
+  }
+
+  .aboutBenefitsWrapper {
+    align-items: center;
+    width: 100%;
+    gap: 34px;
+  }
+
+  .aboutBenefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 100%;
+    overflow: visible;
+
+    border-top: 1px solid rgba(131, 95, 79, 0.22);
+    border-bottom: none;
+  }
+
+  .aboutBenefitItem {
+    flex: 0 0 50%;
+    min-height: 142px;
+    padding: 22px 12px;
+
+    border-bottom: 1px solid rgba(131, 95, 79, 0.18);
+  }
+
+  .aboutBenefitItem:not(:last-child)::after {
+    display: none;
+  }
+
+  .aboutBenefitItem:nth-child(odd)::after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    top: 50%;
+    right: 0;
+
+    width: 1px;
+    height: 86px;
+
+    background: rgba(131, 95, 79, 0.2);
+
+    transform: translateY(-50%);
+  }
+
+  .aboutBenefitItem:nth-child(2)::after,
+  .aboutBenefitItem:nth-child(4)::after,
+  .aboutBenefitItem:nth-child(5)::after {
+    display: none;
+  }
+
+  .aboutBenefitItem:nth-child(5) {
+    flex: 0 0 100%;
+  }
+
+  .aboutBenefitIcon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .aboutBenefitItem p {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .aboutNote {
+    width: 100%;
+    max-width: 620px;
+    border-radius: 34px;
+  }
+
+  .aboutRecommendedCard {
+    width: 100%;
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutSection {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .aboutContainer {
+    width: 88%;
+    max-width: 420px;
+    gap: 32px;
+  }
+
+  .aboutContent .sectionTitle {
+    margin-bottom: 26px;
+    font-size: 44px;
+    line-height: 0.95;
+  }
+
+  .aboutEyebrow {
+    margin-bottom: 20px;
+    font-size: 31px;
+    line-height: 1.08;
+  }
+
+  .aboutSectionText {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .aboutImage {
+    width: 100%;
+    height: 280px;
+    border-radius: 140px 140px 0 0;
+  }
+
+  .aboutBenefitsWrapper {
+    gap: 30px;
+  }
+
+  .aboutBenefitItem {
+    min-height: 132px;
+    padding: 20px 10px;
+  }
+
+  .aboutBenefitIcon svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .aboutBenefitItem p {
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  .aboutNote {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    padding: 24px 22px;
+    border-radius: 28px;
+  }
+
+  .aboutNote span {
+    font-size: 24px;
+  }
+
+  .aboutNote p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .aboutRecommendedCard {
+    padding: 28px 22px;
+    border-radius: 20px;
+  }
+
+  .aboutRecommendedTitle {
+    font-size: 30px;
+  }
+
+  .aboutRecommendedList li {
+    font-size: 13px;
+    line-height: 1.35rem;
+  }
+
+  .aboutRecommendedButton {
+    width: 100%;
+  }
+}

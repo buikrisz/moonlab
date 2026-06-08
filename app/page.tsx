@@ -27,7 +27,10 @@ import aboutImg from './assets/welcome_image.jpg';
 import contactImg from './assets/contact_image.png';
 import { Navbar } from './components';
 import { FaqCard } from './components/FaqCard';
-import styles from './styles/pages.module.css';
+import styles from './styles/pages/pages.module.css';
+import aboutStyles from './styles/pages/about.module.css';
+import coachStyles from './styles/pages/coach.module.css';
+import classesStyles from './styles/pages/classes.module.css';
 import { classTypes, coaches, faq, motibroLink, prices } from './data';
 import { PriceCardIcons } from './types';
 import { useCallback, useState } from 'react';
@@ -130,43 +133,48 @@ const HomePage = () => {
             </motion.a>
           </motion.div>
         </motion.section>
+
         {/* About Reformer Pilates Section */}
         <motion.section
           id="pilates"
           ref={aboutRef}
-          className={`${styles.section} ${styles.aboutSection}`}
+          className={`${styles.section} ${aboutStyles.aboutSection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: aboutInView ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
           <motion.div
-            className={styles.aboutContainer}
+            className={aboutStyles.aboutContainer}
             initial={{ opacity: 0 }}
             animate={{ opacity: aboutInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            <div className={styles.aboutContent}>
+            <div className={aboutStyles.aboutContent}>
               <h2 className={styles.sectionTitle}>Reformer Pilates</h2>
-              <h3 className={styles.aboutEyebrow}>Mi az a Reformer Pilates?</h3>
+              <h3 className={aboutStyles.aboutEyebrow}>Mi az a Reformer Pilates?</h3>
 
-              <p className={styles.aboutSectionText}>
+              <p className={aboutStyles.aboutSectionText}>
                 A Reformer Pilates egy alacsony hatású, mégis rendkívül hatékony edzésmódszer, amely
                 egy speciális gépen, a reformeren végzett mozgássorokkal erősíti, nyújtja és
                 formálja a testet.
               </p>
-              <p className={styles.aboutSectionText}>
+              <p className={aboutStyles.aboutSectionText}>
                 Segít javítani a tartást, növeli a rugalmasságot, fejleszti a testtudatot, és
                 hozzájárul a mindennapi mozgásminőség javításához.
               </p>
             </div>
 
-            <div className={styles.aboutImageWrapper}>
-              <Image src={aboutImg} alt="Inside the Pilates studio" className={styles.aboutImage} />
+            <div className={aboutStyles.aboutImageWrapper}>
+              <Image
+                src={aboutImg}
+                alt="Inside the Pilates studio"
+                className={aboutStyles.aboutImage}
+              />
             </div>
 
-            <div className={styles.aboutBenefitsWrapper}>
-              <div className={styles.aboutBenefits}>
-                <div className={styles.aboutBenefitItem}>
+            <div className={aboutStyles.aboutBenefitsWrapper}>
+              <div className={aboutStyles.aboutBenefits}>
+                <div className={aboutStyles.aboutBenefitItem}>
                   <Dumbbell size={38} strokeWidth={1.4} />
                   <p>
                     Erősítés
@@ -175,7 +183,7 @@ const HomePage = () => {
                   </p>
                 </div>
 
-                <div className={styles.aboutBenefitItem}>
+                <div className={aboutStyles.aboutBenefitItem}>
                   <ShieldCheck size={38} strokeWidth={1.4} />
                   <p>
                     Ízületkímélő
@@ -184,7 +192,7 @@ const HomePage = () => {
                   </p>
                 </div>
 
-                <div className={styles.aboutBenefitItem}>
+                <div className={aboutStyles.aboutBenefitItem}>
                   <Scale size={38} strokeWidth={1.4} />
                   <p>
                     Testtudatosság
@@ -193,7 +201,7 @@ const HomePage = () => {
                   </p>
                 </div>
 
-                <div className={styles.aboutBenefitItem}>
+                <div className={aboutStyles.aboutBenefitItem}>
                   <BicepsFlexed size={38} strokeWidth={1.4} />
                   <p>
                     Célzott
@@ -202,7 +210,7 @@ const HomePage = () => {
                   </p>
                 </div>
 
-                <div className={styles.aboutBenefitItem}>
+                <div className={aboutStyles.aboutBenefitItem}>
                   <HeartPulse size={38} strokeWidth={1.4} />
                   <p>
                     Rehabilitáció
@@ -211,7 +219,7 @@ const HomePage = () => {
                   </p>
                 </div>
               </div>
-              <div className={styles.aboutNote}>
+              <div className={aboutStyles.aboutNote}>
                 <span>✨</span>
                 <p>
                   Stúdiónkban prémium kategóriás Reformer gépekkel dolgozunk, amelyek maximális
@@ -220,10 +228,10 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className={styles.aboutRecommendedCard}>
-              <h3 className={styles.aboutRecommendedTitle}>Kinek ajánlott?</h3>
+            <div className={aboutStyles.aboutRecommendedCard}>
+              <h3 className={aboutStyles.aboutRecommendedTitle}>Kinek ajánlott?</h3>
 
-              <ul className={styles.aboutRecommendedList}>
+              <ul className={aboutStyles.aboutRecommendedList}>
                 <li>
                   Teljesen kezdőknek, akik biztonságos, vezetett módon szeretnék elkezdeni az edzést
                 </li>
@@ -233,7 +241,7 @@ const HomePage = () => {
                 <li>Várandós kismamáknak speciális program keretében</li>
               </ul>
 
-              <a className={styles.aboutRecommendedButton} href="#oratipusok">
+              <a className={aboutStyles.aboutRecommendedButton} href="#oratipusok">
                 Tudj meg többet
               </a>
             </div>
@@ -244,46 +252,46 @@ const HomePage = () => {
         <motion.section
           id="oktatok"
           ref={coachRef}
-          className={`${styles.section} ${styles.coachPriceSection}`}
+          className={`${styles.section} ${coachStyles.coachPriceSection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: coachInView ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
           <motion.div
-            className={styles.coachPriceContainer}
+            className={coachStyles.coachPriceContainer}
             initial={{ opacity: 0 }}
             animate={{ opacity: coachInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            <div className={styles.coachPriceIntro}>
-              <p className={styles.coachPriceEyebrow}>Szakértelem, amire számíthatsz</p>
-              <h2 className={styles.sectionTitle}>Oktatóink & Áraink</h2>
+            <div className={coachStyles.coachPriceIntro}>
+              <p className={coachStyles.coachPriceEyebrow}>Szakértelem, amire számíthatsz</p>
+              <h2 className={coachStyles.sectionTitle}>Oktatóink & Áraink</h2>
 
-              <p className={styles.coachPriceText}>
+              <p className={coachStyles.coachPriceText}>
                 Nálunk a mozgás több, mint edzés — tudatos figyelem, szakértelem és törődés. Ismerd
                 meg oktatóinkat és válaszd ki az igényeidhez leginkább illő bérletet.
               </p>
 
-              <div className={styles.coachPriceHighlights}>
-                <div className={styles.coachPriceHighlight}>
+              <div className={coachStyles.coachPriceHighlights}>
+                <div className={coachStyles.coachPriceHighlight}>
                   <span>✦</span>
                   <p>Kis létszámú, személyre szabott órák</p>
                 </div>
 
-                <div className={styles.coachPriceHighlight}>
+                <div className={coachStyles.coachPriceHighlight}>
                   <span>♡</span>
                   <p>Támogató közeg, pozitív energiákkal</p>
                 </div>
               </div>
             </div>
 
-            <div className={styles.coachCards}>
+            <div className={coachStyles.coachCards}>
               {coaches.map((coach) => (
                 <button
                   type="button"
                   key={coach.name}
-                  className={`${styles.coachCard} ${
-                    flippedCoach === coach.name ? styles.flipped : ''
+                  className={`${coachStyles.coachCard} ${
+                    flippedCoach === coach.name ? coachStyles.flipped : ''
                   }`}
                   onClick={() =>
                     setFlippedCoach((currentCoach) =>
@@ -292,47 +300,47 @@ const HomePage = () => {
                   }
                   aria-label={`${coach.name} bemutatkozás megnyitása`}
                 >
-                  <div className={styles.coachCardInner}>
-                    <div className={styles.coachCardFront}>
-                      <Image src={coach.img} alt={coach.name} className={styles.coachImage} />
+                  <div className={coachStyles.coachCardInner}>
+                    <div className={coachStyles.coachCardFront}>
+                      <Image src={coach.img} alt={coach.name} className={coachStyles.coachImage} />
 
-                      <div className={styles.coachCardContent}>
-                        <h3 className={styles.coachName}>{coach.name}</h3>
-                        <p className={styles.coachDescription}>{coach.description}</p>
+                      <div className={coachStyles.coachCardContent}>
+                        <h3 className={coachStyles.coachName}>{coach.name}</h3>
+                        <p className={coachStyles.coachDescription}>{coach.description}</p>
                       </div>
                     </div>
 
-                    <div className={styles.coachCardBack}>
-                      <h3 className={styles.coachBackName}>{coach.name}</h3>
+                    <div className={coachStyles.coachCardBack}>
+                      <h3 className={coachStyles.coachBackName}>{coach.name}</h3>
 
-                      <p className={styles.coachLongDescription}>{coach.description_long}</p>
+                      <p className={coachStyles.coachLongDescription}>{coach.description_long}</p>
 
-                      <span className={styles.coachFlipHint}>Vissza</span>
+                      <span className={coachStyles.coachFlipHint}>Vissza</span>
                     </div>
                   </div>
                 </button>
               ))}
             </div>
 
-            <div id="arak" className={styles.pricePanel}>
-              <div className={styles.priceHeader}>
-                <h2 className={styles.priceTitle}>Bérleteink</h2>
+            <div id="arak" className={coachStyles.pricePanel}>
+              <div className={coachStyles.priceHeader}>
+                <h2 className={coachStyles.priceTitle}>Bérleteink</h2>
               </div>
 
-              <div className={styles.priceCards}>
+              <div className={coachStyles.priceCards}>
                 {prices.map((price) => (
-                  <div className={styles.priceCard} key={price.name}>
-                    <div className={styles.priceIcon}>{getPriceIcon(price.icon)}</div>
+                  <div className={coachStyles.priceCard} key={price.name}>
+                    <div className={coachStyles.priceIcon}>{getPriceIcon(price.icon)}</div>
 
-                    <h3 className={styles.priceName}>{price.name}</h3>
-                    <p className={styles.priceValue}>{price.price}</p>
-                    <p className={styles.priceDescription}>{price.description}</p>
+                    <h3 className={coachStyles.priceName}>{price.name}</h3>
+                    <p className={coachStyles.priceValue}>{price.price}</p>
+                    <p className={coachStyles.priceDescription}>{price.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className={styles.priceNote}>
+            <div className={coachStyles.priceNote}>
               <span>✨</span>
               <p>
                 Időszakos bérletkedvezményeinkről és aktuális ajánlatainkról Instagram és Facebook
@@ -346,45 +354,47 @@ const HomePage = () => {
         <motion.section
           id="oratipusok"
           ref={classesRef}
-          className={`${styles.section} ${styles.classesSection}`}
+          className={`${styles.section} ${classesStyles.classesSection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: classesInView ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
           <motion.div
-            className={styles.classesContainer}
+            className={classesStyles.classesContainer}
             initial={{ opacity: 0 }}
             animate={{ opacity: classesInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            <div className={styles.classesHeader}>
-              <h2 className={styles.sectionTitle}>Óratípusok</h2>
+            <div className={classesStyles.classesHeader}>
+              <h2 className={classesStyles.sectionTitle}>Óratípusok</h2>
 
-              <p className={styles.classesIntroText}>
+              <p className={classesStyles.classesIntroText}>
                 Válaszd ki a céljaidhoz és energiaszintedhez leginkább illő óratípust, és élvezd a
                 tudatos mozgás minden pillanatát.
               </p>
             </div>
 
-            <div className={styles.classesCards}>
+            <div className={classesStyles.classesCards}>
               {classTypes.map((classType) => (
-                <div className={styles.classTypeCard} key={classType.name}>
-                  <div className={styles.classTypeImageWrapper}>
+                <div className={classesStyles.classTypeCard} key={classType.name}>
+                  <div className={classesStyles.classTypeImageWrapper}>
                     <Image
                       src={classType.img}
                       alt={classType.name}
-                      className={styles.classTypeImage}
+                      className={classesStyles.classTypeImage}
                     />
                   </div>
 
-                  <div className={styles.classTypeIcon}>{getClassTypeIcon(classType.type)}</div>
+                  <div className={classesStyles.classTypeIcon}>
+                    {getClassTypeIcon(classType.type)}
+                  </div>
 
-                  <div className={styles.classTypeContent}>
-                    <h3 className={styles.classTypeName}>{classType.name}</h3>
+                  <div className={classesStyles.classTypeContent}>
+                    <h3 className={classesStyles.classTypeName}>{classType.name}</h3>
 
-                    <p className={styles.classTypeDescription}>{classType.description}</p>
+                    <p className={classesStyles.classTypeDescription}>{classType.description}</p>
 
-                    <div className={styles.classTypeTags}>
+                    <div className={classesStyles.classTypeTags}>
                       {classType.tags.map((tag) => (
                         <span key={tag}>{tag}</span>
                       ))}
@@ -394,7 +404,7 @@ const HomePage = () => {
               ))}
             </div>
 
-            <div className={styles.classesNote}>
+            <div className={classesStyles.classesNote}>
               <span>✨</span>
               <p>
                 Óráink kis létszámúak, hogy mindenki megkapja a figyelmet és a támogatást, amire
