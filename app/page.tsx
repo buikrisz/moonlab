@@ -71,29 +71,22 @@ const HomePage = () => {
     }
   }, []);
 
-  const getClassTypeIcon = (type: string) => {
-    if (type === 'all-levels') {
-      return <UserRound size={26} strokeWidth={1.35} />;
+  const getClassTypeIcon = useCallback((type: string) => {
+    switch (type) {
+      case 'all-levels':
+        return <UserRound size={26} strokeWidth={1.35} />;
+      case 'cardio':
+        return <HeartPulse size={26} strokeWidth={1.35} />;
+      case 'power':
+        return <Zap size={26} strokeWidth={1.35} />;
+      case 'beginner':
+        return <Baby size={26} strokeWidth={1.35} />;
+      case 'stretching':
+        return <Flower size={26} strokeWidth={1.35} />;
+      default:
+        return <UserRound size={26} strokeWidth={1.35} />;
     }
-
-    if (type === 'cardio') {
-      return <HeartPulse size={26} strokeWidth={1.35} />;
-    }
-
-    if (type === 'power') {
-      return <Zap size={26} strokeWidth={1.35} />;
-    }
-
-    if (type === 'beginner') {
-      return <Baby size={26} strokeWidth={1.35} />;
-    }
-
-    if (type === 'stretching') {
-      return <Flower size={26} strokeWidth={1.35} />;
-    }
-
-    return <UserRound size={26} strokeWidth={1.35} />;
-  };
+  }, []);
 
   return (
     <>
