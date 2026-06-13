@@ -21,6 +21,10 @@ import {
   XCircle,
   Star,
   RefreshCcw,
+  Mail,
+  Sparkles,
+  Plus,
+  Minus,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -30,16 +34,18 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import aboutImg from './assets/welcome_image.jpg';
 import contactImg from './assets/contact_image.png';
 import { Navbar } from './components';
-import { FaqCard } from './components/FaqCard';
 import styles from './styles/pages/pages.module.css';
 import aboutStyles from './styles/pages/about.module.css';
 import coachStyles from './styles/pages/coach.module.css';
 import classesStyles from './styles/pages/classes.module.css';
 import scheduleStyles from './styles/pages/schedule.module.css';
+import faqStyles from './styles/pages/faq.module.css';
+import contactStyles from './styles/pages/contact.module.css';
 import { classTypes, coaches, faq, motibroLink, prices } from './data';
 import { PriceCardIcons } from './types';
 import { useCallback, useState } from 'react';
 import scheduleImg from './assets/main_background.png';
+import faqImg from './assets/welcome_image_2.png';
 
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -62,6 +68,7 @@ const HomePage = () => {
   });
 
   const [flippedCoach, setFlippedCoach] = useState<string | null>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const getPriceIcon = useCallback((icon: PriceCardIcons) => {
     switch (icon) {
@@ -139,7 +146,6 @@ const HomePage = () => {
             </motion.a>
           </motion.div>
         </motion.section>
-
         {/* About Reformer Pilates Section */}
         <motion.section
           id="pilates"
@@ -253,7 +259,6 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
-
         {/* Coaches and Pricing */}
         <motion.section
           id="oktatok"
@@ -355,7 +360,6 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
-
         {/* Class Types */}
         <motion.section
           id="oratipusok"
@@ -419,7 +423,6 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
-
         {/* Class schedules */}
         <motion.section
           id="orarend"
@@ -570,7 +573,6 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
-
         {/* FAQ */}
         <motion.section
           id="faq"
@@ -581,20 +583,132 @@ const HomePage = () => {
           transition={{ duration: 1 }}
         >
           <motion.div
-            className={styles.faqContainer}
+            className={faqStyles.faqContainer}
             initial={{ opacity: 0 }}
             animate={{ opacity: faqInView ? 1 : 0 }}
             transition={{ duration: 1 }}
           >
-            <h2 className={styles.sectionTitle}>Gyakori Kérdések</h2>
-            {faq.map((item) => (
-              <FaqCard
-                key={item.answer}
-                question={item.question}
-                answer={item.answer}
-                link={item.link}
-              />
-            ))}
+            <div className={faqStyles.faqHeader}>
+              <p className={faqStyles.faqEyebrow}>Moon Lab Pilates</p>
+              <h2 className={faqStyles.sectionTitle}>Gyakori kérdések</h2>
+
+              <div className={faqStyles.faqTitleDivider}>
+                <span />
+              </div>
+            </div>
+
+            <div className={faqStyles.faqContent}>
+              <div className={faqStyles.faqInfoCard}>
+                <div className={faqStyles.faqInfoIcon}>
+                  <Sparkles size={28} strokeWidth={1.35} />
+                </div>
+
+                <h3 className={faqStyles.faqInfoTitle}>Minden, amit tudni szeretnél óráinkról</h3>
+
+                <div className={faqStyles.faqInfoDivider}>
+                  <span />
+                </div>
+
+                <p className={faqStyles.faqInfoText}>
+                  Összegyűjtöttünk néhány gyakran felmerülő kérdést, hogy gyorsan és egyszerűen
+                  megtaláld a számodra fontos információkat.
+                </p>
+
+                <Image
+                  src={faqImg}
+                  alt="Moon Lab Pilates studio"
+                  className={faqStyles.faqInfoImage}
+                />
+
+                <p className={faqStyles.faqInfoSignature}>Mozgás. Tudatosság. Egyensúly.</p>
+              </div>
+
+              <div className={faqStyles.faqList}>
+                {faq.map((item, index) => {
+                  const isOpen = openFaqIndex === index;
+
+                  return (
+                    <button
+                      type="button"
+                      key={item.question}
+                      className={`${faqStyles.faqItem} ${isOpen ? faqStyles.open : ''}`}
+                      onClick={() =>
+                        setOpenFaqIndex((currentIndex) => (currentIndex === index ? -1 : index))
+                      }
+                      aria-expanded={isOpen}
+                    >
+                      <div className={faqStyles.faqQuestionRow}>
+                        <span className={faqStyles.faqNumber}>
+                          {String(index + 1).padStart(2, '0')}.
+                        </span>
+
+                        <h3 className={faqStyles.faqQuestion}>{item.question}</h3>
+
+                        <span className={faqStyles.faqToggleIcon}>
+                          {isOpen ? (
+                            <Minus size={20} strokeWidth={1.5} />
+                          ) : (
+                            <Plus size={20} strokeWidth={1.5} />
+                          )}
+                        </span>
+                      </div>
+
+                      {isOpen && (
+                        <div className={faqStyles.faqAnswerWrapper}>
+                          <p className={faqStyles.faqAnswer}>{item.answer}</p>
+
+                          {item.link && (
+                            <a
+                              className={faqStyles.faqAnswerLink}
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(event) => event.stopPropagation()}
+                            >
+                              Foglalási rendszer megnyitása
+                            </a>
+                          )}
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className={faqStyles.faqContactNote}>
+              <div className={faqStyles.faqContactIntro}>
+                <span>
+                  <Heart size={28} strokeWidth={1.35} />
+                </span>
+
+                <div>
+                  <h3>Nem találtad meg a választ?</h3>
+                  <p>Írj nekünk bizalommal, szívesen segítünk!</p>
+                </div>
+              </div>
+
+              <div className={faqStyles.faqContactLinks}>
+                <a href="mailto:hello@moonlabpilates.hu">
+                  <Mail size={18} strokeWidth={1.5} />
+                  hello@moonlabpilates.hu
+                </a>
+
+                <a
+                  href="https://www.instagram.com/moonlabpilates"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Mail size={18} strokeWidth={1.5} />
+                  @moonlabpilates
+                </a>
+              </div>
+
+              <a className={faqStyles.faqContactButton} href="#kapcsolat">
+                Kapcsolatfelvétel
+                <Sparkles size={18} strokeWidth={1.35} />
+              </a>
+            </div>
           </motion.div>
         </motion.section>
 
@@ -602,75 +716,150 @@ const HomePage = () => {
         <motion.section
           id="kapcsolat"
           ref={contactRef}
-          className={`${styles.section} ${styles.contactSection}`}
+          className={`${styles.section} ${contactStyles.contactSection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: contactInView ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
-          <div className={styles.contactContainer}>
-            <div className={styles.contactInfo}>
-              <h2 className={`${styles.sectionTitle} ${styles.contactSectionTitle}`}>Kapcsolat</h2>
-              <div className={styles.contactDetail}>
-                {IoLocationSharp({})}
+          <motion.div
+            className={contactStyles.contactContainer}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: contactInView ? 1 : 0 }}
+            transition={{ duration: 1 }}
+          >
+            <div className={contactStyles.contactInfo}>
+              <h2 className={`${contactStyles.sectionTitle} ${contactStyles.contactSectionTitle}`}>
+                Kapcsolat
+              </h2>
+
+              <h3 className={contactStyles.contactSubtitle}>Találkozzunk a stúdióban</h3>
+
+              <p className={contactStyles.contactIntroText}>
+                Kérdésed van, vagy szeretnél időpontot egyeztetni? Vedd fel velünk a kapcsolatot,
+                örömmel segítünk!
+              </p>
+
+              <div className={contactStyles.contactDivider}>
+                <span />
+              </div>
+
+              <div className={contactStyles.contactDetails}>
+                <div className={contactStyles.contactDetail}>
+                  <span className={contactStyles.contactDetailIcon}>{IoLocationSharp({})}</span>
+                  <Link
+                    href="https://www.google.com/search?q=1152+Budapest%2C+Öregfalusi+utca+18"
+                    className={contactStyles.contactDetailText}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    1152 Budapest, Öregfalusi utca 18.
+                  </Link>
+                </div>
+
+                <div className={contactStyles.contactDetail}>
+                  <span className={contactStyles.contactDetailIcon}>{MdPhoneIphone({})}</span>
+                  <Link href="tel:+36309014943" className={contactStyles.contactDetailText}>
+                    +36 30 901 4943
+                  </Link>
+                </div>
+
+                <div className={contactStyles.contactDetail}>
+                  <span className={contactStyles.contactDetailIcon}>{MdEmail({})}</span>
+                  <Link
+                    href="mailto:moonlabpilates@gmail.com"
+                    className={contactStyles.contactDetailText}
+                  >
+                    moonlabpilates@gmail.com
+                  </Link>
+                </div>
+              </div>
+
+              <div className={contactStyles.contactDivider}>
+                <span />
+              </div>
+
+              <div className={contactStyles.contactBottom}>
+                <div className={contactStyles.contactSocialBlock}>
+                  <p>Kövess minket</p>
+
+                  <div className={contactStyles.contactSocialLinks}>
+                    <Link
+                      href="https://www.facebook.com/profile.php?id=61575623570319"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                    >
+                      {FaFacebook({})}
+                    </Link>
+
+                    <Link
+                      href="https://www.instagram.com/moonlab_pilates/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                    >
+                      {FaInstagram({})}
+                    </Link>
+                  </div>
+                </div>
+
+                <div className={contactStyles.contactLinks}>
+                  <Link href="#" className={contactStyles.contactLink}>
+                    ÁSZF
+                  </Link>
+                  <Link href="#" className={contactStyles.contactLink}>
+                    Felelősségi nyilatkozat
+                  </Link>
+                  <Link href="/adatkezelesi" className={contactStyles.contactLink}>
+                    Adatkezelési tájékoztató
+                  </Link>
+                </div>
+              </div>
+
+              <div className={contactStyles.contactActions}>
                 <Link
-                  href="https://www.google.com/search?q=1152+Budapest%2C+Öregfalusi+utca+18"
-                  className={styles.contactDetailText}
+                  href="mailto:moonlabpilates@gmail.com"
+                  className={contactStyles.contactPrimaryButton}
+                >
+                  Kapcsolatfelvétel
+                </Link>
+
+                <Link
+                  href="https://www.google.com/maps/search/?api=1&query=1152%20Budapest%2C%20%C3%96regfalusi%20utca%2018"
+                  className={contactStyles.contactSecondaryButton}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  1152 Budapest, Öregfalusi utca 18.
-                </Link>
-              </div>
-              <div className={styles.contactDetail}>
-                {MdPhoneIphone({})}
-                <Link href="tel:+36309014943" className={styles.contactDetailText}>
-                  +36 30 901 4943
-                </Link>
-              </div>
-              <div className={styles.contactDetail}>
-                {MdEmail({})}
-                <Link href="mailto:moonlabpilates@gmail.com" className={styles.contactDetailText}>
-                  moonlabpilates@gmail.com
-                </Link>
-              </div>
-              <div className={styles.contactDetail}>
-                <Link
-                  href="https://www.facebook.com/profile.php?id=61575623570319"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {FaFacebook({ className: styles.contactSocialIcon })}
-                </Link>
-                <Link
-                  href="https://www.instagram.com/moonlab_pilates/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {FaInstagram({ className: styles.contactSocialIcon })}
-                </Link>
-              </div>
-              <div className={styles.contactLinks}>
-                <Link href="#" className={styles.contactLink}>
-                  ÁSZF
-                </Link>
-                <Link href="#" className={styles.contactLink}>
-                  Felelősségi nyilatkozat
-                </Link>
-                <Link href="/adatkezelesi" className={styles.contactLink}>
-                  Adatkezelési tájékoztató
+                  {IoLocationSharp({})}
+                  Útvonaltervezés
                 </Link>
               </div>
             </div>
-            <Image
-              src={contactImg}
-              alt="Inside the Pilates studio"
-              className={styles.contactImage}
-            />
-          </div>
+
+            <div className={contactStyles.contactImageWrapper}>
+              <Image
+                src={contactImg}
+                alt="Inside the Pilates studio"
+                className={contactStyles.contactImage}
+              />
+
+              <div className={contactStyles.contactImageNote}>
+                <span>♡</span>
+                <h3>Itt vagyunk érted</h3>
+                <p>Írj nekünk, hívj fel bennünket, vagy gyere el hozzánk személyesen!</p>
+              </div>
+            </div>
+
+            <div className={contactStyles.contactNote}>
+              <span>✨</span>
+              <p>Várunk szeretettel a Moon Lab Pilates stúdióban — ahol a mozgás élménnyé válik.</p>
+            </div>
+          </motion.div>
         </motion.section>
+
         {/* Footer */}
         <motion.footer
-          className={styles.footer}
+          className={contactStyles.footer}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
