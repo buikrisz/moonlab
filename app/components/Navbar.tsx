@@ -56,18 +56,23 @@ export const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#oratipusok" onClick={handleCloseMenu}>
-              Órák
-            </a>
-          </li>
-          <li>
             <a href="#arak" onClick={handleCloseMenu}>
               Áraink
             </a>
           </li>
           <li>
+            <a href="#oratipusok" onClick={handleCloseMenu}>
+              Óratípusok
+            </a>
+          </li>
+          <li>
             <a href="#faq" onClick={handleCloseMenu}>
               GYIK
+            </a>
+          </li>
+          <li>
+            <a href="#partnereink" onClick={handleCloseMenu}>
+              Partnerek
             </a>
           </li>
           <li>
@@ -95,13 +100,16 @@ export const Navbar = () => {
             <a href="#oktatok">Oktatók</a>
           </li>
           <li>
-            <a href="#oratipusok">Órák</a>
-          </li>
-          <li>
             <a href="#arak">Áraink</a>
           </li>
           <li>
+            <a href="#oratipusok">Óratípusok</a>
+          </li>
+          <li>
             <a href="#faq">GYIK</a>
+          </li>
+          <li>
+            <a href="#partnereink">Partnerek</a>
           </li>
           <li>
             <a href="#kapcsolat">Kapcsolat</a>
