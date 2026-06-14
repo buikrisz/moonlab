@@ -819,7 +819,7 @@ const HomePage = () => {
                 rel="noopener noreferrer"
                 className={reviewsStyles.reviewButton}
               >
-                <FaGoogle size={22} strokeWidth={1.5} />
+                {FaGoogle({ size: 22 })}
                 Értékelj minket Google-on
                 <ExternalLink size={18} strokeWidth={1.5} />
               </a>
@@ -830,7 +830,7 @@ const HomePage = () => {
                 rel="noopener noreferrer"
                 className={reviewsStyles.reviewButton}
               >
-                <FaFacebook size={22} strokeWidth={1.5} />
+                {FaFacebook({ size: 22 })}
                 Írj véleményt Facebookon
                 <ExternalLink size={18} strokeWidth={1.5} />
               </a>
