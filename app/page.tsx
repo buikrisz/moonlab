@@ -25,12 +25,16 @@ import {
   Sparkles,
   Plus,
   Minus,
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Leaf,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { IoLocationSharp } from 'react-icons/io5';
 import { MdPhoneIphone, MdEmail } from 'react-icons/md';
-import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa';
 import aboutImg from './assets/welcome_image.jpg';
 import contactImg from './assets/contact_image.png';
 import { Navbar } from './components';
@@ -40,10 +44,12 @@ import coachStyles from './styles/pages/coach.module.css';
 import classesStyles from './styles/pages/classes.module.css';
 import scheduleStyles from './styles/pages/schedule.module.css';
 import faqStyles from './styles/pages/faq.module.css';
+import reviewsStyles from './styles/pages/reviews.module.css';
+import partnersStyles from './styles/pages/partners.module.css';
 import contactStyles from './styles/pages/contact.module.css';
-import { classTypes, coaches, faq, motibroLink, prices } from './data';
+import { classTypes, coaches, faq, motibroLink, partners, prices, reviews } from './data';
 import { PriceCardIcons } from './types';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useRef } from 'react';
 import scheduleImg from './assets/main_background.png';
 import faqImg from './assets/welcome_image_2.png';
 
@@ -69,6 +75,19 @@ const HomePage = () => {
 
   const [flippedCoach, setFlippedCoach] = useState<string | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+
+  const reviewsTrackRef = useRef<HTMLDivElement>(null);
+
+  const handleReviewScroll = useCallback((direction: 'left' | 'right') => {
+    if (!reviewsTrackRef.current) {
+      return;
+    }
+
+    reviewsTrackRef.current.scrollBy({
+      left: direction === 'right' ? 390 : -390,
+      behavior: 'smooth',
+    });
+  }, []);
 
   const getPriceIcon = useCallback((icon: PriceCardIcons) => {
     switch (icon) {
@@ -573,6 +592,7 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
+
         {/* FAQ */}
         <motion.section
           id="faq"
@@ -707,6 +727,218 @@ const HomePage = () => {
               <a className={faqStyles.faqContactButton} href="#kapcsolat">
                 Kapcsolatfelvétel
                 <Sparkles size={18} strokeWidth={1.35} />
+              </a>
+            </div>
+          </motion.div>
+        </motion.section>
+
+        {/* Reviews */}
+        <motion.section
+          id="velemenyek"
+          className={`${styles.section} ${reviewsStyles.reviewsSection}`}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            className={reviewsStyles.reviewsContainer}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1 }}
+          >
+            <div className={reviewsStyles.reviewsHeader}>
+              <p className={reviewsStyles.reviewsEyebrow}>Vendégeink mondták</p>
+
+              <div className={reviewsStyles.reviewsTitleDivider}>
+                <span />
+              </div>
+
+              <p className={reviewsStyles.reviewsIntroText}>
+                Olvasd el, hogyan élték meg vendégeink a Moon Lab Pilates óráit.
+              </p>
+            </div>
+
+            <div className={reviewsStyles.reviewsSlider}>
+              <button
+                type="button"
+                className={reviewsStyles.reviewsArrow}
+                onClick={() => handleReviewScroll('left')}
+                aria-label="Előző vélemények"
+              >
+                <ChevronLeft size={24} strokeWidth={1.5} />
+              </button>
+
+              <div className={reviewsStyles.reviewsTrack} ref={reviewsTrackRef}>
+                {reviews.map((review) => (
+                  <article
+                    className={reviewsStyles.reviewCard}
+                    key={`${review.name}-${review.date}`}
+                  >
+                    <div
+                      className={reviewsStyles.reviewStars}
+                      aria-label={`${review.rating} csillagos értékelés`}
+                    >
+                      {Array.from({ length: review.rating }).map((_, index) => (
+                        <span key={index}>★</span>
+                      ))}
+                    </div>
+
+                    <h3 className={reviewsStyles.reviewName}>{review.name}</h3>
+
+                    <div className={reviewsStyles.reviewDivider}>
+                      <span />
+                    </div>
+
+                    <p className={reviewsStyles.reviewText}>{review.text}</p>
+
+                    <div className={reviewsStyles.reviewMeta}>
+                      <span>G</span>
+                      <p>{review.source}</p>
+                      <small>{review.date}</small>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                className={reviewsStyles.reviewsArrow}
+                onClick={() => handleReviewScroll('right')}
+                aria-label="Következő vélemények"
+              >
+                <ChevronRight size={24} strokeWidth={1.5} />
+              </button>
+            </div>
+
+            <div className={reviewsStyles.reviewButtons}>
+              <a
+                href="https://g.page/r/Cd8dvm58mCxeEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={reviewsStyles.reviewButton}
+              >
+                <FaGoogle size={22} strokeWidth={1.5} />
+                Értékelj minket Google-on
+                <ExternalLink size={18} strokeWidth={1.5} />
+              </a>
+
+              <a
+                href="https://www.facebook.com/profile.php?id=61575623570319"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={reviewsStyles.reviewButton}
+              >
+                <FaFacebook size={22} strokeWidth={1.5} />
+                Írj véleményt Facebookon
+                <ExternalLink size={18} strokeWidth={1.5} />
+              </a>
+            </div>
+
+            <div className={reviewsStyles.reviewsNote}>
+              <span>✨</span>
+              <p>
+                Köszönjük, hogy megosztod velünk az élményeidet — a visszajelzések sokat jelentenek
+                nekünk.
+              </p>
+              <span>♡</span>
+            </div>
+          </motion.div>
+        </motion.section>
+
+        {/* Partners */}
+        <motion.section
+          id="partnereink"
+          className={`${styles.section} ${partnersStyles.partnersSection}`}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            className={partnersStyles.partnersContainer}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1 }}
+          >
+            <div className={partnersStyles.partnersHeader}>
+              <h2 className={partnersStyles.sectionTitle}>Partnereink</h2>
+
+              <div className={partnersStyles.partnersTitleDivider}>
+                <span />
+              </div>
+
+              <p className={partnersStyles.partnersIntroText}>
+                Olyan gondosan válogatott partnerekkel dolgozunk együtt, akik osztoznak
+                értékeinkben, és támogatják a tudatos, kiegyensúlyozott életmódot.
+              </p>
+            </div>
+
+            <div className={partnersStyles.partnerCards}>
+              {partners.map((partner) => (
+                <article className={partnersStyles.partnerCard} key={partner.name}>
+                  <Image
+                    src={partner.img}
+                    alt={partner.name}
+                    className={partnersStyles.partnerImage}
+                  />
+
+                  <div className={partnersStyles.partnerContent}>
+                    <h3 className={partnersStyles.partnerName}>{partner.name}</h3>
+
+                    <div className={partnersStyles.partnerDivider}>
+                      <span />
+                    </div>
+
+                    <p className={partnersStyles.partnerDescription}>{partner.description}</p>
+
+                    <div className={partnersStyles.partnerOfferBox}>
+                      <div className={partnersStyles.partnerOfferIcon}>
+                        <Leaf size={24} strokeWidth={1.35} />
+                      </div>
+
+                      <div>
+                        <h4>Mit találsz náluk?</h4>
+                        <p>{partner.offer}</p>
+                      </div>
+                    </div>
+
+                    <div className={partnersStyles.partnerCoupon}>
+                      <p>KUPONKÓD:</p>
+                      <span>{partner.coupon}</span>
+                      <small>{partner.discount}</small>
+                    </div>
+
+                    <div className={partnersStyles.partnerActions}>
+                      <a
+                        href={partner.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={partnersStyles.partnerButton}
+                      >
+                        Vásárlás
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className={partnersStyles.partnershipNote}>
+              <div className={partnersStyles.partnershipNoteIcon}>
+                <Mail size={28} strokeWidth={1.35} />
+              </div>
+
+              <div>
+                <h3>Szeretnél velünk együttműködni?</h3>
+                <p>Keress minket emailben, Instagramon vagy telefonon.</p>
+              </div>
+
+              <a href="#kapcsolat">
+                Ugrás a Kapcsolat részhez
+                <ChevronRight size={20} strokeWidth={1.5} />
               </a>
             </div>
           </motion.div>

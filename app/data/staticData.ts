@@ -14,6 +14,8 @@ import {
   PdfLinkProps,
   PriceCardIcons,
 } from '../types';
+import nutriqaImg from '../assets/welcome_image_2.png';
+import creemImg from '../assets/creem.jpg';
 
 export const motibroLink = 'https://moon-lab-pilates.motibro.com/';
 
@@ -207,5 +209,73 @@ export const pdfFiles: PdfLinkProps[] = [
   {
     file: 'raid_max_csotany_es_hangyairto_aeroszol.pdf',
     label: 'Raid Max csótány és hangyairtó aeroszol',
+  },
+];
+
+export const reviews = [
+  {
+    name: 'Szandi',
+    source: 'Google értékelés',
+    date: '2026. 05.',
+    rating: 5,
+    text: 'All level és power órán is már többször részt vettem, mindegyik szuper élmény volt. Az oktatók rendkívül figyelmesek, segítőkészek és minden résztvevőre odafigyelnek, így kezdőként és haladóként is jól lehet fejlődni. A tulajdonosok rendívül vendégközpontúak és bármilyen kérdés vagy probléma esetén állnak rendelkezésre. A stúdió hangulata barátságos és motiváló, ezért mindig örömmel térek vissza. Csak ajánlani tudom!',
+  },
+  {
+    name: 'Dorka',
+    source: 'Google értékelés',
+    date: '2026. 05.',
+    rating: 5,
+    text: 'Nagyon szeretek ide járni, mindig jó a hangulat. Az oktatók felkészültek, az órák pedig mindig változatosak, amit nagyon szeretek, mert izgalmas marad.🩷 Minden korosztály elfér itt ☺️',
+  },
+  {
+    name: 'Reni',
+    source: 'Google értékelés',
+    date: '2026. 05.',
+    rating: 5,
+    text: 'Mindenkinek ajánlom a Moonlab Pilates Stúdiót egyszerűen gyönyörű és letisztult - már nagyon hiányzott a 15.kerületbe egy ilyen színvonalú stúdió 🤩🙏🏻 Nem is beszélve arról, hogy mennyire rugalmasak és kedvesek-segítőkészek. U.i.: Fanni is megérne egy külön véleményt 🤍🤍 2 napig izomlázam volt az edzéstől, de a nevetéstől is - nagyon köszönjük az órát🥰🙏🏻',
+  },
+  {
+    name: 'Anita',
+    source: 'Google értékelés',
+    date: '2026. 05.',
+    rating: 5,
+    text: 'Nagyon kellemes, barátságos hangulatú pilates stúdió. Az oktatók kedvesek, figyelmesek és segítőkészek, mindig odafigyelnek a helyes kivitelezésre. Jó ide járni, mert az ember nemcsak mozog, hanem feltöltődik is. Csak ajánlani tudom!',
+  },
+  {
+    name: 'Krisztina',
+    source: 'Google értékelés',
+    date: '2026. 04.',
+    rating: 5,
+    text: 'Kellemes környezet, a legjobb pilates reformer gépekkel. Kedves, segítőkész edzők, akik figyelemmel kísérik a fejlődésedet, ennek megfelelően állítják be a nehézségi fokozatot személyre szabottan. Változatos edzések, feladatok, minden alkalommal. Az edzők körültekintően járnak el sérülés, fájdalom esetén is.',
+  },
+  {
+    name: 'Melinda',
+    source: 'Google értékelés',
+    date: '2026. 04.',
+    rating: 5,
+    text: 'Nagyon szeretek ide járni pilatesre. A stúdió hangulata kellemes és barátságos, az oktatók pedig rendkívül figyelmesek és szakmailag felkészültek. Az órák jól felépítettek, mindig feltöltődve és jobb közérzettel távozom. Csak ajánlani tudom mindenkinek!✨💯🌜',
+  },
+];
+
+export const partners = [
+  {
+    name: 'Nutriqafoods',
+    description:
+      'Prémium, organikus és vegán termékek a mindennapi vitalitáshoz: superfood italporok, fehérjék, kapszulák és gondosan összeállított egészségtámogató csomagok.',
+    offer: 'Superfood italporok, vegán kapszulák, fehérjék és egészségtámogató csomagok.',
+    coupon: 'MOONLAB20',
+    discount: '20% kedvezmény',
+    link: 'https://nutriqafoods.hu?sca_ref=11343967.zIjJjDW8CD',
+    img: nutriqaImg,
+  },
+  {
+    name: 'Crèem',
+    description:
+      'Természetes levendulás szépségápolási termékek a nyugalomért és a mindennapi önmagadra figyelésért.',
+    offer: 'Bio levendula virágvíz, illóolaj, dezodor krém és természetes testápoló termékek.',
+    coupon: 'MOONLAB20',
+    discount: '20% kedvezmény',
+    link: 'https://creemorganics.com/termekek/',
+    img: creemImg,
   },
 ];
