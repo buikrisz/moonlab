@@ -2,7 +2,7 @@ import allLevelsImg from '../assets/class-types/all_levels_class.png';
 import cardioImg from '../assets/class-types/hiit_class.png';
 import powerImg from '../assets/class-types/power_class.png';
 import fanniImg from '../assets/coaches/fanni.jpg';
-import vanesszaImg from '../assets/coaches/vani.jpg';
+import vaniImg from '../assets/coaches/vani.jpg';
 import teteImg from '../assets/coaches/tete.jpg';
 import zNikiImg from '../assets/coaches/z_niki.jpg';
 import hNikiImg from '../assets/coaches/h_niki.jpg';
@@ -22,7 +22,7 @@ export const motibroLink = 'https://moon-lab-pilates.motibro.com/';
 export const prices: PriceCardProps[] = [
   {
     name: 'Próba alkalom',
-    description: 'A próba jegyet csak új vendégek vehetik igénybe!',
+    description: 'Olyan vendégeknek, akik először járnak nálunk',
     price: '4 000 ,-',
     icon: PriceCardIcons.trial,
   },
@@ -54,44 +54,45 @@ export const prices: PriceCardProps[] = [
 
 export const coaches: InformationCardProps[] = [
   {
-    name: 'Mesi',
-    description: 'Precizitás & tudatosság',
-    description_long:
-      '" A sport mindig is az életem része volt, de igazán akkor találtam rá arra, amit nagyon szeretek, amikor megismerkedtem a reformer pilates edzéssel. Ez a mozgásforma nemcsak hajlékonnyá és erőssé tesz, hanem fejben is teljesen kikapcsol – igazi testi-lelki feltöltődés. "',
-    img: krisztiImg,
-  },
-  {
     name: 'Fanni',
-    description: 'Mobilitás & könnyedség',
+    description: 'Sportolói szemlélettel a tudatos, könnyed mozgás felé',
     description_long:
-      '" A sport már 6 éves korom óta meghatározó része az életemnek, ugyanis 15 éven keresztül versenyszerűen asztaliteniszeztem, és 8 évig voltam a válogatott tagja. Azóta számos sportágban kipróbáltam magam, de a pilates már az első alkalommal magával ragadott, és tudtam, hogy mélyebben szeretnék elmerülni ebben a mozgásformában. "',
+      '" A sport már 6 éves korom óta meghatározó része az életemnek, ugyanis 15 éven keresztül versenyszerűen asztaliteniszeztem, és 8 évig voltam a válogatott tagja. Azóta számos sportágban kipróbáltam magam, de a pilates már az első alkalommal magával ragadott, és tudtam, hogy mélyebben szeretnék elmerülni ebben a mozgásformában. \n\n A pilates segített helyreállítani az egyoldalú sportból adódó testi aszimmetriáimat, valamint enyhítette derék- és térdproblémáimat is, amelyekkel éveken keresztül küzdöttem. Ez a mozgásforma minden izmot átmozgat, és segít tudatos kapcsolatot kialakítani a test és a lélek között. \n\n Célom, hogy óráimon keresztül átadjam a pilates jótékony hatásait, és hogy mindenki megtalálja benne azt, amit keres, legyen az erősítés, rehabilitáció, koordináció fejlesztése vagy testtartás javítása. Szeretettel várlak, hogy együtt fedezzük fel a pilates világát! "',
     img: fanniImg,
   },
   {
     name: 'H. Niki',
-    description: 'Testtudat & erő',
+    description: 'Gerincfókuszú, biztonságos órák a tudatos fejlődésért',
     description_long:
-      '" Gyerekkorom óta a mozgás és a sport szerves része életemnek. Az irodai munka és a gerincsérv kihívásai közepette a pilates nyújtott számomra hatékony megoldást a fájdalom enyhítésére és a testtartás javítására. Ezen személyes tapasztalatok inspiráltak arra, hogy pilates oktatóként segítsek másoknak is megtapasztalni a mozgás gyógyító erejét, különös figyelmet fordítva a gerinc egészségére és a helyes testtartásra. "',
+      '" Gyerekkorom óta a mozgás és a sport szerves része életemnek. Az irodai munka és a gerincsérv kihívásai közepette a pilates nyújtott számomra hatékony megoldást a fájdalom enyhítésére és a testtartás javítására. \n\n Ezen személyes tapasztalatok inspiráltak arra, hogy pilates oktatóként segítsek másoknak is megtapasztalni a mozgás gyógyító erejét, különös figyelmet fordítva a gerinc egészségére és a helyes testtartásra. Hiszem, hogy a pilates nemcsak a testet, hanem a lelket is erősíti, és bármely életkorban vagy fizikai állapotban elérhető eredményeket kínál. \n\n Célom, hogy óráimon egy támogató, motiváló környezetben mindenki megtalálja a mozgás örömét és az egyensúlyát, miközben a saját határait tiszteletben tartva fejlődik. "',
     img: hNikiImg,
   },
   {
-    name: 'Tété',
-    description: 'Stabilitás & fókusz',
+    name: 'Mesi',
+    description: 'Flow, játékosság és tudatos erősödés minden órán',
     description_long:
-      '" Hatéves korom óta meghatározó része az életemnek a mozgás. Miskolcon színházi táncos szakon végeztem, majd Budapesten a Magyar Táncművészeti Egyetem moderntánc szakán diplomáztam. Hálás vagyok, hogy táncművészként több európai országban élhettem, turnézhattam, és nemzetközi művészekkel dolgozhattam együtt – ezek az élmények mélyen formálták a szemléletemet. "',
+      '" Oktatóként az a célom, hogy megmutassam: a mozgás nem kényszer, hanem lehetőség. Szeretem, ha egy óra nemcsak fizikailag formál, hanem mentálisan is feltölt – legyen benne flow, játékosság és persze izzadás is. \n\n Az óráimon megtapasztalhatod, hogy a Pilates túlmutat a nyújtáson és a légzésen: megtanít a testedre figyelni, erősebbé és tudatosabbá válni, miközben könnyedséget hoz a mindennapokba. \n\n Ha szeretnél közelebb kerülni önmagadhoz a mozgáson keresztül, várlak szeretettel az óráimon. "',
+    img: krisztiImg,
+  },
+  {
+    name: 'Tété',
+    description: 'Energikus, motiváló órák, ahol mindenki személyes figyelmet kap',
+    description_long:
+      '" Hatéves korom óta meghatározó része az életemnek a mozgás. Miskolcon színházi táncos szakon végeztem, majd Budapesten a Magyar Táncművészeti Egyetem moderntánc szakán diplomáztam. Hálás vagyok, hogy táncművészként több európai országban élhettem, turnézhattam, és nemzetközi művészekkel dolgozhattam együtt – ezek az élmények mélyen formálták a szemléletemet. \n\n A tanítás mindig is fontos szerepet töltött be az életemben – immár közel 15 éve foglalkozom gyerekekkel és felnőttekkel. Ma már nem vagyok aktív táncos, a fókuszom teljesen a tanításon és a mozgás örömének átadásán van. \n\n A mozgás iránti szenvedélyem a jóga, majd a pilates felé vezetett. Azóta is folyamatosan képzem magam – részt veszek a Michael King nemzetközi pilatesképzésein és STOTT workshopokon is. \n\n Hiszek benne, hogy a fejlődés kulcsa a folyamatos tanulás. Az óráimon nincs elvárás – csak figyelem, jelenlét, és a lehetőség, hogy mindenki a saját tempójában fejlődhessen. Célom, hogy az óráimon egy elvárásmentes, támogató térben kapcsolódhass önmagadhoz – testben és lélekben. "',
     img: teteImg,
   },
   {
-    name: 'Vanessza',
-    description: 'Flow & rugalmasság',
-    description_long: '???',
-    img: vanesszaImg,
+    name: 'Vani',
+    description: 'Lendületes, feltöltő órák a testtartás és rugalmasság támogatására',
+    description_long:
+      '" A mozgás mindig is meghatározó része volt az életemnek. 12 év versenyszerű tánc után régóta kerestem azt a mozgásformát, ami igazán feltölt, valamint visszahozza azt a lelkesedést, amit gyerekként a táncórákon éreztem. \n\n Az irodai munka hatásait én is jól ismerem, ezért különösen fontosnak tartom a rendszeres mozgás beépítését a mindennapokba. A tudatosan felépített mozgás fejleszti a testtartást, erősíti az izomzatot, és hatékonyan csökkenti a terhelésből adódó fájdalmakat. \n\n Az óráimon arra törekszem, hogy vendégeim testben és lélekben is feltöltődjenek, magabiztosabbá váljanak, és megérezzék azt az inspiráló erőt, amit a reformer pilates képvisel. "',
+    img: vaniImg,
   },
   {
     name: 'Z. Niki',
-    description: 'Erő & egyensúly',
+    description: 'Precíz, erősítő órák pozitív és biztonságos környezetben',
     description_long:
-      '" A sport és az egészséges életmód mindig is szerves részét képezte az életemnek, versenyszerűen teniszeztem, majd a futás és a konditermi edzés vette át a helyét. A pilatesre akkor találtam rá, amikor egy olyan mozgásformát kerestem, amely segít a munkámból adódó rengeteg gép előtt ülés mellett megőrizni a helyes tartásomat, a testem rugalmasságát és izmaim erejét. "',
+      '" A sport és az egészséges életmód mindig is szerves részét képezte az életemnek, versenyszerűen teniszeztem, majd a futás és a konditermi edzés vette át a helyét. \n\n A pilatesre akkor találtam rá, amikor egy olyan mozgásformát kerestem, amely segít a munkámból adódó rengeteg gép előtt ülés mellett megőrizni a helyes tartásomat, a testem rugalmasságát és izmaim erejét, azóta pedig elválaszthatatlanok vagyunk. \n\n Óráimon a gyakorlatok pontos kivitelezése és egy biztonságos, pozitív környezet megteremtése mellett arra törekszem, hogy változatos, kihívásokkal teli edzéseket tartsak, ahol vendégként óráról órára fejlődhetsz, és maximálisan kihasználhatod a testedben rejlő potenciált. "',
     img: zNikiImg,
   },
 ];

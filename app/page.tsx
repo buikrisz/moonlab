@@ -181,7 +181,6 @@ const HomePage = () => {
             transition={{ duration: 1 }}
           >
             <div className={aboutStyles.aboutContent}>
-              <h2 className={styles.sectionTitle}>Reformer Pilates</h2>
               <h3 className={aboutStyles.aboutEyebrow}>Mi az a Reformer Pilates?</h3>
 
               <p className={aboutStyles.aboutSectionText}>
@@ -253,8 +252,8 @@ const HomePage = () => {
               <div className={aboutStyles.aboutNote}>
                 <span>✨</span>
                 <p>
-                  Stúdiónkban prémium kategóriás Reformer gépekkel dolgozunk, amelyek maximális
-                  kényelmet és hatékonyságot biztosítanak a tested és a céljaid számára.
+                  Stúdiónkban prémium kategóriás Elina Reformer gépekkel dolgozunk, amelyek
+                  maximális kényelmet és hatékonyságot biztosítanak a tested és a céljaid számára.
                 </p>
               </div>
             </div>
@@ -294,9 +293,7 @@ const HomePage = () => {
             transition={{ duration: 1 }}
           >
             <div className={coachStyles.coachPriceIntro}>
-              <p className={coachStyles.coachPriceEyebrow}>Szakértelem, amire számíthatsz</p>
-              <h2 className={coachStyles.sectionTitle}>Oktatóink & Áraink</h2>
-
+              <p className={coachStyles.coachPriceEyebrow}>Oktatóink & Áraink</p>
               <p className={coachStyles.coachPriceText}>
                 Nálunk a mozgás több, mint edzés — tudatos figyelem, szakértelem és törődés. Ismerd
                 meg oktatóinkat és válaszd ki az igényeidhez leginkább illő bérletet.

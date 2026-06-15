@@ -1,8 +1,8 @@
 .aboutSection {
   background: var(--primary-background);
 
-  padding-top: 80px;
-  padding-bottom: 110px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .aboutContainer {
@@ -25,21 +25,11 @@
   width: calc(56% - 24px);
 }
 
-.aboutContent .sectionTitle {
-  margin-bottom: 64px;
+.aboutEyebrow {
+  margin-bottom: 48px;
 
   font-family: var(--font-eyesome);
-  font-size: clamp(46px, 4vw, 72px);
-  font-weight: 400;
-  line-height: 0.9;
-  color: #6f5144;
-}
-
-.aboutEyebrow {
-  margin-bottom: 28px;
-
-  font-family: var(--font-catchy);
-  font-size: clamp(34px, 3vw, 44px);
+  font-size: clamp(34px, 3vw, 54px);
   font-weight: 400;
   line-height: 1.05;
   color: #3f332e;
@@ -296,11 +286,6 @@
     align-items: flex-start;
   }
 
-  .aboutContent .sectionTitle {
-    margin-bottom: 42px;
-    font-size: clamp(52px, 7vw, 72px);
-  }
-
   .aboutEyebrow {
     font-size: clamp(34px, 4vw, 44px);
   }
@@ -346,11 +331,6 @@
     width: 88%;
     max-width: 720px;
     gap: 38px;
-  }
-
-  .aboutContent .sectionTitle {
-    margin-bottom: 32px;
-    font-size: clamp(46px, 8vw, 64px);
   }
 
   .aboutEyebrow {
@@ -458,12 +438,6 @@
     width: 88%;
     max-width: 420px;
     gap: 32px;
-  }
-
-  .aboutContent .sectionTitle {
-    margin-bottom: 26px;
-    font-size: 44px;
-    line-height: 0.95;
   }
 
   .aboutEyebrow {
