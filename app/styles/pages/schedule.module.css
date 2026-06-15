@@ -6,8 +6,8 @@
   align-items: flex-start;
 
   min-height: unset;
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .scheduleContainer {
@@ -40,7 +40,7 @@
   margin-bottom: 36px;
 
   font-family: var(--font-eyesome);
-  font-size: clamp(54px, 5vw, 86px);
+  font-size: clamp(34px, 3vw, 54px);
   font-weight: 400;
   line-height: 0.9;
   color: #6f5144;
@@ -242,7 +242,7 @@
 
   border-radius: 28px;
 
-  background: rgba(131, 95, 79, 0.08);
+  background: var(--note-background);
 }
 
 .scheduleNote span {

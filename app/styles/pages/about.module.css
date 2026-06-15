@@ -136,6 +136,7 @@
   line-height: 1.25;
   color: #4f3b32;
 }
+
 .aboutNote {
   display: flex;
   align-items: center;
@@ -148,7 +149,7 @@
 
   border-radius: 999px;
 
-  background: rgba(131, 95, 79, 0.08);
+  background: var(--note-background);
 }
 
 .aboutNote span {

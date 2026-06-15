@@ -438,7 +438,7 @@
 
   border-radius: 999px;
 
-  background: rgba(131, 95, 79, 0.08);
+  background: var(--note-background);
 }
 
 .priceNote span {

@@ -521,9 +521,9 @@ const HomePage = () => {
                 <p className={scheduleStyles.scheduleCardNumber}>02.</p>
                 <h3 className={scheduleStyles.scheduleCardTitle}>Jegy- és bérletvásárlás</h3>
                 <p className={scheduleStyles.scheduleCardText}>
-                  Az órára történő részvételhez vásárolhatsz jegyet vagy bérletet egyszerűen a
-                  Motibro fiókodban a Bérleteim menüpont alatt. Személyesen a stúdióban is van
-                  lehetőség fizetésre, bankkártyával.
+                  Az órán való részvételhez jegyet vagy bérletet személyesen a stúdióban tudsz
+                  vásárolni. Fizetésre készpénzzel, bankkártyával vagy OTP SZÉP kártyával van
+                  lehetőség.
                 </p>
               </div>
 
