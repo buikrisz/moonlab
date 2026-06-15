@@ -1033,10 +1033,10 @@ const HomePage = () => {
                 </div>
 
                 <div className={contactStyles.contactLinks}>
-                  <Link href="#" className={contactStyles.contactLink}>
+                  <Link href="/aszf" className={contactStyles.contactLink}>
                     ÁSZF
                   </Link>
-                  <Link href="#" className={contactStyles.contactLink}>
+                  <Link href="/felelossegi-nyilatkozat" className={contactStyles.contactLink}>
                     Felelősségi nyilatkozat
                   </Link>
                   <Link href="/adatkezelesi" className={contactStyles.contactLink}>
