@@ -1,12 +1,14 @@
-import allLevelsImg from '../assets/class-types/all_levels_class.png';
-import cardioImg from '../assets/class-types/hiit_class.png';
-import powerImg from '../assets/class-types/power_class.png';
+import allLevelsImg from '../assets/class-types/all_levels.jpg';
+import powerImg from '../assets/class-types/power.jpg';
+import stretchingImg from '../assets/class-types/stretching.jpg';
+import prenatImg from '../assets/class-types/prenat.jpg';
+import cardioImg from '../assets/class-types/cardio.jpg';
 import fanniImg from '../assets/coaches/fanni.jpg';
 import vaniImg from '../assets/coaches/vani.jpg';
 import teteImg from '../assets/coaches/tete.jpg';
 import zNikiImg from '../assets/coaches/z_niki.jpg';
 import hNikiImg from '../assets/coaches/h_niki.jpg';
-import krisztiImg from '../assets/coaches/kriszti.jpg';
+import mesiImg from '../assets/coaches/mesi.jpg';
 import {
   PriceCardProps,
   InformationCardProps,
@@ -14,7 +16,7 @@ import {
   PdfLinkProps,
   PriceCardIcons,
 } from '../types';
-import nutriqaImg from '../assets/welcome_image_2.png';
+import nutriqaImg from '../assets/nutriqa.jpeg';
 import creemImg from '../assets/creem.jpg';
 
 export const motibroLink = 'https://moon-lab-pilates.motibro.com/';
@@ -72,7 +74,7 @@ export const coaches: InformationCardProps[] = [
     description: 'Flow, játékosság és tudatos erősödés minden órán',
     description_long:
       '" Oktatóként az a célom, hogy megmutassam: a mozgás nem kényszer, hanem lehetőség. Szeretem, ha egy óra nemcsak fizikailag formál, hanem mentálisan is feltölt – legyen benne flow, játékosság és persze izzadás is. \n\n Az óráimon megtapasztalhatod, hogy a Pilates túlmutat a nyújtáson és a légzésen: megtanít a testedre figyelni, erősebbé és tudatosabbá válni, miközben könnyedséget hoz a mindennapokba. \n\n Ha szeretnél közelebb kerülni önmagadhoz a mozgáson keresztül, várlak szeretettel az óráimon. "',
-    img: krisztiImg,
+    img: mesiImg,
   },
   {
     name: 'Tété',
@@ -128,7 +130,7 @@ export const classTypes = [
     description:
       'Kíméletes, biztonságos óra a helyes alapokért, a tudatos mozgásért és a testi-lelki egyensúly támogatásáért.',
     tags: ['Alapok', 'Biztonság', 'Tudatosság'],
-    img: powerImg,
+    img: prenatImg,
   },
   {
     name: 'Stretching',
@@ -136,7 +138,7 @@ export const classTypes = [
     description:
       'Lassú, nyújtó és feltöltő óra a test és az elme ellazításáért, valamint a rugalmasság növeléséért.',
     tags: ['Nyújtás', 'Mobilitás', 'Relaxáció'],
-    img: powerImg,
+    img: stretchingImg,
   },
 ];
 

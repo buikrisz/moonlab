@@ -36,7 +36,7 @@ import { IoLocationSharp } from 'react-icons/io5';
 import { MdPhoneIphone, MdEmail } from 'react-icons/md';
 import { FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa';
 import aboutImg from './assets/welcome_image.jpg';
-import contactImg from './assets/contact_image.png';
+import contactImg from './assets/contact.jpg';
 import { Navbar } from './components';
 import styles from './styles/pages/pages.module.css';
 import aboutStyles from './styles/pages/about.module.css';
@@ -50,8 +50,8 @@ import contactStyles from './styles/pages/contact.module.css';
 import { classTypes, coaches, faq, motibroLink, partners, prices, reviews } from './data';
 import { PriceCardIcons } from './types';
 import { useCallback, useState, useRef } from 'react';
-import scheduleImg from './assets/main_background.png';
-import faqImg from './assets/welcome_image_2.png';
+import scheduleImg from './assets/book.jpg';
+import faqImg from './assets/faq.jpg';
 
 const HomePage = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
