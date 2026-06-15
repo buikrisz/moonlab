@@ -1,7 +1,17 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../assets/moon_studio_website_logo_brown.svg';
 import styles from '../styles/aszf.module.css';
+
+export const metadata: Metadata = {
+  title: 'Általános Szerződési Feltételek',
+  description:
+    'A Moon Lab Pilates Általános Szerződési Feltételei a foglalás, bérletek, részvétel, lemondás és stúdióhasználat szabályairól.',
+  alternates: {
+    canonical: '/aszf',
+  },
+};
 
 const AszfPage = () => {
   return (

@@ -1,7 +1,17 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../assets/moon_studio_website_logo_brown.svg';
 import styles from '../styles/felelossegi-nyilatkozat.module.css';
+
+export const metadata: Metadata = {
+  title: 'Felelősségvállalási nyilatkozat',
+  description:
+    'A Moon Lab Pilates felelősségvállalási nyilatkozata az órákon való részvétel, egészségügyi tájékoztatás és stúdióhasználat feltételeiről.',
+  alternates: {
+    canonical: '/felelossegi-nyilatkozat',
+  },
+};
 
 const FelelossegvallalasiNyilatkozatPage = () => {
   return (

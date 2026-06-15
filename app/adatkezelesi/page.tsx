@@ -1,7 +1,17 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../assets/moon_studio_website_logo_brown.svg';
 import styles from '../styles/adatkezelesi.module.css';
+
+export const metadata: Metadata = {
+  title: 'Adatkezelési tájékoztató',
+  description:
+    'A Moon Lab Pilates adatkezelési tájékoztatója a vendégek személyes adatainak kezeléséről, foglalásról, kapcsolattartásról és kamerás megfigyelésről.',
+  alternates: {
+    canonical: '/adatkezelesi',
+  },
+};
 
 const AdatkezelesiPage = () => {
   return (
