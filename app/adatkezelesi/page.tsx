@@ -1,202 +1,301 @@
-import Image from "next/image";
-import logo from "../assets/moon_studio_website_logo_brown.svg";
-import styles from "../styles/adatkezelesi.module.css";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
+import logo from '../assets/moon_studio_website_logo_brown.svg';
+import styles from '../styles/adatkezelesi.module.css';
 
 const AdatkezelesiPage = () => {
   return (
     <main className={styles.main}>
-      <Link className={styles.logo} href="/">
-        <Image src={logo} alt="Moon Lab Pilates Logo" width={100} />
+      <Link className={styles.logo} href="/" aria-label="Vissza a főoldalra">
+        <Image src={logo} alt="Moon Lab Pilates Logo" width={112} />
       </Link>
-      <div className={styles.mainSection}>
+
+      <section className={styles.hero}>
+        <p className={styles.eyebrow}>Moon Lab Pilates</p>
         <h1 className={styles.title}>Adatkezelési tájékoztató</h1>
 
-        <h2 className={styles.subTitle}>1. Az adatkezelő adatai</h2>
-        <ul className={styles.list}>
-          <li>
-            <strong>Név:</strong> Moon Lab Pilates Korlátolt Felelősségű
-            Társaság
-          </li>
-          <li>
-            <strong>Székhely:</strong> 1048, Budapest Külső Szilágyi út 106. 1
-            em. 2
-          </li>
-          <li>
-            <strong>Cégjegyzékszám:</strong> 01-09-443478
-          </li>
-          <li>
-            <strong>Adószám:</strong> 32804119-1-41
-          </li>
-          <li>
-            <strong>Képviselő:</strong> Bui-Tóth Dominika
-          </li>
-          <li>
-            <strong>Kapcsolat:</strong> moonlabpilates@gmail.com, 06 30 901 4943
-          </li>
-        </ul>
+        <div className={styles.titleDivider}>
+          <span />
+        </div>
 
-        <h2 className={styles.subTitle}>2. Az adatkezelés célja</h2>
-        <p>
-          A Moon Lab Pilates Kft. a stúdió működésével összefüggésben kétféle
-          adatkezelést végez:
-        </p>
-        <ul className={`${styles.list} ${styles.listWithBullets}`}>
-          <li>
-            Vendégek személyes adatainak kezelése a szolgáltatások
-            igénybevételéhez (pl. foglalás, kapcsolattartás, számlázás)
-          </li>
-          <li>Kamerás megfigyelés a személy- és vagyonvédelem céljából</li>
-        </ul>
-
-        <h2 className={styles.subTitle}>
-          3. A vendégek személyes adatainak kezelése
-        </h2>
-        <p>
-          A vendégek adatai (pl. név, e-mail cím, telefonszám) a Motibro
-          rendszerben kerülnek rögzítésre, amely adatfeldolgozóként jár el.
-        </p>
-        <p>
-          Az adatkezelés célja: időpontfoglalás kezelése, kapcsolattartás,
-          szolgáltatás nyújtása, jogi kötelezettségek teljesítése.
-        </p>
-        <p>
-          Az adatkezelés jogalapja: az érintett hozzájárulása (GDPR 6. cikk (1)
-          a)), szerződés teljesítése (b)), valamint jogi kötelezettség (c)).
+        <p className={styles.lead}>
+          Jelen tájékoztató bemutatja, hogy a Moon Lab Pilates Kft. milyen személyes adatokat kezel
+          a stúdió működése, a foglalások, a kapcsolattartás, a számlázás és a kamerás vagyonvédelem
+          során.
         </p>
 
-        <h2 className={styles.subTitle}>4. Kamerás megfigyelés</h2>
-        <p>A kamerás megfigyelés célja:</p>
-        <ul className={`${styles.list} ${styles.listWithBullets}`}>
-          <li>személyek és vagyon védelme</li>
-          <li>jogellenes cselekmények megelőzése és felderítése</li>
-          <li>jogsértések bizonyítása (pl. lopás, rongálás)</li>
-          <li>esetleges jogviták megalapozása vagy elhárítása</li>
-        </ul>
-        <p>
-          <strong>A megfigyelt terület:</strong>
-        </p>
-        <ul className={`${styles.list} ${styles.listWithBullets}`}>
-          <li>stúdió bejárata</li>
-          <li>recepciós/pihenőterület</li>
-          <li>közlekedőfolyosó</li>
-        </ul>
-        <p>
-          A rendszer kizárólag képet rögzít, hangot nem. A felvételek legfeljebb
-          3 munkanapig kerülnek megőrzésre, kivéve ha jogvita vagy hatósági
-          eljárás indokolja a hosszabb tárolást.
-        </p>
-        <p>
-          Hozzáférés a felvételekhez kizárólag az adatkezelő vagy az általa
-          kijelölt, titoktartásra kötelezett személyek számára biztosított. A
-          hozzáférés naplózott és ellenőrizhető.
-        </p>
+        <p className={styles.updated}>Hatályos: 2025. július 26-tól</p>
+      </section>
 
-        <h3 className={styles.subTitle}>
-          4.1. Az adatkezelés alapjául szolgáló jogszabályok
-        </h3>
-        <ul className={`${styles.list} ${styles.listWithBullets}`}>
-          <li>
-            Az információs önrendelkezési jogról szóló és az
-            információszabadságról szóló 2011. évi CXII. törvény (Info tv.)
-          </li>
-          <li>
-            Az Európai Parlament és a Tanács (EU) 2016/679 Rendelete (GDPR)
-          </li>
-          <li>A Polgári Törvénykönyvről szóló 2013. évi V. törvény (Ptk.)</li>
-          <li>
-            Az Általános Adatvédelmi Rendelet (GDPR) 6. cikk (1) bekezdés f)
-            pontja – az adatkezelő jogos érdeke.
-          </li>
-        </ul>
-        <p>
-          <strong>A jogos érdek igazolása:</strong> a stúdió vagyonbiztonságának
-          megőrzése, a vendégek és munkatársak testi épségének, illetve a
-          szolgáltatás zavartalan működésének biztosítása.
-        </p>
+      <div className={styles.mainSection}>
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>1. Az adatkezelő adatai</h2>
 
-        <h3 className={styles.subTitle}>4.2. A kezelt adatok köre</h3>
-        <ul className={styles.list}>
-          <li>
-            A kamerarendszer valós idejű képfelvételt, illetve annak rögzítését
-            végzi.
-          </li>
-          <li>A hangrögzítés nem történik.</li>
-        </ul>
+          <div className={styles.infoGrid}>
+            <div className={styles.infoCard}>
+              <span>Név</span>
+              <p>Moon Lab Pilates Korlátolt Felelősségű Társaság</p>
+            </div>
 
-        <h3 className={styles.subTitle}>4.3. A felvételek tárolásának ideje</h3>
-        <p>
-          A felvételek maximum 3 munkanapig kerülnek tárolásra, kivéve ha azok
-          felhasználása egy eljárásban indokolt (pl. rendőrségi megkeresés,
-          jogvita).
-        </p>
+            <div className={styles.infoCard}>
+              <span>Székhely</span>
+              <p>1048 Budapest, Külső Szilágyi út 106. 1. em. 2.</p>
+            </div>
 
-        <h3 className={styles.subTitle}>4.4. Hozzáférés az adatokhoz</h3>
-        <ul className={styles.list}>
-          <li>
-            A felvételekhez kizárólag az adatkezelő, illetve az általa
-            megbízott, titoktartásra kötelezett személyek férhetnek hozzá.
-          </li>
-          <li>
-            Az adatkezelő biztosítja, hogy a hozzáférés naplózott és
-            ellenőrizhető legyen.
-          </li>
-        </ul>
+            <div className={styles.infoCard}>
+              <span>Cégjegyzékszám</span>
+              <p>01-09-443478</p>
+            </div>
 
-        <h2 className={styles.subTitle}>5. Adatok továbbítása</h2>
-        <ul className={styles.list}>
-          <li>
-            Személyes adatok kizárólag jogszabály alapján vagy az érintett
-            hozzájárulása esetén kerülnek továbbításra.
-          </li>
-          <li>
-            Kamerafelvétel kizárólag hatósági megkeresés vagy jogvita esetén
-            kerülhet kiadásra.
-          </li>
-        </ul>
+            <div className={styles.infoCard}>
+              <span>Adószám</span>
+              <p>32804119-1-41</p>
+            </div>
 
-        <h2 className={styles.subTitle}>6. Az érintettek jogai</h2>
-        <ul className={`${styles.list} ${styles.listWithBullets}`}>
-          <li>tájékoztatást az adatkezelésről</li>
-          <li>hozzáférést saját adataihoz</li>
-          <li>azok helyesbítését, törlését, kezelésének korlátozását</li>
-          <li>tiltakozhat az adatkezelés ellen</li>
-          <li>
-            panaszt tehet a Nemzeti Adatvédelmi és Információszabadság
-            Hatóságnál (NAIH)
-          </li>
-        </ul>
-        <p>
-          <strong>Cím:</strong> 1055 Budapest, Falk Miksa utca 9-11.
-          <br />
-          <strong>Web:</strong>{" "}
-          <a
-            href="https://www.naih.hu"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://www.naih.hu
-          </a>
-          <br />
-          <strong>E-mail:</strong>{" "}
-          <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>
-        </p>
+            <div className={styles.infoCard}>
+              <span>Képviselő</span>
+              <p>Bui-Tóth Dominika</p>
+            </div>
 
-        <h2 className={styles.subTitle}>
-          7. Automatizált döntéshozatal, profilalkotás
-        </h2>
-        <p>
-          Az adatkezelő nem végez automatizált döntéshozatalt vagy
-          profilalkotást.
-        </p>
+            <div className={styles.infoCard}>
+              <span>Kapcsolat</span>
+              <p>
+                <a href="mailto:moonlabpilates@gmail.com">moonlabpilates@gmail.com</a>
+                <br />
+                <a href="tel:+36309014943">06 30 901 4943</a>
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <h2 className={styles.subTitle}>
-          8. Hozzáférés az adatkezelési tájékoztatóhoz
-        </h2>
-        <p>
-          Ez a tájékoztató a stúdióban a recepción megtalálható, valamint a
-          honlapon elektronikusan is elérhető.
-        </p>
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>2. Az adatkezelés célja</h2>
+
+          <p>
+            A Moon Lab Pilates Kft. a stúdió működésével összefüggésben személyes adatokat kezel
+            annak érdekében, hogy a szolgáltatásokat megfelelően biztosítani tudja, kapcsolatot
+            tartson a vendégekkel, kezelje a foglalásokat, teljesítse jogszabályi kötelezettségeit,
+            valamint biztosítsa a stúdió személy- és vagyonvédelmét.
+          </p>
+
+          <ul className={styles.bulletList}>
+            <li>időpontfoglalások kezelése, órákon való részvétel biztosítása,</li>
+            <li>vendégekkel történő kapcsolattartás,</li>
+            <li>számlázási és számviteli kötelezettségek teljesítése,</li>
+            <li>panaszok, kérdések és megkeresések kezelése,</li>
+            <li>személy- és vagyonvédelem kamerás megfigyelés útján.</li>
+          </ul>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>3. A vendégek személyes adatainak kezelése</h2>
+
+          <p>
+            A vendégek adatai elsősorban a foglalási rendszerben kerülnek rögzítésre. A foglalási
+            rendszer üzemeltetője adatfeldolgozóként jár el, vagyis az adatokat a Moon Lab Pilates
+            Kft. megbízásából és annak utasításai szerint kezeli.
+          </p>
+
+          <div className={styles.tableLike}>
+            <div>
+              <strong>Kezelt adatok</strong>
+              <p>
+                név, e-mail cím, telefonszám, foglalási adatok, bérlet- és vásárlási adatok,
+                számlázási adatok
+              </p>
+            </div>
+
+            <div>
+              <strong>Adatkezelés célja</strong>
+              <p>
+                foglalás kezelése, szolgáltatás nyújtása, kapcsolattartás, számlázás, jogi
+                kötelezettségek teljesítése
+              </p>
+            </div>
+
+            <div>
+              <strong>Jogalap</strong>
+              <p>
+                szerződés teljesítése, jogi kötelezettség teljesítése, hozzájárulás, illetve jogos
+                érdek
+              </p>
+            </div>
+
+            <div>
+              <strong>Megőrzési idő</strong>
+              <p>
+                a szolgáltatás teljesítéséhez szükséges ideig, illetve a számviteli és jogszabályi
+                kötelezettségek szerinti ideig
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>4. Adatfeldolgozók</h2>
+
+          <p>
+            A Moon Lab Pilates Kft. a működése során adatfeldolgozókat vehet igénybe. Az
+            adatfeldolgozók kizárólag a szolgáltatás nyújtásához szükséges mértékben, az adatkezelő
+            utasításai szerint férhetnek hozzá személyes adatokhoz.
+          </p>
+
+          <ul className={styles.bulletList}>
+            <li>foglalási rendszer szolgáltatója,</li>
+            <li>számlázóprogram szolgáltatója,</li>
+            <li>könyvelési szolgáltató,</li>
+            <li>tárhely- és e-mail szolgáltató,</li>
+            <li>informatikai vagy karbantartási szolgáltató, ha ez szükséges.</li>
+          </ul>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>5. Kamerás megfigyelés</h2>
+
+          <p>
+            A stúdió egyes területein kamerás megfigyelés működik személy- és vagyonvédelmi célból.
+            A kamerarendszer kizárólag képet rögzít, hangrögzítés nem történik.
+          </p>
+
+          <div className={styles.noticeCard}>
+            <span>Fontos</span>
+            <p>
+              Kamera nem kerül elhelyezésre öltözőben, mosdóban vagy olyan helyiségben, ahol a
+              megfigyelés az emberi méltóságot sértené.
+            </p>
+          </div>
+
+          <h3 className={styles.smallTitle}>5.1. A kamerás megfigyelés célja</h3>
+
+          <ul className={styles.bulletList}>
+            <li>személyek és vagyon védelme,</li>
+            <li>jogellenes cselekmények megelőzése és felderítése,</li>
+            <li>jogsértések bizonyítása, például lopás vagy rongálás esetén,</li>
+            <li>esetleges jogviták megalapozása vagy elhárítása.</li>
+          </ul>
+
+          <h3 className={styles.smallTitle}>5.2. A megfigyelt területek</h3>
+
+          <ul className={styles.bulletList}>
+            <li>stúdió bejárata,</li>
+            <li>recepciós vagy pihenőterület,</li>
+            <li>közlekedőfolyosó.</li>
+          </ul>
+
+          <h3 className={styles.smallTitle}>5.3. Jogalap</h3>
+
+          <p>
+            A kamerás adatkezelés jogalapja a Moon Lab Pilates Kft. jogos érdeke, amely a stúdió
+            vagyonbiztonságának megőrzéséhez, a vendégek és munkatársak testi épségének védelméhez,
+            valamint a szolgáltatás zavartalan működésének biztosításához kapcsolódik.
+          </p>
+
+          <h3 className={styles.smallTitle}>5.4. A felvételek megőrzési ideje</h3>
+
+          <p>
+            A felvételek legfeljebb 3 munkanapig kerülnek megőrzésre, kivéve, ha jogvita, rendkívüli
+            esemény, hatósági megkeresés vagy más jogi eljárás indokolja a hosszabb tárolást. Ilyen
+            esetben a felvétel a szükséges eljárás lezárásáig őrizhető meg.
+          </p>
+
+          <h3 className={styles.smallTitle}>5.5. Hozzáférés a felvételekhez</h3>
+
+          <p>
+            A kamerafelvételekhez kizárólag az adatkezelő, illetve az általa kijelölt, titoktartásra
+            kötelezett személyek férhetnek hozzá. A hozzáférés kizárólag indokolt esetben történhet.
+          </p>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>6. Adatok továbbítása</h2>
+
+          <p>
+            Személyes adatok harmadik fél részére kizárólag jogszabályi kötelezettség teljesítése,
+            hatósági megkeresés, az érintett hozzájárulása vagy a szolgáltatás teljesítéséhez
+            szükséges adatfeldolgozói közreműködés esetén kerülhetnek továbbításra.
+          </p>
+
+          <p>
+            Kamerafelvétel kizárólag indokolt esetben, például hatósági megkeresés, jogvita vagy
+            rendkívüli esemény kivizsgálása esetén adható ki.
+          </p>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>7. Az érintettek jogai</h2>
+
+          <p>
+            Az érintettek a vonatkozó adatvédelmi jogszabályok alapján az alábbi jogokat
+            gyakorolhatják:
+          </p>
+
+          <ul className={styles.bulletList}>
+            <li>tájékoztatást kérhetnek az adatkezelésről,</li>
+            <li>hozzáférést kérhetnek saját személyes adataikhoz,</li>
+            <li>kérhetik adataik helyesbítését,</li>
+            <li>kérhetik adataik törlését, ha annak jogszabályi feltételei fennállnak,</li>
+            <li>kérhetik az adatkezelés korlátozását,</li>
+            <li>tiltakozhatnak a jogos érdeken alapuló adatkezelés ellen,</li>
+            <li>hozzájáruláson alapuló adatkezelés esetén visszavonhatják hozzájárulásukat,</li>
+            <li>panaszt tehetnek a Nemzeti Adatvédelmi és Információszabadság Hatóságnál.</li>
+          </ul>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>8. Panasztételi lehetőség</h2>
+
+          <p>
+            Amennyiben az érintett úgy véli, hogy személyes adatainak kezelése jogsértő, panasszal
+            fordulhat a Nemzeti Adatvédelmi és Információszabadság Hatósághoz.
+          </p>
+
+          <div className={styles.contactCard}>
+            <p>
+              <strong>Nemzeti Adatvédelmi és Információszabadság Hatóság</strong>
+            </p>
+            <p>
+              <strong>Cím:</strong> 1055 Budapest, Falk Miksa utca 9-11.
+            </p>
+            <p>
+              <strong>Levelezési cím:</strong> 1363 Budapest, Pf. 9.
+            </p>
+            <p>
+              <strong>Web:</strong>{' '}
+              <a href="https://www.naih.hu" target="_blank" rel="noopener noreferrer">
+                www.naih.hu
+              </a>
+            </p>
+            <p>
+              <strong>E-mail:</strong>{' '}
+              <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>
+            </p>
+          </div>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>9. Automatizált döntéshozatal, profilalkotás</h2>
+
+          <p>A Moon Lab Pilates Kft. nem végez automatizált döntéshozatalt vagy profilalkotást.</p>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>10. Hozzáférés az adatkezelési tájékoztatóhoz</h2>
+
+          <p>
+            A tájékoztató a stúdióban elérhető, valamint a honlapon elektronikusan is megtekinthető.
+            A Moon Lab Pilates Kft. fenntartja a jogot a tájékoztató módosítására, különösen
+            jogszabályváltozás, új adatkezelési folyamat vagy szolgáltatás bevezetése esetén.
+          </p>
+        </section>
+
+        <div className={styles.bottomNote}>
+          <span>✨</span>
+          <p>
+            Kérdés esetén keress minket emailben vagy telefonon, és segítünk az adatkezeléssel
+            kapcsolatos információkban.
+          </p>
+          <Link href="/#kapcsolat">Kapcsolat</Link>
+        </div>
       </div>
     </main>
   );
