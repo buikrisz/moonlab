@@ -394,19 +394,7 @@
 }
 
 .contactNote {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 28px;
-
-  width: 100%;
-  min-height: 82px;
-
-  padding: 20px 34px;
-
-  border-radius: 999px;
-
-  background: var(--note-background);
 }
 
 .contactNote span {

@@ -249,7 +249,7 @@ const HomePage = () => {
                   </p>
                 </div>
               </div>
-              <div className={aboutStyles.aboutNote}>
+              <div className={`${styles.note} ${aboutStyles.aboutNote}`}>
                 <span>✨</span>
                 <p>
                   Stúdiónkban prémium kategóriás Elina Reformer gépekkel dolgozunk, amelyek
@@ -277,6 +277,7 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
+
         {/* Coaches and Pricing */}
         <motion.section
           id="oktatok"
@@ -367,7 +368,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className={coachStyles.priceNote}>
+            <div className={`${styles.note} ${coachStyles.priceNote}`}>
               <span>✨</span>
               <p>
                 Időszakos bérletkedvezményeinkről és aktuális ajánlatainkról Instagram és Facebook
@@ -376,6 +377,7 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
+
         {/* Class Types */}
         <motion.section
           id="oratipusok"
@@ -430,7 +432,7 @@ const HomePage = () => {
               ))}
             </div>
 
-            <div className={classesStyles.classesNote}>
+            <div className={`${styles.note} ${classesStyles.classesNote}`}>
               <span>✨</span>
               <p>
                 Óráink kis létszámúak, hogy mindenki megkapja a figyelmet és a támogatást, amire
@@ -569,7 +571,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className={scheduleStyles.scheduleNote}>
+            <div className={`${styles.note} ${scheduleStyles.scheduleNote}`}>
               <span>✨</span>
 
               <p>
@@ -693,11 +695,9 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className={faqStyles.faqContactNote}>
+            <div className={`${styles.note} ${faqStyles.faqContactNote}`}>
               <div className={faqStyles.faqContactIntro}>
-                <span>
-                  <Heart size={28} strokeWidth={1.35} />
-                </span>
+                <span>✨</span>
 
                 <div>
                   <h3>Nem találtad meg a választ?</h3>
@@ -833,7 +833,7 @@ const HomePage = () => {
               </a>
             </div>
 
-            <div className={reviewsStyles.reviewsNote}>
+            <div className={`${styles.note} ${reviewsStyles.reviewsNote}`}>
               <span>✨</span>
               <p>
                 Köszönjük, hogy megosztod velünk az élményeidet — a visszajelzések sokat jelentenek
@@ -923,7 +923,7 @@ const HomePage = () => {
               ))}
             </div>
 
-            <div className={partnersStyles.partnershipNote}>
+            <div className={`${styles.note} ${partnersStyles.partnershipNote}`}>
               <div className={partnersStyles.partnershipNoteIcon}>
                 <Mail size={28} strokeWidth={1.35} />
               </div>
@@ -1079,7 +1079,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className={contactStyles.contactNote}>
+            <div className={`${styles.note} ${contactStyles.contactNote}`}>
               <span>✨</span>
               <p>Várunk szeretettel a Moon Lab Pilates stúdióban — ahol a mozgás élménnyé válik.</p>
             </div>

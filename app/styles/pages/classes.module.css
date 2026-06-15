@@ -182,21 +182,8 @@
 }
 
 .classesNote {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 24px;
-
-  width: 100%;
-  min-height: 66px;
-
   margin-top: 34px;
-  padding: 18px 34px;
-
-  border: 1px solid rgba(131, 95, 79, 0.14);
-  border-radius: 999px;
-
-  background: var(--note-background);
 }
 
 .classesNote span {

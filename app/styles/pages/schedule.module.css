@@ -230,21 +230,6 @@
   background: transparent;
 }
 
-.scheduleNote {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-
-  width: 100%;
-  min-height: 82px;
-
-  padding: 20px 34px;
-
-  border-radius: 28px;
-
-  background: var(--note-background);
-}
-
 .scheduleNote span {
   font-size: 26px;
 }
@@ -441,7 +426,6 @@
     gap: 16px;
 
     padding: 22px 22px;
-    border-radius: 28px;
 
     text-align: left;
   }
