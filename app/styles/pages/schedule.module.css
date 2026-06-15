@@ -1,6 +1,6 @@
 .scheduleSection {
   background:
-    radial-gradient(circle at 88% 12%, rgba(131, 95, 79, 0.06) 0%, rgba(131, 95, 79, 0) 34%),
+    radial-gradient(circle at 12% 18%, rgba(131, 95, 79, 0.06) 0%, rgba(131, 95, 79, 0) 32%),
     var(--primary-background);
 
   align-items: flex-start;

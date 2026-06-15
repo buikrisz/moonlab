@@ -1,5 +1,7 @@
 .aboutSection {
-  background: var(--primary-background);
+  background:
+    radial-gradient(circle at 50% 8%, rgba(131, 95, 79, 0.07) 0%, rgba(131, 95, 79, 0) 34%),
+    var(--primary-background);
 
   padding-top: 40px;
   padding-bottom: 40px;

@@ -165,6 +165,7 @@ const HomePage = () => {
             </motion.a>
           </motion.div>
         </motion.section>
+
         {/* About Reformer Pilates Section */}
         <motion.section
           id="pilates"
@@ -441,11 +442,12 @@ const HomePage = () => {
             </div>
           </motion.div>
         </motion.section>
+
         {/* Class schedules */}
         <motion.section
           id="orarend"
           ref={scheduleRef}
-          className={`${styles.section} ${styles.scheduleSection}`}
+          className={`${styles.section} ${scheduleStyles.scheduleSection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: scheduleInView ? 1 : 0 }}
           transition={{ duration: 1 }}
@@ -594,7 +596,7 @@ const HomePage = () => {
         <motion.section
           id="faq"
           ref={faqRef}
-          className={`${styles.section} ${styles.faqSection}`}
+          className={`${styles.section} ${faqStyles.faqSection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: faqInView ? 1 : 0 }}
           transition={{ duration: 1 }}
