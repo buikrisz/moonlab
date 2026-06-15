@@ -586,8 +586,6 @@ const HomePage = () => {
               >
                 Megnyitom az órarendet
               </a>
-
-              <small>A Motibro felületén keresztül</small>
             </div>
           </motion.div>
         </motion.section>
@@ -684,7 +682,7 @@ const HomePage = () => {
                               rel="noopener noreferrer"
                               onClick={(event) => event.stopPropagation()}
                             >
-                              Foglalási rendszer megnyitása
+                              {item.linkLabel ?? item.link}
                             </a>
                           )}
                         </div>

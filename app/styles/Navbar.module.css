@@ -298,27 +298,33 @@
 }
 
 @media (max-width: 950px) {
-  .navbar {
+  .navbar,
+  .navbar.visible {
     top: 12px;
-    width: calc(100% - 24px);
+    left: 24px;
+
+    width: 60px;
     height: 60px;
-    padding: 0 18px;
+    padding: 0;
 
-    border-radius: 24px;
-    background: rgba(255, 250, 246, 0.9);
+    transform: none;
 
-    box-shadow:
-      0 10px 28px rgba(73, 49, 38, 0.08),
-      0 2px 8px rgba(73, 49, 38, 0.05);
+    border-radius: 10px;
   }
 
-  .navbar.visible {
-    top: 10px;
-    height: 58px;
+  .navbarContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    gap: 0;
   }
 
   .navLinks,
-  .scheduleLink {
+  .scheduleLink,
+  .logo {
     display: none;
   }
 
@@ -327,9 +333,24 @@
     justify-content: center;
     align-items: center;
 
-    font-size: 28px;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    border: none;
+    border-radius: 24px;
+
+    background: transparent;
     color: #6f5144;
+
+    font-size: 28px;
+    line-height: 1;
+
     cursor: pointer;
+  }
+
+  .hamburger svg {
+    pointer-events: none;
   }
 
   .mobileMenu {

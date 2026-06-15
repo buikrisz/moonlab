@@ -27,6 +27,7 @@ export type FaqCardProps = {
   question: string;
   answer: string;
   link?: string;
+  linkLabel?: string;
 };
 
 export type PdfLinkProps = {

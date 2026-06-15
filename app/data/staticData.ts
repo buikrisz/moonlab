@@ -20,6 +20,8 @@ import nutriqaImg from '../assets/nutriqa.jpeg';
 import creemImg from '../assets/creem.jpg';
 
 export const motibroLink = 'https://moon-lab-pilates.motibro.com/';
+export const googleMapsLink =
+  'https://www.google.com/maps/search/?api=1&query=1152%20Budapest%2C%20%C3%96regfalusi%20utca%2018';
 
 export const prices: PriceCardProps[] = [
   {
@@ -148,42 +150,53 @@ export const faq: FaqCardProps[] = [
     answer:
       'Bejelentkezni a Motibro online foglalási rendszerén keresztül tudsz, egy gyors regisztráció után.',
     link: motibroLink,
+    linkLabel: 'Foglalási rendszer megnyitása',
   },
   {
     question: 'Hogyan tudok jegyet vagy bérletet vásárolni?',
     answer:
-      'A Motibro fiókodban egyszerűen vásárolhatsz jegyet vagy bérletet. Személyesen is fizethetsz a stúdióban, készpénzzel vagy bankkártyával.',
+      'Jegyet vagy bérletet személyesen a stúdióban tudsz vásárolni óra kezdés előtt vagy óra után. Fizetésre készpénzzel, bankkártyával vagy OTP SZÉP kártyával van lehetőség.',
   },
   {
     question: 'Meddig tudom lemondani az órát, amire bejelentkeztem?',
     answer:
-      'Az órát legalább 24 órával a kezdés előtt tudod lemondani a Motibro rendszerében díjmentesen. Késői - 24 órán belüli - lemondás esetén az óra díját felszámoljuk, bérletes vendégek esetén pedig levonásra kerül az alkalom. Kérjük, hogy mindenképp jelezd a lemondást, még ha későn is, így esélyt adsz a válólistán szereplő vendégeknek a részvételre.',
+      'Az órát legfeljebb 24 órával a kezdés előttig tudod lemondani a Motibro rendszerében díjmentesen. Késői - 24 órán belüli - lemondás esetén az óra díját felszámoljuk, bérletes vendégek esetén pedig levonásra kerül az alkalom. Kérjük, hogy mindenképp jelezd a lemondást, még ha későn is, így esélyt adsz a válólistán szereplő vendégeknek a részvételre.',
   },
   {
     question: 'Mit hozzak magammal az órára?',
     answer:
-      'Csak kényelmes, testhezálló edzőruhára van szükség, hogy az oktató jól lássa a tested tartását gyakorlás közben. Emellett javasoljuk a csúszásmentes zokni használatát a biztonság és higiénia érdekében. + törölköző / víz',
+      'Csak kényelmes, testhezálló edzőruhára lesz szükséged, hogy az oktató jól lássa a testtartásodat és a gyakorlatok kivitelezését. A biztonság és higiénia érdekében csúszásmentes zokni használata javasolt. Ha nincs nálad, a stúdióban 5 990 Ft-ért tudsz vásárolni. Törölközőt és vizet érdemes magaddal hoznod.',
   },
   {
     question: 'Mennyi ideig tart egy óra?',
-    answer: 'A csoportos Reformer Pilates órák 50 perc hosszúak.',
+    answer:
+      'A csoportos Reformer Pilates órák 50 perc hosszúak, az órák között 10 perc szünet van, hogy a következő vendégeknek legyen ideje felkészülni. A magánórák szintént 50 perc hosszúak, de igény szerint hosszabb órákat is lehet szervezni.',
   },
   {
     question: 'Teljesen kezdő vagyok, jöhetek órára?',
     answer:
-      'Igen! Kezdő óráinkat úgy alakítottuk ki, hogy biztonságos és érthető legyen mindenki számára. Ha bizonytalan vagy, egyéni bevezető órát is tudsz foglalni.',
+      'Igen! Kezdő & Kismama, illetve All levels óráinkat úgy alakítottuk ki, hogy biztonságos és érthető legyen mindenki számára. Ha bizonytalan vagy, egyéni bevezető órát is tudsz foglalni.',
   },
   {
     question: 'Milyen típusú órák vannak?',
-    answer: 'Reformer pilates (kezdő/haladó); Funkcionális Reformer; HIIT Strength; Stretching ',
+    answer:
+      'Többféle reformer pilates órával várunk, hogy megtaláld a számodra legmegfelelőbb gyakorlást. Az All Levels óra minden szintnek ajánlott, a Cardio | Jumpboard dinamikusabb, állóképesség-fejlesztő óra, a Power intenzívebb erősítő gyakorlás, a Kezdő & Kismama óra kíméletesebb és biztonságosabb tempójú, míg a Stretching a nyújtásra, mobilitásra és feltöltődésre fókuszál.',
   },
   {
     question: 'Studiót, hogyan tudom megközelíteni?',
-    answer: '???',
+    answer:
+      'A stúdiót a 1152 Budapest, Öregfalusi utca 18. szám alatt találod. Tömegközlekedéssel a környéken több megálló is elérhető: a Széchenyi tér kb. 2 perc, az Epres sor kb. 4 perc, a Fő út kb. 6 perc sétára van. A környéket több buszjárat is érinti, többek között az 5-ös, 104A, 204-es, illetve az Epres sor megálló felől a 231, 231B és 950A járatok is opciók lehetnek. Indulás előtt érdemes a pontos útvonalat BudapestGO-ban ellenőrizni.',
+    link: googleMapsLink,
+    linkLabel: 'Útvonaltervezés a Google Maps-en',
   },
   {
     question: 'Van parkolási lehetőség?',
     answer: 'Igen, a környéken ingyenes az utcai parkolás elérhető.',
+  },
+  {
+    question: 'Van átöltözésre/zuhanyzásra lehetőség?',
+    answer:
+      'Igen, a stúdióban van lehetőség átöltözésre és zuhanyzásra is, így kényelmesen tudsz készülni az óra előtt és után.',
   },
 ];
 

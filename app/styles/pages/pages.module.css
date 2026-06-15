@@ -257,4 +257,8 @@
 
     font-size: 13px;
   }
+
+  .note {
+    border-radius: 28px;
+  }
 }

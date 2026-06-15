@@ -84,7 +84,12 @@ export const Navbar = () => {
       </div>
 
       <div className={styles.navbarContent}>
-        <button className={styles.hamburger} onClick={handleToggleMenu} aria-label="Open menu">
+        <button
+          type="button"
+          className={styles.hamburger}
+          onClick={handleToggleMenu}
+          aria-label="Open menu"
+        >
           {IoMdMenu({})}
         </button>
 
