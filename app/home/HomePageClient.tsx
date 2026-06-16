@@ -53,7 +53,6 @@ import { useCallback, useState, useRef } from 'react';
 import scheduleImg from '../assets/book.jpg';
 import faqImg from '../assets/faq.jpg';
 import { trackEvent } from '../utils/analytics';
-import { CookieSettingsButton } from '../components/CookieSettingsButton';
 
 export const HomePageClient = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
