@@ -16,7 +16,7 @@ import {
   PdfLinkProps,
   PriceCardIcons,
 } from '../types';
-import nutriqaImg from '../assets/nutriqa.jpeg';
+import nutriqaImg from '../assets/nutriqa.jpg';
 import creemImg from '../assets/creem.jpg';
 
 export const motibroLink = 'https://moon-lab-pilates.motibro.com/';
