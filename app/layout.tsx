@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import { defaultSeoDescription, siteName, siteUrl } from './seoConfig';
+import { CookieConsent } from './components/CookieConsent';
 import './globals.css';
 
 const dmSans = DM_Sans({
@@ -93,8 +94,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={dmSans.variable}>{children}</body>
+    <html lang="hu">
+      <body className={dmSans.variable}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

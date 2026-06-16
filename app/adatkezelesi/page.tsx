@@ -160,7 +160,29 @@ const AdatkezelesiPage = () => {
         </section>
 
         <section className={styles.sectionBlock}>
-          <h2 className={styles.subTitle}>5. Kamerás megfigyelés</h2>
+          <h2 className={styles.subTitle}>5. Cookie-k és Google Analytics</h2>
+
+          <p>
+            A Moon Lab Pilates weboldala a látogatói élmény javítása és az oldal használatának
+            megértése érdekében Google Analytics 4 szolgáltatást használhat.
+          </p>
+
+          <p>
+            A Google Analytics kizárólag akkor töltődik be, ha a látogató ehhez a süti bannerben
+            hozzájárul. Elutasítás esetén analitikai mérés nem történik.
+          </p>
+
+          <p>
+            A sütik és analitikai beállítások részletes leírását a Süti tájékoztató tartalmazza.
+          </p>
+
+          <Link className={styles.inlineButton} href="/suti-tajekoztato">
+            Süti tájékoztató megnyitása
+          </Link>
+        </section>
+
+        <section className={styles.sectionBlock}>
+          <h2 className={styles.subTitle}>6. Kamerás megfigyelés</h2>
 
           <p>
             A stúdió egyes területein kamerás megfigyelés működik személy- és vagyonvédelmi célból.
@@ -175,7 +197,7 @@ const AdatkezelesiPage = () => {
             </p>
           </div>
 
-          <h3 className={styles.smallTitle}>5.1. A kamerás megfigyelés célja</h3>
+          <h3 className={styles.smallTitle}>6.1. A kamerás megfigyelés célja</h3>
 
           <ul className={styles.bulletList}>
             <li>személyek és vagyon védelme,</li>
@@ -184,7 +206,7 @@ const AdatkezelesiPage = () => {
             <li>esetleges jogviták megalapozása vagy elhárítása.</li>
           </ul>
 
-          <h3 className={styles.smallTitle}>5.2. A megfigyelt területek</h3>
+          <h3 className={styles.smallTitle}>6.2. A megfigyelt területek</h3>
 
           <ul className={styles.bulletList}>
             <li>stúdió bejárata,</li>
@@ -192,7 +214,7 @@ const AdatkezelesiPage = () => {
             <li>közlekedőfolyosó.</li>
           </ul>
 
-          <h3 className={styles.smallTitle}>5.3. Jogalap</h3>
+          <h3 className={styles.smallTitle}>6.3. Jogalap</h3>
 
           <p>
             A kamerás adatkezelés jogalapja a Moon Lab Pilates Kft. jogos érdeke, amely a stúdió
@@ -200,7 +222,7 @@ const AdatkezelesiPage = () => {
             valamint a szolgáltatás zavartalan működésének biztosításához kapcsolódik.
           </p>
 
-          <h3 className={styles.smallTitle}>5.4. A felvételek megőrzési ideje</h3>
+          <h3 className={styles.smallTitle}>6.4. A felvételek megőrzési ideje</h3>
 
           <p>
             A felvételek legfeljebb 3 munkanapig kerülnek megőrzésre, kivéve, ha jogvita, rendkívüli
@@ -208,7 +230,7 @@ const AdatkezelesiPage = () => {
             esetben a felvétel a szükséges eljárás lezárásáig őrizhető meg.
           </p>
 
-          <h3 className={styles.smallTitle}>5.5. Hozzáférés a felvételekhez</h3>
+          <h3 className={styles.smallTitle}>6.5. Hozzáférés a felvételekhez</h3>
 
           <p>
             A kamerafelvételekhez kizárólag az adatkezelő, illetve az általa kijelölt, titoktartásra
@@ -217,7 +239,7 @@ const AdatkezelesiPage = () => {
         </section>
 
         <section className={styles.sectionBlock}>
-          <h2 className={styles.subTitle}>6. Adatok továbbítása</h2>
+          <h2 className={styles.subTitle}>7. Adatok továbbítása</h2>
 
           <p>
             Személyes adatok harmadik fél részére kizárólag jogszabályi kötelezettség teljesítése,
@@ -232,7 +254,7 @@ const AdatkezelesiPage = () => {
         </section>
 
         <section className={styles.sectionBlock}>
-          <h2 className={styles.subTitle}>7. Az érintettek jogai</h2>
+          <h2 className={styles.subTitle}>8. Az érintettek jogai</h2>
 
           <p>
             Az érintettek a vonatkozó adatvédelmi jogszabályok alapján az alábbi jogokat
@@ -252,7 +274,7 @@ const AdatkezelesiPage = () => {
         </section>
 
         <section className={styles.sectionBlock}>
-          <h2 className={styles.subTitle}>8. Panasztételi lehetőség</h2>
+          <h2 className={styles.subTitle}>9. Panasztételi lehetőség</h2>
 
           <p>
             Amennyiben az érintett úgy véli, hogy személyes adatainak kezelése jogsértő, panasszal
@@ -283,13 +305,13 @@ const AdatkezelesiPage = () => {
         </section>
 
         <section className={styles.sectionBlock}>
-          <h2 className={styles.subTitle}>9. Automatizált döntéshozatal, profilalkotás</h2>
+          <h2 className={styles.subTitle}>10. Automatizált döntéshozatal, profilalkotás</h2>
 
           <p>A Moon Lab Pilates Kft. nem végez automatizált döntéshozatalt vagy profilalkotást.</p>
         </section>
 
         <section className={styles.sectionBlock}>
-          <h2 className={styles.subTitle}>10. Hozzáférés az adatkezelési tájékoztatóhoz</h2>
+          <h2 className={styles.subTitle}>11. Hozzáférés az adatkezelési tájékoztatóhoz</h2>
 
           <p>
             A tájékoztató a stúdióban elérhető, valamint a honlapon elektronikusan is megtekinthető.
