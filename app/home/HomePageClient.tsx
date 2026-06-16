@@ -52,6 +52,8 @@ import { PriceCardIcons } from '../types';
 import { useCallback, useState, useRef } from 'react';
 import scheduleImg from '../assets/book.jpg';
 import faqImg from '../assets/faq.jpg';
+import { trackEvent } from '../utils/analytics';
+import { CookieSettingsButton } from '../components/CookieSettingsButton';
 
 export const HomePageClient = () => {
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -123,6 +125,13 @@ export const HomePageClient = () => {
     }
   }, []);
 
+  const trackEventHandler = useCallback(
+    (event: string, params: Record<string, string | number | boolean> = {}) => {
+      trackEvent(event, params);
+    },
+    [],
+  );
+
   return (
     <>
       <Navbar />
@@ -160,6 +169,12 @@ export const HomePageClient = () => {
               href={motibroLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEventHandler('click_schedule', {
+                  location: 'hero',
+                  label: 'Órarend',
+                })
+              }
             >
               Órarend
             </motion.a>
@@ -273,7 +288,17 @@ export const HomePageClient = () => {
                 <li>Várandós kismamáknak speciális program keretében</li>
               </ul>
 
-              <a className={aboutStyles.aboutRecommendedButton} href="#oratipusok">
+              <a
+                className={aboutStyles.aboutRecommendedButton}
+                href="#oratipusok"
+                onClick={() =>
+                  trackEventHandler('click_internal_anchor', {
+                    location: 'about_recommended_card',
+                    target: 'oratipusok',
+                    label: 'Tudj meg többet',
+                  })
+                }
+              >
                 Tudj meg többet
               </a>
             </div>
@@ -323,11 +348,18 @@ export const HomePageClient = () => {
                   className={`${coachStyles.coachCard} ${
                     flippedCoach === coach.name ? coachStyles.flipped : ''
                   }`}
-                  onClick={() =>
+                  onClick={() => {
+                    const action = flippedCoach === coach.name ? 'close' : 'open';
+
+                    trackEventHandler('coach_card_toggle', {
+                      coach: coach.name,
+                      action,
+                    });
+
                     setFlippedCoach((currentCoach) =>
                       currentCoach === coach.name ? null : coach.name,
-                    )
-                  }
+                    );
+                  }}
                   aria-label={`${coach.name} bemutatkozás megnyitása`}
                 >
                   <div className={coachStyles.coachCardInner}>
@@ -586,6 +618,12 @@ export const HomePageClient = () => {
                 href={motibroLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEventHandler('click_schedule', {
+                    location: 'schedule_section',
+                    label: 'Megnyitom az órarendet',
+                  })
+                }
               >
                 Megnyitom az órarendet
               </a>
@@ -652,9 +690,17 @@ export const HomePageClient = () => {
                       type="button"
                       key={item.question}
                       className={`${faqStyles.faqItem} ${isOpen ? faqStyles.open : ''}`}
-                      onClick={() =>
-                        setOpenFaqIndex((currentIndex) => (currentIndex === index ? -1 : index))
-                      }
+                      onClick={() => {
+                        const action = openFaqIndex === index ? 'close' : 'open';
+
+                        trackEventHandler('faq_toggle', {
+                          question: item.question,
+                          action,
+                          index: index + 1,
+                        });
+
+                        setOpenFaqIndex((currentIndex) => (currentIndex === index ? -1 : index));
+                      }}
                       aria-expanded={isOpen}
                     >
                       <div className={faqStyles.faqQuestionRow}>
@@ -683,7 +729,15 @@ export const HomePageClient = () => {
                               href={item.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(event) => event.stopPropagation()}
+                              onClick={(event) => {
+                                event.stopPropagation();
+
+                                trackEventHandler('click_faq_link', {
+                                  question: item.question,
+                                  url: item.link ?? '',
+                                  label: item.linkLabel ?? item.link ?? '',
+                                });
+                              }}
                             >
                               {item.linkLabel ?? item.link}
                             </a>
@@ -707,7 +761,15 @@ export const HomePageClient = () => {
               </div>
 
               <div className={faqStyles.faqContactLinks}>
-                <a href="mailto:hello@moonlabpilates.hu">
+                <a
+                  href="mailto:hello@moonlabpilates.hu"
+                  onClick={() =>
+                    trackEventHandler('click_email', {
+                      location: 'faq_contact_note',
+                      label: 'hello@moonlabpilates.hu',
+                    })
+                  }
+                >
                   <Mail size={18} strokeWidth={1.5} />
                   hello@moonlabpilates.hu
                 </a>
@@ -716,13 +778,29 @@ export const HomePageClient = () => {
                   href="https://www.instagram.com/moonlabpilates"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEventHandler('click_social', {
+                      location: 'faq_contact_note',
+                      platform: 'instagram',
+                    })
+                  }
                 >
                   <Mail size={18} strokeWidth={1.5} />
                   @moonlabpilates
                 </a>
               </div>
 
-              <a className={faqStyles.faqContactButton} href="#kapcsolat">
+              <a
+                className={faqStyles.faqContactButton}
+                href="#kapcsolat"
+                onClick={() =>
+                  trackEventHandler('click_internal_anchor', {
+                    location: 'faq_contact_note',
+                    target: 'kapcsolat',
+                    label: 'Kapcsolatfelvétel',
+                  })
+                }
+              >
                 Kapcsolatfelvétel
                 <Sparkles size={18} strokeWidth={1.35} />
               </a>
@@ -762,7 +840,13 @@ export const HomePageClient = () => {
               <button
                 type="button"
                 className={reviewsStyles.reviewsArrow}
-                onClick={() => handleReviewScroll('left')}
+                onClick={() => {
+                  trackEventHandler('review_slider_click', {
+                    direction: 'left',
+                  });
+
+                  handleReviewScroll('left');
+                }}
                 aria-label="Előző vélemények"
               >
                 <ChevronLeft size={24} strokeWidth={1.5} />
@@ -803,7 +887,13 @@ export const HomePageClient = () => {
               <button
                 type="button"
                 className={reviewsStyles.reviewsArrow}
-                onClick={() => handleReviewScroll('right')}
+                onClick={() => {
+                  trackEventHandler('review_slider_click', {
+                    direction: 'right',
+                  });
+
+                  handleReviewScroll('right');
+                }}
                 aria-label="Következő vélemények"
               >
                 <ChevronRight size={24} strokeWidth={1.5} />
@@ -816,6 +906,11 @@ export const HomePageClient = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={reviewsStyles.reviewButton}
+                onClick={() =>
+                  trackEventHandler('click_google_review', {
+                    location: 'reviews_section',
+                  })
+                }
               >
                 {FaGoogle({ size: 22 })}
                 Értékelj minket Google-on
@@ -827,6 +922,11 @@ export const HomePageClient = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={reviewsStyles.reviewButton}
+                onClick={() =>
+                  trackEventHandler('click_facebook_review', {
+                    location: 'reviews_section',
+                  })
+                }
               >
                 {FaFacebook({ size: 22 })}
                 Írj véleményt Facebookon
@@ -915,6 +1015,12 @@ export const HomePageClient = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={partnersStyles.partnerButton}
+                        onClick={() =>
+                          trackEventHandler('click_partner_shop', {
+                            partner: partner.name,
+                            url: partner.link,
+                          })
+                        }
                       >
                         Vásárlás
                       </a>
@@ -934,7 +1040,16 @@ export const HomePageClient = () => {
                 <p>Keress minket emailben, Instagramon vagy telefonon.</p>
               </div>
 
-              <a href="#kapcsolat">
+              <a
+                href="#kapcsolat"
+                onClick={() =>
+                  trackEventHandler('click_internal_anchor', {
+                    location: 'partnership_note',
+                    target: 'kapcsolat',
+                    label: 'Ugrás a Kapcsolat részhez',
+                  })
+                }
+              >
                 Ugrás a Kapcsolat részhez
                 <ChevronRight size={20} strokeWidth={1.5} />
               </a>
@@ -981,6 +1096,11 @@ export const HomePageClient = () => {
                     className={contactStyles.contactDetailText}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() =>
+                      trackEventHandler('click_address', {
+                        location: 'contact_details',
+                      })
+                    }
                   >
                     1152 Budapest, Öregfalusi utca 18.
                   </Link>
@@ -988,7 +1108,15 @@ export const HomePageClient = () => {
 
                 <div className={contactStyles.contactDetail}>
                   <span className={contactStyles.contactDetailIcon}>{MdPhoneIphone({})}</span>
-                  <Link href="tel:+36309014943" className={contactStyles.contactDetailText}>
+                  <Link
+                    href="tel:+36309014943"
+                    className={contactStyles.contactDetailText}
+                    onClick={() =>
+                      trackEventHandler('click_phone', {
+                        location: 'contact_details',
+                      })
+                    }
+                  >
                     +36 30 901 4943
                   </Link>
                 </div>
@@ -998,6 +1126,12 @@ export const HomePageClient = () => {
                   <Link
                     href="mailto:moonlabpilates@gmail.com"
                     className={contactStyles.contactDetailText}
+                    onClick={() =>
+                      trackEventHandler('click_email', {
+                        location: 'contact_details',
+                        label: 'moonlabpilates@gmail.com',
+                      })
+                    }
                   >
                     moonlabpilates@gmail.com
                   </Link>
@@ -1018,6 +1152,12 @@ export const HomePageClient = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
+                      onClick={() =>
+                        trackEventHandler('click_social', {
+                          location: 'contact_social_links',
+                          platform: 'facebook',
+                        })
+                      }
                     >
                       {FaFacebook({})}
                     </Link>
@@ -1027,6 +1167,12 @@ export const HomePageClient = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
+                      onClick={() =>
+                        trackEventHandler('click_social', {
+                          location: 'contact_social_links',
+                          platform: 'instagram',
+                        })
+                      }
                     >
                       {FaInstagram({})}
                     </Link>
@@ -1034,14 +1180,53 @@ export const HomePageClient = () => {
                 </div>
 
                 <div className={contactStyles.contactLinks}>
-                  <Link href="/aszf" className={contactStyles.contactLink}>
+                  <Link
+                    href="/aszf"
+                    className={contactStyles.contactLink}
+                    onClick={() =>
+                      trackEventHandler('click_legal_link', {
+                        location: 'contact_links',
+                        page: 'aszf',
+                      })
+                    }
+                  >
                     ÁSZF
                   </Link>
-                  <Link href="/felelossegi-nyilatkozat" className={contactStyles.contactLink}>
+                  <Link
+                    href="/felelossegi-nyilatkozat"
+                    className={contactStyles.contactLink}
+                    onClick={() =>
+                      trackEventHandler('click_legal_link', {
+                        location: 'contact_links',
+                        page: 'felelossegi-nyilatkozat',
+                      })
+                    }
+                  >
                     Felelősségi nyilatkozat
                   </Link>
-                  <Link href="/adatkezelesi" className={contactStyles.contactLink}>
+                  <Link
+                    href="/adatkezelesi"
+                    className={contactStyles.contactLink}
+                    onClick={() =>
+                      trackEventHandler('click_legal_link', {
+                        location: 'contact_links',
+                        page: 'adatkezelesi',
+                      })
+                    }
+                  >
                     Adatkezelési tájékoztató
+                  </Link>
+                  <Link
+                    href="/suti-tajekoztato"
+                    className={contactStyles.contactLink}
+                    onClick={() =>
+                      trackEventHandler('click_legal_link', {
+                        location: 'contact_links',
+                        page: 'suti-tajekoztato',
+                      })
+                    }
+                  >
+                    Süti tájékoztató
                   </Link>
                 </div>
               </div>
@@ -1050,6 +1235,12 @@ export const HomePageClient = () => {
                 <Link
                   href="mailto:moonlabpilates@gmail.com"
                   className={contactStyles.contactPrimaryButton}
+                  onClick={() =>
+                    trackEventHandler('click_email', {
+                      location: 'contact_actions',
+                      label: 'Kapcsolatfelvétel',
+                    })
+                  }
                 >
                   Kapcsolatfelvétel
                 </Link>
@@ -1059,6 +1250,11 @@ export const HomePageClient = () => {
                   className={contactStyles.contactSecondaryButton}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEventHandler('click_directions', {
+                      location: 'contact_actions',
+                    })
+                  }
                 >
                   {IoLocationSharp({})}
                   Útvonaltervezés

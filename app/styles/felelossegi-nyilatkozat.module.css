@@ -369,6 +369,10 @@
     padding: 30px 28px;
   }
 
+  .eyebrow {
+    display: none;
+  }
+
   .subTitle {
     font-size: 28px;
   }

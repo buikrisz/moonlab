@@ -380,6 +380,51 @@
   color: #7a5849;
 }
 
+.heroActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 24px;
+}
+
+.cookieSettingsButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 46px;
+
+  padding: 0 24px;
+
+  border: 1px solid rgba(131, 95, 79, 0.22);
+  border-radius: 999px;
+
+  background: rgba(131, 95, 79, 0.08);
+  color: #6f5144;
+
+  font-family: var(--font-dm-sans);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cookieSettingsButton:hover {
+  background: #7a5849;
+  border-color: #7a5849;
+  color: var(--primary-background);
+
+  transform: translateY(-1px);
+}
+
 @media (max-width: 900px) {
   .main {
     padding-top: 100px;
@@ -399,6 +444,10 @@
 
   .sectionBlock {
     padding: 30px 28px;
+  }
+
+  .eyebrow {
+    display: none;
   }
 
   .subTitle {
@@ -501,5 +550,14 @@
 
   .bottomNote a {
     width: 100%;
+  }
+
+  .heroActions {
+    margin-top: 20px;
+  }
+
+  .cookieSettingsButton {
+    width: 100%;
+    max-width: 320px;
   }
 }
