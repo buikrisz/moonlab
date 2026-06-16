@@ -185,13 +185,14 @@ export const HomePageClient = () => {
               <h3 className={aboutStyles.aboutEyebrow}>Mi az a Reformer Pilates?</h3>
 
               <p className={aboutStyles.aboutSectionText}>
-                A Reformer Pilates egy alacsony hatású, mégis rendkívül hatékony edzésmódszer, amely
-                egy speciális gépen, a reformeren végzett mozgássorokkal erősíti, nyújtja és
-                formálja a testet.
+                A Reformer Pilates egy kíméletes, mégis rendkívül hatékony edzésmódszer, amely egy
+                speciális gépen, a reformeren végzett mozgássorokkal erősíti, nyújtja és formálja a
+                testet.
               </p>
               <p className={aboutStyles.aboutSectionText}>
                 Segít javítani a tartást, növeli a rugalmasságot, fejleszti a testtudatot, és
-                hozzájárul a mindennapi mozgásminőség javításához.
+                támogatja, hogy a mindennapi mozgás könnyedebbé, tudatosabbá és harmonikusabbá
+                váljon.
               </p>
             </div>
 
