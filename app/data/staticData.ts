@@ -5,7 +5,7 @@ import prenatImg from '../assets/class-types/prenat.jpg';
 import cardioImg from '../assets/class-types/cardio.jpg';
 import fanniImg from '../assets/coaches/fanni.jpg';
 import vaniImg from '../assets/coaches/vani.jpg';
-import teteImg from '../assets/coaches/tete.jpg';
+import gabiImg from '../assets/coaches/gabi.jpg';
 import zNikiImg from '../assets/coaches/z_niki.jpg';
 import hNikiImg from '../assets/coaches/h_niki.jpg';
 import mesiImg from '../assets/coaches/mesi.jpg';
@@ -79,11 +79,11 @@ export const coaches: InformationCardProps[] = [
     img: mesiImg,
   },
   {
-    name: 'Tété',
+    name: 'Gabi',
     description: 'Energikus, motiváló órák, ahol mindenki személyes figyelmet kap',
     description_long:
-      '" Hatéves korom óta meghatározó része az életemnek a mozgás. Miskolcon színházi táncos szakon végeztem, majd Budapesten a Magyar Táncművészeti Egyetem moderntánc szakán diplomáztam. Hálás vagyok, hogy táncművészként több európai országban élhettem, turnézhattam, és nemzetközi művészekkel dolgozhattam együtt – ezek az élmények mélyen formálták a szemléletemet. \n\n A tanítás mindig is fontos szerepet töltött be az életemben – immár közel 15 éve foglalkozom gyerekekkel és felnőttekkel. Ma már nem vagyok aktív táncos, a fókuszom teljesen a tanításon és a mozgás örömének átadásán van. \n\n A mozgás iránti szenvedélyem a jóga, majd a pilates felé vezetett. Azóta is folyamatosan képzem magam – részt veszek a Michael King nemzetközi pilatesképzésein és STOTT workshopokon is. \n\n Hiszek benne, hogy a fejlődés kulcsa a folyamatos tanulás. Az óráimon nincs elvárás – csak figyelem, jelenlét, és a lehetőség, hogy mindenki a saját tempójában fejlődhessen. Célom, hogy az óráimon egy elvárásmentes, támogató térben kapcsolódhass önmagadhoz – testben és lélekben. "',
-    img: teteImg,
+      '" A sport gyerekkorom óta az életem része, és immár több mint egy évtizede segítem a vendégeimet abban, hogy tudatosan, egészségesen és sérülésmentesen fejlesszék a testüket. Az évek során megfordultam külföldi prémium sportközpontokban is, 2025 óta pedig hazai Pilates Stúdiókban várlak Titeket a gépeken!\n\nA Reformer Pilates számomra a tökéletes egyensúly: egyszerre erősít a mélyizmok szintjéig, formál, nyújt és javítja a tartást – mindezt maximális ízületvédelem mellett. Kedvencem a precíz, preventív szemléletű edzéstervezés, ahol minden mozdulatnak célja van.\n\nAkár most ismerkedsz a géppel, akár szintet lépnél a fejlődésben, várlak szeretettel az óráimon! "',
+    img: gabiImg,
   },
   {
     name: 'Vani',
