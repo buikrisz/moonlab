@@ -363,7 +363,13 @@ export const HomePageClient = () => {
                 >
                   <div className={coachStyles.coachCardInner}>
                     <div className={coachStyles.coachCardFront}>
-                      <Image src={coach.img} alt={coach.name} className={coachStyles.coachImage} />
+                      <Image
+                        src={coach.img}
+                        alt={coach.name}
+                        className={coachStyles.coachImage}
+                        sizes="240px"
+                        quality={90}
+                      />
 
                       <div className={coachStyles.coachCardContent}>
                         <h3 className={coachStyles.coachName}>{coach.name}</h3>
